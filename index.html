@@ -4,13 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MH — Official Website | More Than a Box</title>
-  <meta name="description" content="Mystery Boxes designed for couples, friends, families and every special moment. Premium, minimal, and personal.">
+  <meta name="description" content="Mystery Boxes designed for couples, friends, families and every special moment.">
   <link rel="stylesheet" href="css/main.css">
   <link rel="icon" type="image/png" href="Logo.png">
 </head>
-<body>
+<body data-lang="ar">
 
-  <!-- Shared Header -->
+  <!-- Header -->
   <header class="header">
     <div class="header-inner">
       <a href="index.html" class="brand-logo-wrap">
@@ -18,14 +18,17 @@
       </a>
       
       <ul class="nav-menu" id="navMenu">
-        <li><a href="index.html" class="nav-link active">HOME</a></li>
-        <li><a href="boxes.html" class="nav-link">BOXES</a></li>
-        <li><a href="customize.html" class="nav-link">CUSTOMIZE</a></li>
-        <li><a href="about.html" class="nav-link">ABOUT</a></li>
-        <li><a href="contact.html" class="nav-link">CONTACT</a></li>
+        <li><a href="index.html" class="nav-link active" data-i18n="nav_home">الرئيسية</a></li>
+        <li><a href="boxes.html" class="nav-link" data-i18n="nav_boxes">البوكسات</a></li>
+        <li><a href="customize.html" class="nav-link" data-i18n="nav_customize">تخصيص الصندوق</a></li>
+        <li><a href="about.html" class="nav-link" data-i18n="nav_about">عن البراند</a></li>
+        <li><a href="contact.html" class="nav-link" data-i18n="nav_contact">تواصل معنا</a></li>
       </ul>
 
       <div class="header-actions">
+        <!-- زر تبديل اللغة الأنيق -->
+        <button class="lang-toggle-btn" aria-label="Toggle Language">EN</button>
+
         <a href="boxes.html" class="icon-btn" aria-label="Search">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
         </a>
@@ -47,17 +50,14 @@
     <section class="hero">
       <div class="container hero-grid">
         <div>
-          <div class="hero-tagline">More Than a Box</div>
-          <h1 class="hero-title">A Box. A Surprise. A Moment.</h1>
-          <p class="hero-desc">
-            نحول اللحظات العادية إلى ذكريات لا تُنسى عبر صناديق استثنائية مصممة بعناية فائقة وتفاصيل دقيقة.
+          <div class="hero-tagline" data-i18n="hero_tag">أكثر من مجرد صندوق</div>
+          <h1 class="hero-title" data-i18n="hero_title">صندوق. مفاجأة. لحظة لا تُنسى.</h1>
+          <p class="hero-desc" data-i18n="hero_desc">
+            نحوّل اللحظات العادية إلى ذكريات استثنائية عبر صناديق غامضة صُممت بعناية تامة وأعلى معايير الأناقة.
           </p>
           <div class="hero-buttons">
-            <a href="boxes.html" class="btn btn-primary">
-              DISCOVER BOXES
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-            </a>
-            <a href="customize.html" class="btn btn-secondary">CUSTOMIZE YOUR BOX</a>
+            <a href="boxes.html" class="btn btn-primary" data-i18n="hero_cta_discover">استكشف البوكسات</a>
+            <a href="customize.html" class="btn btn-secondary" data-i18n="hero_cta_customize">صمّم صندوقك</a>
           </div>
         </div>
 
@@ -69,14 +69,14 @@
       </div>
     </section>
 
-    <!-- Brand Concept Section -->
+    <!-- Concept Section -->
     <section class="container" style="border-bottom: var(--border-subtle); text-align: center;">
       <div style="max-width: 640px; margin: 0 auto;">
-        <h2 style="font-family: var(--font-en); font-size: 28px; margin-bottom: 12px; letter-spacing: 0.05em;">
-          Choose the moment. We create the surprise.
+        <h2 style="font-size: 26px; margin-bottom: 12px;" data-i18n="concept_title">
+          اختر اللحظة. ونحن نصنع المفاجأة.
         </h2>
-        <p style="color: var(--mh-cool-grey); font-size: 15px;">
-          Mystery Boxes designed for couples, friends, families and every special moment.
+        <p style="color: var(--mh-cool-grey); font-size: 15px;" data-i18n="concept_desc">
+          صناديق مفاجآت مخصصة للكابلز، الأصدقاء، العائلة، ولكل مناسبة تستحق الاحتفال.
         </p>
       </div>
     </section>
@@ -84,42 +84,42 @@
     <!-- For Every Moment Section -->
     <section class="container">
       <div class="section-header">
-        <div class="section-label">Moments</div>
-        <h2 class="section-title">FOR EVERY MOMENT</h2>
+        <div class="section-label" data-i18n="moments_label">المناسبات</div>
+        <h2 class="section-title" data-i18n="moments_title">لكل لحظة خاصة</h2>
       </div>
 
       <div class="moments-grid">
         <a href="boxes.html" class="moment-card">
-          <div class="moment-card-title">Couples</div>
-          <div class="moment-card-sub">لحظات استثنائية تجمعكما معاً</div>
+          <div class="moment-card-title" data-i18n="moment_couples">الكابلز</div>
+          <div class="moment-card-sub" data-i18n="moment_couples_sub">لحظات استثنائية تجمعكما معاً</div>
         </a>
         <a href="boxes.html" class="moment-card">
-          <div class="moment-card-title">Engagement</div>
-          <div class="moment-card-sub">بداية القصة والخطوة الأولى</div>
+          <div class="moment-card-title" data-i18n="moment_engagement">الخطوبة</div>
+          <div class="moment-card-sub" data-i18n="moment_engagement_sub">بداية القصة والخطوة الأولى</div>
         </a>
         <a href="boxes.html" class="moment-card">
-          <div class="moment-card-title">Wedding</div>
-          <div class="moment-card-sub">فخامة تليق باليوم الكبير</div>
+          <div class="moment-card-title" data-i18n="moment_wedding">الزواج</div>
+          <div class="moment-card-sub" data-i18n="moment_wedding_sub">فخامة تليق باليوم الكبير</div>
         </a>
         <a href="boxes.html" class="moment-card">
-          <div class="moment-card-title">Friends</div>
-          <div class="moment-card-sub">تقدير صادق لذكريات تدوم</div>
+          <div class="moment-card-title" data-i18n="moment_friends">الأصدقاء</div>
+          <div class="moment-card-sub" data-i18n="moment_friends_sub">تقدير حقيقي لرفقة تدوم</div>
         </a>
         <a href="boxes.html" class="moment-card">
-          <div class="moment-card-title">Birthday</div>
-          <div class="moment-card-sub">مفاجأة مبهجة متجددة كل عام</div>
+          <div class="moment-card-title" data-i18n="moment_birthday">أعياد الميلاد</div>
+          <div class="moment-card-sub" data-i18n="moment_birthday_sub">مفاجأة مبهجة متجددة كل عام</div>
         </a>
         <a href="boxes.html" class="moment-card">
-          <div class="moment-card-title">Graduation</div>
-          <div class="moment-card-sub">تتويج سنوات الجهد والنجاح</div>
+          <div class="moment-card-title" data-i18n="moment_graduation">التخرج</div>
+          <div class="moment-card-sub" data-i18n="moment_graduation_sub">تتويج مسيرة الجهد والنجاح</div>
         </a>
         <a href="boxes.html" class="moment-card">
-          <div class="moment-card-title">Valentine's</div>
-          <div class="moment-card-sub">تعبير رقيق بأرقى أسلوب</div>
+          <div class="moment-card-title" data-i18n="moment_valentines">يوم الحب</div>
+          <div class="moment-card-sub" data-i18n="moment_valentines_sub">تعبير رقيق بأرقى أسلوب</div>
         </a>
         <a href="boxes.html" class="moment-card">
-          <div class="moment-card-title">Ramadan</div>
-          <div class="moment-card-sub">أجواء أصيلة وهدايا دافئة</div>
+          <div class="moment-card-title" data-i18n="moment_ramadan">رمضان</div>
+          <div class="moment-card-sub" data-i18n="moment_ramadan_sub">أجواء دافئة وهدايا أصيلة</div>
         </a>
       </div>
     </section>
@@ -127,49 +127,46 @@
     <!-- How It Works Section -->
     <section class="container" style="border-top: var(--border-subtle);">
       <div class="section-header">
-        <div class="section-label">Process</div>
-        <h2 class="section-title">HOW IT WORKS</h2>
+        <div class="section-label" data-i18n="how_label">كيف نعمل</div>
+        <h2 class="section-title" data-i18n="how_title">خطوات بسيطة نحو المفاجأة</h2>
       </div>
 
       <div class="steps-grid">
         <div class="step-card">
-          <div class="step-number">01</div>
-          <div class="step-name">Choose</div>
-          <div class="step-desc">اختر المناسبة ونوع البوكس المناسب لذوقك ولمن تحب.</div>
+          <div class="step-number" data-i18n="how_step1_num">01</div>
+          <div class="step-name" data-i18n="how_step1_title">اختر</div>
+          <div class="step-desc" data-i18n="how_step1_desc">اختر الفئة ونوع الصندوق المناسب لمناسبتك ولمن تحب.</div>
         </div>
         <div class="step-card">
-          <div class="step-number">02</div>
-          <div class="step-name">Customize</div>
-          <div class="step-desc">حدد التفاصيل والرسالة والإضافات الخاصة خطوة بخطوة.</div>
+          <div class="step-number" data-i18n="how_step2_num">02</div>
+          <div class="step-name" data-i18n="how_step2_title">خصّص</div>
+          <div class="step-desc" data-i18n="how_step2_desc">حدد تفاصيل الهدايا والرسالة الشخصية والإضافات بدقة.</div>
         </div>
         <div class="step-card">
-          <div class="step-number">03</div>
-          <div class="step-name">Surprise</div>
-          <div class="step-desc">استلم البوكس الفاخر في الموعد المحدد وافتح باب الدهشة.</div>
+          <div class="step-number" data-i18n="how_step3_num">03</div>
+          <div class="step-name" data-i18n="how_step3_title">فاجئ</div>
+          <div class="step-desc" data-i18n="how_step3_desc">استلم الصندوق الفاخر وافتح باب الدهشة واللحظة السعيدة.</div>
         </div>
       </div>
     </section>
 
     <!-- Make It Yours Section -->
-    <section class="container" style="border-top: var(--border-subtle); padding: 96px 24px;">
-      <div style="background-color: var(--mh-graphite); border: var(--border-subtle); padding: 64px 32px; text-align: center;">
-        <div class="section-label">Custom Experience</div>
-        <h2 style="font-family: var(--font-en); font-size: 38px; letter-spacing: 0.1em; margin-bottom: 16px;">MAKE IT YOURS</h2>
-        <p style="color: var(--mh-cool-grey); max-width: 520px; margin: 0 auto 32px; font-size: 15px;">
-          صمّم صندوقك بالكامل من الصفر بدقة وانسيابية. اختر كل قطعة ورسالة بنفسك.
+    <section class="container" style="border-top: var(--border-subtle); padding: 80px 24px;">
+      <div style="background-color: var(--mh-graphite); border: var(--border-subtle); padding: 56px 24px; text-align: center;">
+        <div class="section-label" data-i18n="make_label">تجربة مخصصة</div>
+        <h2 style="font-size: 34px; margin-bottom: 16px;" data-i18n="make_title">اصنعه بأسلوبك</h2>
+        <p style="color: var(--mh-cool-grey); max-width: 520px; margin: 0 auto 32px; font-size: 15px;" data-i18n="make_desc">
+          صمّم صندوقك بالكامل من الصفر بدقة وانسيابية تامة. اختر كل عنصر بنفسك.
         </p>
-        <a href="customize.html" class="btn btn-primary">
-          CUSTOMIZE YOUR BOX
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-        </a>
+        <a href="customize.html" class="btn btn-primary" data-i18n="make_btn">تخصيص البوكس الآن</a>
       </div>
     </section>
 
     <!-- Pre-Footer CTA -->
-    <section class="container" style="text-align: center; padding-bottom: 96px;">
-      <h2 style="font-size: 32px; margin-bottom: 16px;">Ready to create a surprise?</h2>
-      <a href="customize.html" class="btn btn-secondary" style="border-color: var(--mh-orange); color: var(--mh-orange);">
-        BUILD YOUR BOX
+    <section class="container" style="text-align: center; padding-bottom: 80px;">
+      <h2 style="font-size: 28px; margin-bottom: 16px;" data-i18n="ready_title">جاهز لصناعة مفاجأة لا تُنسى؟</h2>
+      <a href="customize.html" class="btn btn-secondary" style="border-color: var(--mh-orange); color: var(--mh-orange);" data-i18n="ready_btn">
+        ابدأ بتجهيز الصندوق
       </a>
     </section>
 
@@ -179,52 +176,52 @@
   <div class="cart-drawer-overlay" id="cartDrawerOverlay">
     <div class="cart-drawer">
       <div class="cart-header">
-        <span class="cart-title">YOUR CART</span>
+        <span class="cart-title" data-i18n="cart_title">سلة المشتريات</span>
         <button class="icon-btn" id="cartCloseBtn">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
         </button>
       </div>
-      <div class="cart-items-body" id="cartItemsList"></div>
+      <div class="cart-items-body" id="cartItemsList">
+        <p class="cart-empty-text" data-i18n="cart_empty">السلة فارغة حالياً.</p>
+      </div>
       <div class="cart-footer">
         <div class="cart-total-row">
-          <span>Total</span>
+          <span data-i18n="cart_total">الإجمالي</span>
           <span id="cartTotalDisplay">$0.00</span>
         </div>
-        <button class="btn btn-primary" style="width: 100%;" onclick="MHStore.checkoutWhatsApp('YOUR_PHONE_NUMBER')">
-          CHECKOUT VIA WHATSAPP
+        <button class="btn btn-primary" style="width: 100%;" onclick="MHStore.checkoutWhatsApp('YOUR_PHONE_NUMBER')" data-i18n="cart_checkout_btn">
+          إتمام الطلب عبر واتساب
         </button>
       </div>
     </div>
   </div>
 
-  <!-- Shared Footer -->
+  <!-- Footer -->
   <footer class="footer">
     <div class="footer-top">
       <div class="footer-brand">
         <h3>MH</h3>
-        <p>One system. Many expressions.</p>
+        <p data-i18n="footer_slogan">نظام واحد. تعبيرات متعددة.</p>
       </div>
       <ul class="footer-links">
-        <li><a href="index.html">HOME</a></li>
-        <li><a href="boxes.html">BOXES</a></li>
-        <li><a href="customize.html">CUSTOMIZE</a></li>
-        <li><a href="about.html">ABOUT</a></li>
-        <li><a href="contact.html">CONTACT</a></li>
+        <li><a href="index.html" data-i18n="nav_home">الرئيسية</a></li>
+        <li><a href="boxes.html" data-i18n="nav_boxes">البوكسات</a></li>
+        <li><a href="customize.html" data-i18n="nav_customize">تخصيص الصندوق</a></li>
+        <li><a href="about.html" data-i18n="nav_about">عن البراند</a></li>
+        <li><a href="contact.html" data-i18n="nav_contact">تواصل معنا</a></li>
       </ul>
       <ul class="footer-links">
-        <li><a href="https://instagram.com/YOUR_INSTAGRAM_USERNAME" target="_blank">INSTAGRAM</a></li>
-        <li><a href="https://wa.me/YOUR_PHONE_NUMBER" target="_blank">WHATSAPP</a></li>
+        <li><a href="https://instagram.com/YOUR_INSTAGRAM_USERNAME" target="_blank">Instagram</a></li>
+        <li><a href="https://wa.me/YOUR_PHONE_NUMBER" target="_blank">WhatsApp</a></li>
       </ul>
     </div>
     <div class="footer-bottom">
-      <div>&copy; 2026 MH. All Rights Reserved.</div>
-      <div style="display:flex; gap:16px;">
-        <a href="#" style="color:#666; text-decoration:none;">Privacy Policy</a>
-        <a href="#" style="color:#666; text-decoration:none;">Terms &amp; Conditions</a>
-      </div>
+      <div data-i18n="footer_rights">جميع الحقوق محفوظة © 2026 MH.</div>
     </div>
   </footer>
 
+  <!-- Scripts -->
+  <script src="js/lang.js"></script>
   <script src="js/store.js"></script>
   <script src="js/main.js"></script>
 </body>
