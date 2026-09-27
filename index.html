@@ -3,86 +3,229 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MH Brand | الصفحة الرسمية</title>
-  <link rel="stylesheet" href="css/style.css">
-  <!-- FontAwesome for icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <title>MH — Official Website | More Than a Box</title>
+  <meta name="description" content="Mystery Boxes designed for couples, friends, families and every special moment. Premium, minimal, and personal.">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="icon" type="image/png" href="Logo.png">
 </head>
 <body>
 
-  <!-- Navigation Header -->
-  <header>
-    <div class="nav-container">
-      <a href="index.html" class="brand-identity">
-        <img src="Logo.png" alt="MH Brand Logo" class="brand-logo">
-        <span class="brand-title">MH BRAND</span>
+  <!-- Shared Header -->
+  <header class="header">
+    <div class="header-inner">
+      <a href="index.html" class="brand-logo-wrap">
+        <img src="Logo.png" alt="MH Logo">
       </a>
-      <ul class="nav-links">
-        <li><a href="index.html" class="nav-link active">الرئيسية</a></li>
-        <li><a href="box-customizer.html" class="nav-link">صمّم صندوقك</a></li>
+      
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="index.html" class="nav-link active">HOME</a></li>
+        <li><a href="boxes.html" class="nav-link">BOXES</a></li>
+        <li><a href="customize.html" class="nav-link">CUSTOMIZE</a></li>
+        <li><a href="about.html" class="nav-link">ABOUT</a></li>
+        <li><a href="contact.html" class="nav-link">CONTACT</a></li>
       </ul>
+
+      <div class="header-actions">
+        <a href="boxes.html" class="icon-btn" aria-label="Search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        </a>
+        <button class="icon-btn" id="cartTriggerBtn" aria-label="Cart">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+          <span class="cart-count" id="cartCountBadge">0</span>
+        </button>
+        <button class="icon-btn hamburger" id="hamburgerBtn" aria-label="Menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <main class="container">
+  <!-- Main Content -->
+  <main class="main-content">
+
+    <!-- Hero Section -->
     <section class="hero">
-      <h1>عالم الهدايا والمفاجآت الفاخرة</h1>
-      <p>
-        أهلاً بك في عالم MH Brand. تجربة إهداء مصممة خصيصاً لتمنحك ولأحبائك لحظات لا تُنسى بأعلى معايير الأناقة والغموض الراقي.
-      </p>
-      <a href="box-customizer.html" class="cta-btn">
-        <i class="fa-solid fa-gift"></i>
-        ابدأ باختيار وتخصيص البوكس
-      </a>
-    </section>
+      <div class="container hero-grid">
+        <div>
+          <div class="hero-tagline">More Than a Box</div>
+          <h1 class="hero-title">A Box. A Surprise. A Moment.</h1>
+          <p class="hero-desc">
+            نحول اللحظات العادية إلى ذكريات لا تُنسى عبر صناديق استثنائية مصممة بعناية فائقة وتفاصيل دقيقة.
+          </p>
+          <div class="hero-buttons">
+            <a href="boxes.html" class="btn btn-primary">
+              DISCOVER BOXES
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+            <a href="customize.html" class="btn btn-secondary">CUSTOMIZE YOUR BOX</a>
+          </div>
+        </div>
 
-    <!-- Services / Mystery Box Intro -->
-    <section class="cards-grid">
-      <div class="card">
-        <h3><i class="fa-solid fa-box-open"></i> Mystery Boxes</h3>
-        <p>صناديق مفاجآت مخصصة بعناية تامة تتناسب مع ذوقك ومناسبتك الخاصة بمحتوى فخم ومفاجآت غير متوقعة.</p>
-        <a href="box-customizer.html" class="cta-btn" style="padding: 10px 18px; font-size: 0.9rem;">تخصيص الآن</a>
-      </div>
-
-      <div class="card">
-        <h3><i class="fa-solid fa-gem"></i> جودة واهتمام بالتفاصيل</h3>
-        <p>نحرص في MH Brand على اختيار أفخر الخامات والتغليفات لتصل هديتك كقطعة فنية تعبّر عن اهتمامك الحقيقي.</p>
-        <span style="color: var(--primary-color); font-weight: 700; font-size: 0.9rem;">صُنع بإتقان وشغف</span>
-      </div>
-
-      <div class="card">
-        <h3><i class="fa-solid fa-truck-fast"></i> توصيل وخدمة سريعة</h3>
-        <p>خدمة عملاء مباشرة عبر الواتساب والإنستغرام لمتابعة طلبك خطوة بخطوة وتوصيله بأمان وسرية تامة.</p>
-        <div style="display: flex; gap: 8px;">
-          <a href="https://wa.me/YOUR_PHONE_NUMBER" target="_blank" class="social-btn whatsapp" style="padding: 8px 14px; font-size: 0.85rem;"><i class="fa-brands fa-whatsapp"></i> واتساب</a>
-          <a href="https://instagram.com/YOUR_INSTAGRAM_USERNAME" target="_blank" class="social-btn instagram" style="padding: 8px 14px; font-size: 0.85rem;"><i class="fa-brands fa-instagram"></i> إنستا</a>
+        <div class="hero-visual">
+          <div class="hero-box-mockup">
+            <span class="hero-box-brand">MH</span>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Social Connection Hub -->
-    <div style="text-align: center; margin-top: 4rem;">
-      <h2 style="font-size: 1.5rem; margin-bottom: 1rem;">تواصل معنا مباشرة</h2>
-      <p style="color: var(--text-muted); margin-bottom: 1.5rem;">نسعد بالإجابة على استفساراتكم وتلقي الطلبات الخاصة</p>
-      <div class="social-section">
-        <a href="https://wa.me/YOUR_PHONE_NUMBER" target="_blank" class="social-btn whatsapp">
-          <i class="fa-brands fa-whatsapp fa-xl"></i>
-          محادثة واتساب مباشرة
+    <!-- Brand Concept Section -->
+    <section class="container" style="border-bottom: var(--border-subtle); text-align: center;">
+      <div style="max-width: 640px; margin: 0 auto;">
+        <h2 style="font-family: var(--font-en); font-size: 28px; margin-bottom: 12px; letter-spacing: 0.05em;">
+          Choose the moment. We create the surprise.
+        </h2>
+        <p style="color: var(--mh-cool-grey); font-size: 15px;">
+          Mystery Boxes designed for couples, friends, families and every special moment.
+        </p>
+      </div>
+    </section>
+
+    <!-- For Every Moment Section -->
+    <section class="container">
+      <div class="section-header">
+        <div class="section-label">Moments</div>
+        <h2 class="section-title">FOR EVERY MOMENT</h2>
+      </div>
+
+      <div class="moments-grid">
+        <a href="boxes.html" class="moment-card">
+          <div class="moment-card-title">Couples</div>
+          <div class="moment-card-sub">لحظات استثنائية تجمعكما معاً</div>
         </a>
-        <a href="https://instagram.com/YOUR_INSTAGRAM_USERNAME" target="_blank" class="social-btn instagram">
-          <i class="fa-brands fa-instagram fa-xl"></i>
-          تابعنا على إنستغرام
+        <a href="boxes.html" class="moment-card">
+          <div class="moment-card-title">Engagement</div>
+          <div class="moment-card-sub">بداية القصة والخطوة الأولى</div>
+        </a>
+        <a href="boxes.html" class="moment-card">
+          <div class="moment-card-title">Wedding</div>
+          <div class="moment-card-sub">فخامة تليق باليوم الكبير</div>
+        </a>
+        <a href="boxes.html" class="moment-card">
+          <div class="moment-card-title">Friends</div>
+          <div class="moment-card-sub">تقدير صادق لذكريات تدوم</div>
+        </a>
+        <a href="boxes.html" class="moment-card">
+          <div class="moment-card-title">Birthday</div>
+          <div class="moment-card-sub">مفاجأة مبهجة متجددة كل عام</div>
+        </a>
+        <a href="boxes.html" class="moment-card">
+          <div class="moment-card-title">Graduation</div>
+          <div class="moment-card-sub">تتويج سنوات الجهد والنجاح</div>
+        </a>
+        <a href="boxes.html" class="moment-card">
+          <div class="moment-card-title">Valentine's</div>
+          <div class="moment-card-sub">تعبير رقيق بأرقى أسلوب</div>
+        </a>
+        <a href="boxes.html" class="moment-card">
+          <div class="moment-card-title">Ramadan</div>
+          <div class="moment-card-sub">أجواء أصيلة وهدايا دافئة</div>
         </a>
       </div>
-    </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="container" style="border-top: var(--border-subtle);">
+      <div class="section-header">
+        <div class="section-label">Process</div>
+        <h2 class="section-title">HOW IT WORKS</h2>
+      </div>
+
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-number">01</div>
+          <div class="step-name">Choose</div>
+          <div class="step-desc">اختر المناسبة ونوع البوكس المناسب لذوقك ولمن تحب.</div>
+        </div>
+        <div class="step-card">
+          <div class="step-number">02</div>
+          <div class="step-name">Customize</div>
+          <div class="step-desc">حدد التفاصيل والرسالة والإضافات الخاصة خطوة بخطوة.</div>
+        </div>
+        <div class="step-card">
+          <div class="step-number">03</div>
+          <div class="step-name">Surprise</div>
+          <div class="step-desc">استلم البوكس الفاخر في الموعد المحدد وافتح باب الدهشة.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Make It Yours Section -->
+    <section class="container" style="border-top: var(--border-subtle); padding: 96px 24px;">
+      <div style="background-color: var(--mh-graphite); border: var(--border-subtle); padding: 64px 32px; text-align: center;">
+        <div class="section-label">Custom Experience</div>
+        <h2 style="font-family: var(--font-en); font-size: 38px; letter-spacing: 0.1em; margin-bottom: 16px;">MAKE IT YOURS</h2>
+        <p style="color: var(--mh-cool-grey); max-width: 520px; margin: 0 auto 32px; font-size: 15px;">
+          صمّم صندوقك بالكامل من الصفر بدقة وانسيابية. اختر كل قطعة ورسالة بنفسك.
+        </p>
+        <a href="customize.html" class="btn btn-primary">
+          CUSTOMIZE YOUR BOX
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- Pre-Footer CTA -->
+    <section class="container" style="text-align: center; padding-bottom: 96px;">
+      <h2 style="font-size: 32px; margin-bottom: 16px;">Ready to create a surprise?</h2>
+      <a href="customize.html" class="btn btn-secondary" style="border-color: var(--mh-orange); color: var(--mh-orange);">
+        BUILD YOUR BOX
+      </a>
+    </section>
+
   </main>
 
-  <!-- Footer -->
-  <footer>
-    <p>جميع الحقوق محفوظة &copy; 2026 - MH Brand</p>
+  <!-- Slide-out Cart Drawer -->
+  <div class="cart-drawer-overlay" id="cartDrawerOverlay">
+    <div class="cart-drawer">
+      <div class="cart-header">
+        <span class="cart-title">YOUR CART</span>
+        <button class="icon-btn" id="cartCloseBtn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
+      <div class="cart-items-body" id="cartItemsList"></div>
+      <div class="cart-footer">
+        <div class="cart-total-row">
+          <span>Total</span>
+          <span id="cartTotalDisplay">$0.00</span>
+        </div>
+        <button class="btn btn-primary" style="width: 100%;" onclick="MHStore.checkoutWhatsApp('YOUR_PHONE_NUMBER')">
+          CHECKOUT VIA WHATSAPP
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Shared Footer -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <h3>MH</h3>
+        <p>One system. Many expressions.</p>
+      </div>
+      <ul class="footer-links">
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="boxes.html">BOXES</a></li>
+        <li><a href="customize.html">CUSTOMIZE</a></li>
+        <li><a href="about.html">ABOUT</a></li>
+        <li><a href="contact.html">CONTACT</a></li>
+      </ul>
+      <ul class="footer-links">
+        <li><a href="https://instagram.com/YOUR_INSTAGRAM_USERNAME" target="_blank">INSTAGRAM</a></li>
+        <li><a href="https://wa.me/YOUR_PHONE_NUMBER" target="_blank">WHATSAPP</a></li>
+      </ul>
+    </div>
+    <div class="footer-bottom">
+      <div>&copy; 2026 MH. All Rights Reserved.</div>
+      <div style="display:flex; gap:16px;">
+        <a href="#" style="color:#666; text-decoration:none;">Privacy Policy</a>
+        <a href="#" style="color:#666; text-decoration:none;">Terms &amp; Conditions</a>
+      </div>
+    </div>
   </footer>
 
+  <script src="js/store.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
