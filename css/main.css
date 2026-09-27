@@ -30,28 +30,28 @@ html, body {
   overflow-x: hidden;
 }
 
+/* التوسيط العام لكل من العربي والإنجليزي */
 body {
   font-family: var(--font-ar);
   font-size: 15px;
   line-height: 1.6;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
-/* تبديل اتجاه المستند والخط بحسب اللغة */
 html[lang="ar"] body {
   direction: rtl;
-  text-align: right;
   font-family: var(--font-ar);
 }
 
 html[lang="en"] body {
   direction: ltr;
-  text-align: left;
   font-family: var(--font-en);
 }
 
-/* ضبط حرج للأيقونات لمنع تمدد SVG */
+/* ضبط الأيقونات */
 svg {
   width: 20px;
   height: 20px;
@@ -76,13 +76,13 @@ svg {
   height: 72px;
   display: flex;
   align-items: center;
+  justify-content: center;
   width: 100%;
 }
 
 .header-inner {
   max-width: 1240px;
   width: 100%;
-  margin: 0 auto;
   padding: 0 24px;
   display: flex;
   justify-content: space-between;
@@ -108,6 +108,7 @@ svg {
   list-style: none;
   gap: 28px;
   align-items: center;
+  justify-content: center;
 }
 
 .nav-link {
@@ -222,10 +223,13 @@ svg {
   background-color: rgba(255, 255, 255, 0.04);
 }
 
-/* Layout Containers */
+/* Layout Containers متمركزة */
 .main-content {
   flex: 1;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .container {
@@ -233,6 +237,9 @@ svg {
   width: 100%;
   margin: 0 auto;
   padding: 60px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .container-narrow {
@@ -240,11 +247,15 @@ svg {
   width: 100%;
   margin: 0 auto;
   padding: 60px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .section-header {
   margin-bottom: 36px;
   width: 100%;
+  text-align: center;
 }
 
 .section-label {
@@ -266,14 +277,18 @@ svg {
   border-bottom: var(--border-subtle);
   padding: 70px 0;
   width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .hero-grid {
   display: grid;
   grid-template-columns: 1.2fr 0.8fr;
   align-items: center;
+  justify-items: center;
   gap: 48px;
   width: 100%;
+  text-align: center;
 }
 
 .hero-tagline {
@@ -294,14 +309,15 @@ svg {
 .hero-desc {
   color: var(--mh-cool-grey);
   font-size: 16px;
-  max-width: 500px;
-  margin-bottom: 32px;
+  max-width: 520px;
+  margin: 0 auto 32px auto;
 }
 
 .hero-buttons {
   display: flex;
   gap: 16px;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .hero-box-mockup {
@@ -340,7 +356,9 @@ svg {
   transition: var(--transition);
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   min-height: 180px;
 }
 
@@ -368,12 +386,17 @@ svg {
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
   width: 100%;
+  margin-top: 10px;
 }
 
 .step-card {
   background-color: var(--mh-graphite);
   border: var(--border-subtle);
   padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .step-number {
@@ -396,10 +419,11 @@ svg {
   color: var(--mh-cool-grey);
 }
 
-/* Products & Filters */
+/* Filters & Products */
 .filters-bar {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 10px;
   margin-bottom: 32px;
   padding-bottom: 20px;
@@ -436,6 +460,8 @@ svg {
   border: var(--border-subtle);
   display: flex;
   flex-direction: column;
+  align-items: center;
+  text-align: center;
   transition: var(--transition);
   width: 100%;
 }
@@ -466,6 +492,8 @@ svg {
   padding: 22px;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  width: 100%;
   flex: 1;
 }
 
@@ -487,6 +515,8 @@ svg {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 18px;
+  width: 100%;
+  padding: 0 8px;
 }
 
 .product-price {
@@ -504,6 +534,7 @@ svg {
 .product-actions {
   display: flex;
   gap: 8px;
+  width: 100%;
 }
 
 /* Customizer Form Component */
@@ -512,11 +543,12 @@ svg {
   border: var(--border-subtle);
   padding: 36px 30px;
   width: 100%;
+  text-align: center;
 }
 
-.customizer-progress {
+.customizer-progress, .stepper-nav {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   margin-bottom: 36px;
   border-bottom: var(--border-subtle);
   padding-bottom: 16px;
@@ -525,23 +557,27 @@ svg {
   width: 100%;
 }
 
-.progress-step-item {
+.progress-step-item, .stepper-btn {
   font-size: 12px;
   font-weight: 600;
   color: var(--mh-cool-grey);
+  background: transparent;
+  border: none;
+  cursor: pointer;
   display: flex;
   align-items: center;
   gap: 8px;
   white-space: nowrap;
 }
 
-.progress-step-item.active {
+.progress-step-item.active, .stepper-btn.active {
   color: var(--mh-orange);
 }
 
 .step-view {
   display: none;
   width: 100%;
+  text-align: center;
 }
 
 .step-view.active {
@@ -563,6 +599,11 @@ svg {
   cursor: pointer;
   transition: var(--transition);
   width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .option-box:hover {
@@ -588,6 +629,7 @@ svg {
 .form-group {
   margin-bottom: 22px;
   width: 100%;
+  text-align: center;
 }
 
 .form-label {
@@ -596,6 +638,7 @@ svg {
   font-weight: 600;
   margin-bottom: 8px;
   color: var(--mh-cool-grey);
+  text-align: center;
 }
 
 .form-control {
@@ -608,6 +651,7 @@ svg {
   font-size: 14px;
   outline: none;
   transition: var(--transition);
+  text-align: center;
 }
 
 .form-control:focus {
@@ -655,6 +699,7 @@ textarea.form-control {
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   display: flex;
   flex-direction: column;
+  text-align: right;
 }
 
 html[lang="ar"] .cart-drawer {
@@ -662,6 +707,7 @@ html[lang="ar"] .cart-drawer {
   right: auto;
   border-right: var(--border-subtle);
   transform: translateX(-100%);
+  text-align: right;
 }
 
 html[lang="en"] .cart-drawer {
@@ -669,6 +715,7 @@ html[lang="en"] .cart-drawer {
   left: auto;
   border-left: var(--border-subtle);
   transform: translateX(100%);
+  text-align: left;
 }
 
 .cart-overlay.open .cart-drawer {
@@ -722,6 +769,9 @@ html[lang="en"] .cart-drawer {
   padding: 56px 24px 28px;
   margin-top: auto;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .footer-top {
@@ -729,10 +779,14 @@ html[lang="en"] .cart-drawer {
   margin: 0 auto 36px;
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
   flex-wrap: wrap;
   gap: 32px;
   width: 100%;
+}
+
+.footer-brand {
+  text-align: center;
 }
 
 .footer-brand h3 {
@@ -753,6 +807,7 @@ html[lang="en"] .cart-drawer {
   gap: 24px;
   list-style: none;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .footer-links a {
@@ -771,20 +826,18 @@ html[lang="en"] .cart-drawer {
   margin: 0 auto;
   padding-top: 24px;
   border-top: var(--border-subtle);
-  display: flex;
-  justify-content: space-between;
   font-size: 12px;
   color: #666;
   width: 100%;
+  text-align: center;
 }
 
 /* Responsive */
 @media screen and (max-width: 900px) {
-  .hero-grid { grid-template-columns: 1fr; text-align: center; }
-  .hero-desc { margin: 0 auto 28px; }
-  .hero-buttons { justify-content: center; }
+  .hero-grid { grid-template-columns: 1fr; }
   .steps-grid { grid-template-columns: 1fr; }
   .contact-channels-grid { grid-template-columns: 1fr; }
+  .footer-top { flex-direction: column; justify-content: center; }
 }
 
 @media screen and (max-width: 768px) {
@@ -804,6 +857,5 @@ html[lang="en"] .cart-drawer {
   .nav-menu.open { transform: translateY(0); }
   .hamburger { display: inline-flex; }
   .hero-title { font-size: 34px; }
-  .footer-top { flex-direction: column; }
   .customizer-wrapper { padding: 24px 16px; }
 }
