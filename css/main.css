@@ -10,6 +10,7 @@
   --mh-cool-grey: #C3CACC;
   --mh-white: #FFFFFF;
   --border-subtle: 1px solid rgba(255, 255, 255, 0.08);
+  --border-brand: 2px solid var(--mh-orange);
   --font-ar: 'Noto Kufi Arabic', sans-serif;
   --font-en: 'Inter', sans-serif;
   --transition: all 0.25s ease-in-out;
@@ -257,7 +258,7 @@ svg {
   font-weight: 800;
 }
 
-/* Hero Section مع الصورة */
+/* Hero Section */
 .hero {
   border-bottom: var(--border-subtle);
   padding: 70px 0;
@@ -305,15 +306,15 @@ svg {
   justify-content: center;
 }
 
-/* إطار صورة الـ Hero */
+/* إطار صورة الـ Hero بإطار برتقالي */
 .hero-img-wrap {
   width: 100%;
   max-width: 480px;
-  border-radius: 4px;
+  border-radius: 6px;
   overflow: hidden;
-  border: var(--border-subtle);
+  border: var(--border-brand); /* إطار البراند البرتقالي */
   background: var(--mh-graphite);
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0 20px rgba(244, 81, 16, 0.25), 0 16px 36px rgba(0, 0, 0, 0.6);
 }
 
 .hero-img-wrap img {
@@ -329,7 +330,7 @@ svg {
   transform: scale(1.03);
 }
 
-/* بطاقة Make It Yours في الرئيسية */
+/* إطار صورة قسم Make It Yours في الرئيسية */
 .make-it-yours-card {
   background-color: var(--mh-graphite);
   border: var(--border-subtle);
@@ -345,9 +346,10 @@ svg {
 
 .make-visual-wrap {
   width: 100%;
-  border-radius: 4px;
+  border-radius: 6px;
   overflow: hidden;
-  border: var(--border-subtle);
+  border: var(--border-brand); /* إطار البراند البرتقالي */
+  box-shadow: 0 0 20px rgba(244, 81, 16, 0.25);
 }
 
 .make-visual-wrap img {
@@ -442,7 +444,7 @@ svg {
   color: var(--mh-cool-grey);
 }
 
-/* Products & Filters (مع صور المنتجات) */
+/* Products & Filters (مع الإطار البرتقالي للصور) */
 .filters-bar {
   display: flex;
   flex-wrap: wrap;
@@ -491,7 +493,7 @@ svg {
 }
 
 .product-card:hover {
-  border-color: rgba(244, 81, 16, 0.4);
+  border-color: var(--mh-orange);
 }
 
 .product-thumb {
@@ -502,7 +504,7 @@ svg {
   display: flex;
   align-items: center;
   justify-content: center;
-  border-bottom: var(--border-subtle);
+  border-bottom: var(--border-brand); /* إطار برتقالي يفصل الصورة عن محتوى الكرت */
 }
 
 .product-thumb img {
