@@ -66,19 +66,37 @@ svg {
 }
 
 /* Header & Navbar */
+
+/* ===================================================
+   Permanent Fixed Header
+   =================================================== */
 .header {
-  position: sticky;
+  position: fixed; /* تثبيت دائم في أعلى الشاشة */
   top: 0;
-  z-index: 1000;
-  background: rgba(15, 15, 15, 0.95);
-  backdrop-filter: blur(12px);
-  border-bottom: var(--border-subtle);
+  left: 0;
+  right: 0;
+  width: 100%;
   height: 72px;
+  z-index: 9999; /* ضمان بقائه فوق جميع العناصر والبطاقات */
+  background: rgba(15, 15, 15, 0.96); /* خلفية داكنة معتمة */
+  backdrop-filter: blur(14px); /* تأثير زجاجي ناعم خلف الشريط */
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: var(--border-subtle);
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
 }
+
+/* إضافة مسافة علوية للمحتوى حتى لا يختفي أول جزء تحت الشريط الثابت */
+.main-content {
+  padding-top: 72px; /* مساوية لارتفاع الهيدر تماماً */
+  flex: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 
 .header-inner {
   max-width: 1240px;
