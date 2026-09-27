@@ -1,6 +1,12 @@
 /* ===================================================
-   MH Brand - Complete Master Engine (All Pages i18n)
+   MH Brand - Complete Master Engine (With Auto Scroll-to-Top)
    =================================================== */
+
+// 1. منع المتصفح من حفظ مكان النزول والعودة لرأس الصفحة عند التحديث
+if ('scrollRestoration' in history) {
+  history.scrollRestoration = 'manual';
+}
+window.scrollTo(0, 0);
 
 const MH_CONFIG = {
   whatsappNumber: "963900000000", // ضع رقمك بالصيغة الدولية هنا بدون +
@@ -75,7 +81,7 @@ const I18N_DATA = {
     btn_view_details: "تخصيص البوكس",
     in_stock: "متوفر للطلب",
 
-    // About Page (تمت إضافتها بالكامل)
+    // About Page
     about_label: "فلسفة البراند",
     about_title: "أكثر من مجرد صندوق.",
     about_desc: "تأسست MH حول فكرة واحدة بسيطة: تحويل اللحظات العادية إلى مفاجآت لا تُنسى تبقى في الذاكرة للأبد.",
@@ -346,7 +352,7 @@ const I18N_DATA = {
     btn_view_details: "CUSTOMIZE",
     in_stock: "IN STOCK",
 
-    // About Page (تمت إضافتها بالكامل)
+    // About Page
     about_label: "BRAND PHILOSOPHY",
     about_title: "MORE THAN A BOX.",
     about_desc: "MH is built around one simple idea: turning ordinary moments into memorable surprises that endure forever.",
@@ -384,7 +390,7 @@ const I18N_DATA = {
     step5_tab: "REVIEW & CONFIRM",
     btn_continue: "CONTINUE →",
     btn_back: "← BACK",
-    btn_review: "REVIEW & ORDER →", // تم إصلاح هذا المفتاح هنا
+    btn_review: "REVIEW & ORDER →",
     btn_edit: "← EDIT DETAILS",
     btn_confirm_capture: "CONFIRM & SAVE RECEIPT TO WHATSAPP",
 
@@ -699,6 +705,7 @@ function updateReviewDisplay() {
   document.getElementById("sumFinalPrice").textContent = `$${data.totalPrice.toFixed(2)}`;
 }
 
+// التمرير التلقائي لأعلى الصفحة عند الانتقال بين الخطوات
 window.goToStep = function(stepNum) {
   const data = collectCustomBoxData();
   const lang = AppEngine.lang;
@@ -722,6 +729,9 @@ window.goToStep = function(stepNum) {
   document.querySelectorAll(".stepper-btn").forEach(p => {
     p.classList.toggle("active", parseInt(p.getAttribute("data-step")) === stepNum);
   });
+
+  // العودة إلى رأس الصفحة بسلاسة
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 
   if (stepNum === 5) {
     updateReviewDisplay();
