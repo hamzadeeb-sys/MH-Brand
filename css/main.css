@@ -577,6 +577,16 @@ svg {
   text-align: center;
 }
 
+.step-view {
+  display: none !important;
+  width: 100%;
+}
+
+.step-view.active {
+  display: block !important;
+}
+
+
 .custom-options-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
