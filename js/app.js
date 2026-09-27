@@ -1,13 +1,12 @@
 /* ===================================================
-   MH Brand - Core Engine (i18n, Cart, Customizer)
+   MH Brand - Core Engine (i18n, Cart, Mystery Box Customizer)
    =================================================== */
 
 const MH_CONFIG = {
-  whatsappNumber: "963900000000", // ضع رقمك بالصيغة الدولية هنا
+  whatsappNumber: "963900000000", // استبدله برقمك بالصيغة الدولية بدون +
   instagramUsername: "mh_brand"
 };
 
-// قاموس الترجمة الموحد
 const I18N_DATA = {
   ar: {
     nav_home: "الرئيسية",
@@ -16,83 +15,96 @@ const I18N_DATA = {
     nav_about: "عن البراند",
     nav_contact: "تواصل معنا",
     lang_btn: "EN",
-    hero_tag: "أكثر من مجرد صندوق",
-    hero_title: "صندوق. مفاجأة. لحظة لا تُنسى.",
-    hero_desc: "نحوّل اللحظات العادية إلى ذكريات استثنائية عبر صناديق غامضة صُممت بعناية تامة وبأعلى درجات الفخامة.",
-    hero_btn_discover: "استكشف البوكسات",
-    hero_btn_customize: "صمّم صندوقك",
-    concept_title: "اختر اللحظة. ونحن نصنع المفاجأة.",
-    concept_desc: "صناديق مفاجآت مخصصة للكابلز، الأصدقاء، العائلة، ولكل مناسبة تستحق الاحتفال.",
-    moments_label: "المناسبات",
-    moments_title: "لكل لحظة خاصة",
-    moment_couples: "الكابلز (Couples)",
-    moment_couples_sub: "لحظات استثنائية تجمعكما معاً",
-    moment_engagement: "الخطوبة (Engagement)",
-    moment_engagement_sub: "بداية القصة والخطوة الأولى",
-    moment_wedding: "الزواج (Wedding)",
-    moment_wedding_sub: "فخامة تليق باليوم الكبير",
-    moment_friends: "الأصدقاء (Friends)",
-    moment_friends_sub: "تقدير حقيقي لرفقة تدوم",
-    moment_birthday: "أعياد الميلاد (Birthday)",
-    moment_birthday_sub: "مفاجأة مبهجة متجددة كل عام",
-    moment_graduation: "التخرج (Graduation)",
-    moment_graduation_sub: "تتويج مسيرة الجهد والنجاح",
-    how_label: "الخطوات",
-    how_title: "كيف نعمل",
-    how_s1_title: "اختر",
-    how_s1_desc: "اختر المناسبة ونوع الصندوق الأساسي الذي يناسبك.",
-    how_s2_title: "خصّص",
-    how_s2_desc: "حدد الهدايا الداخلية والإضافات والرسالة الشخصية.",
-    how_s3_title: "فاجئ",
-    how_s3_desc: "استلم البوكس المغلف بعناية وافتح باب الدهشة.",
-    make_label: "تجربة مخصصة",
-    make_title: "اصنعه بأسلوبك",
-    make_desc: "صمّم صندوقك بالكامل من الصفر بدقة وانسيابية تامة.",
-    make_btn: "تخصيص البوكس الآن ←",
-    ready_title: "جاهز لصناعة مفاجأة لا تُنسى؟",
-    ready_btn: "ابدأ بتجهيز الصندوق",
-    boxes_title: "صناديق المفاجآت",
-    boxes_sub: "اكتشف صندوقاً صُمم خصيصاً لمناسبتك.",
-    filter_all: "الكل",
-    filter_couple: "كابلز",
-    filter_fiance: "خطوبة",
-    filter_friend: "أصدقاء",
-    filter_birthday: "عيد ميلاد",
-    filter_wedding: "زفاف",
-    box_noir_title: "صندوق نوار الملكي",
-    box_noir_desc: "مزيج ملكي من العطور الفاخرة، والإكسسوارات المصنوعة يدوياً.",
-    box_suite_title: "جناح العروسين الفاخر",
-    box_suite_desc: "تنسيق متكامل للعروسين بتغليف شمعي فاخر وبطاقة تهنئة.",
-    box_milestone_title: "صندوق أعياد الميلاد",
-    box_milestone_desc: "صندوق مفاجآت يحمل هدايا مختارة بدقة تتناسب مع اهتمامات الشخص.",
-    box_bond_title: "صندوق الصداقة الدائمة",
-    box_bond_desc: "هدية أنيقة ومفاجئة تعبّر عن الامتنان والرفقة الدائمة.",
-    btn_add_cart: "إضافة للسلة",
-    btn_view_details: "تخصيص البوكس",
-    in_stock: "متوفر للطلب",
-    cust_title: "تخصيص صندوقك الخاص",
+    
+    // Customizer Stepper
     cust_label: "التجربة الأساسية",
-    cust_s1_title: "الخطوة 01: لمن هذا الصندوق؟",
-    cust_s1_desc: "حدد الشخص المستهدف لنخصص النمط الداخلي للهدية.",
+    cust_title: "تخصيص صندوقك الخاص",
+    step1_tab: "الحجم والنوع",
+    step2_tab: "المستهدف",
+    step3_tab: "المناسبة",
+    step4_tab: "الإضافات والكرت",
+    step5_tab: "المعاينة والطلب",
+    
+    // Step 1
+    box_size_title: "1. اختر حجم وفئة الصندوق",
+    box_size_sub: "كل حجم يتم تصميمه بعناية مع هدايا تناسب فئته ومساحته.",
+    tier_special: "سبيشال بوكس (Special)",
+    tier_special_desc: "الصندوق الأكبر والأفخم، يتسع لأكثر من 5 هدايا قيمة مع تنسيق ملكي.",
+    tier_regular: "ريجيلار بوكس (Regular)",
+    tier_regular_desc: "الحجم الأكثر طلباً، يتسع لـ 3 إلى 4 هدايا أساسية أنيقة.",
+    tier_mini: "ميني بوكس (Mini)",
+    tier_mini_desc: "حجم لطيف وموجز، مناسب للقطع الثمينة أو التذكارات الصغيرة.",
+    box_experience_title: "طابع المفاجأة",
+    exp_mystery: "غموض كامل (100% Mystery)",
+    exp_mystery_desc: "فريقنا يختار محتويات الصندوق بعناية بناءً على المناسبة والشخص.",
+    exp_curated: "كلاسيك نصف مخصص",
+    exp_curated_desc: "تحديد نوع القطع مسبقاً مع مفاجآت تكميلية غير متوقعة.",
     btn_continue: "متابعة ←",
     btn_back: "← رجوع",
-    cust_s2_title: "الخطوة 02: ما هي المناسبة؟",
-    cust_s2_desc: "اختر المناسبة ليتم مواءمة الهدايا والرسالة معها.",
-    cust_s3_title: "الخطوة 03: العناصر المفضلة",
-    cust_s3_desc: "اختر العناصر التي ترغب في تواجدها داخل البوكس.",
-    cust_s4_title: "الخطوة 04: اللمسات الشخصية",
-    cust_s4_desc: "أضف بطاقة الإهداء والرسالة التي ترغب في وضعها.",
-    form_recip: "اسم مستلم الصندوق",
-    form_msg: "نص رسالة الإهداء",
-    btn_review: "معاينة الصندوق ←",
-    cust_s5_title: "الخطوة 05: معاينة وتأكيد الصندوق",
-    cust_s5_desc: "راجع تفاصيل طلبك النهائي قبل الإضافة إلى السلة.",
+
+    // Step 2 & 3
+    cust_s1_title: "2. لمن هذا الصندوق؟",
+    cust_s1_desc: "حدد الشخص المستهدف لنخصص النمط الداخلي للهدية.",
+    target_couple: "الكابلز (Couples)",
+    target_couple_desc: "لشريك حياتك",
+    target_fiance: "الخطيب / الخطيبة",
+    target_fiance_desc: "لبداية قصة جديدة",
+    target_friend: "صديق مقرب",
+    target_friend_desc: "للأصدقاء والمقربين",
+    target_family: "أفراد العائلة",
+    target_family_desc: "للأهل والأقارب",
+    target_parent: "الوالدين",
+    target_parent_desc: "للأم أو الأب",
+    target_kids: "الأطفال",
+    target_kids_desc: "مفاجآت مرحة",
+    cust_s2_title: "3. ما هي المناسبة؟",
+    cust_s2_desc: "اختر المناسبة ليتم مواءمة التغليف ورسالة الإهداء والقطع معها.",
+    occ_birthday: "عيد ميلاد",
+    occ_birthday_desc: "سنة جديدة سعيدة",
+    occ_graduation: "تخرج",
+    occ_graduation_desc: "تتويج النجاح",
+    occ_engagement: "خطوبة",
+    occ_engagement_desc: "أجمل بداية",
+    occ_wedding: "زفاف",
+    occ_wedding_desc: "اليوم الكبير",
+    occ_anniversary: "ذكرى سنوية",
+    occ_anniversary_desc: "لحظات لا تنسى",
+    occ_valentines: "يوم الحب",
+    occ_valentines_desc: "تعبير راقٍ",
+    occ_ramadan: "رمضان",
+    occ_ramadan_desc: "أجواء مباركة",
+    occ_justbecause: "بدون مناسبة",
+    occ_justbecause_desc: "مفاجأة عفوية",
+
+    // Step 4
+    step4_addons_title: "4. الإضافات وبطاقة الإهداء",
+    step4_addons_sub: "اختر الإضافات الخاصة ثم اكتب رسالة الصندوق.",
+    addon_wax: "ختم شمعي أحمر فاخر",
+    addon_wax_desc: "ختم رسمي من الشمع يعطي طابع الفخامة الملكية (+$5).",
+    addon_card: "بطاقة إهداء بخط اليد",
+    addon_card_desc: "كتابة رسالتك الخاصة بحبر أنيق على ورق مقوى فاخر (+$5).",
+    addon_polaroid: "صور بولارويد تذكارية",
+    addon_polaroid_desc: "طباعة صورتين خاصتين وتثبيتهما بداخل غطاء البوكس (+$8).",
+    addon_scent: "تعطير الصندوق برائحة خاصة",
+    addon_scent_desc: "تفوح رائحة عطرية مميزة فور فتح العميل للصندوق (+$4).",
+    form_recip: "اسم مستلم الصندوق (Recipient Name)",
+    form_msg: "نص رسالة الإهداء (Gift Card Message)",
+    btn_review: "معاينة الصندوق والطلب ←",
+
+    // Step 5 Review
+    cust_s5_title: "5. معاينة وتأكيد الصندوق",
+    cust_s5_desc: "راجع تفاصيل طلبك النهائي والحساب الإجمالي قبل الاعتماد.",
+    summary_box_type: "نوع وحجم الصندوق:",
+    summary_experience: "طابع الصندوق:",
+    summary_target: "الفئة المستهدفة:",
+    summary_occasion: "المناسبة:",
+    summary_addons: "الإضافات المختارة:",
+    summary_recip: "المستلم:",
+    summary_note: "رسالة الإهداء:",
     btn_add_custom: "إضافة الصندوق إلى السلة",
-    about_title: "أكثر من مجرد صندوق.",
-    about_desc: "تأسست MH حول فكرة واحدة بسيطة: تحويل اللحظات العادية إلى مفاجآت لا تُنسى تبقى في الذاكرة للأبد.",
-    contact_title: "دعنا نتحدث.",
-    contact_desc: "نسعد بتلقي استفساراتك وطلباتك الخاصة مباشرة.",
-    btn_send: "إرسال الرسالة",
+    btn_direct_wa: "طلب هذا الصندوق مباشرة عبر واتساب",
+
+    // Cart & Global
     cart_title: "سلة المشتريات",
     cart_empty: "السلة فارغة حالياً.",
     cart_total: "الإجمالي",
@@ -107,83 +119,96 @@ const I18N_DATA = {
     nav_about: "ABOUT",
     nav_contact: "CONTACT",
     lang_btn: "عربي",
-    hero_tag: "More Than a Box",
-    hero_title: "A Box. A Surprise. A Moment.",
-    hero_desc: "Turning ordinary moments into memorable surprises through meticulously curated boxes and refined elegance.",
-    hero_btn_discover: "DISCOVER BOXES",
-    hero_btn_customize: "CUSTOMIZE YOUR BOX",
-    concept_title: "Choose the moment. We create the surprise.",
-    concept_desc: "Mystery Boxes designed for couples, friends, families, and every special moment.",
-    moments_label: "MOMENTS",
-    moments_title: "FOR EVERY MOMENT",
-    moment_couples: "Couples",
-    moment_couples_sub: "Memorable moments to cherish together",
-    moment_engagement: "Engagement",
-    moment_engagement_sub: "The beginning of a timeless story",
-    moment_wedding: "Wedding",
-    moment_wedding_sub: "Elegance crafted for the big day",
-    moment_friends: "Friends",
-    moment_friends_sub: "Genuine tokens of lasting bonds",
-    moment_birthday: "Birthday",
-    moment_birthday_sub: "A joyful annual surprise crafted with care",
-    moment_graduation: "Graduation",
-    moment_graduation_sub: "Honoring years of dedication and triumph",
-    how_label: "PROCESS",
-    how_title: "HOW IT WORKS",
-    how_s1_title: "Choose",
-    how_s1_desc: "Select the occasion and the base box tailored to your recipient.",
-    how_s2_title: "Customize",
-    how_s2_desc: "Personalize items, choose addons, and include your custom note.",
-    how_s3_title: "Surprise",
-    how_s3_desc: "Receive the signature box and unveil the magic together.",
-    make_label: "CUSTOM EXPERIENCE",
-    make_title: "MAKE IT YOURS",
-    make_desc: "Build your gift box from scratch with absolute fluidity and precision.",
-    make_btn: "CUSTOMIZE YOUR BOX →",
-    ready_title: "Ready to create a surprise?",
-    ready_btn: "BUILD YOUR BOX",
-    boxes_title: "MYSTERY BOXES",
-    boxes_sub: "Discover a box made for your moment.",
-    filter_all: "ALL",
-    filter_couple: "COUPLE",
-    filter_fiance: "FIANCÉ",
-    filter_friend: "FRIEND",
-    filter_birthday: "BIRTHDAY",
-    filter_wedding: "WEDDING",
-    box_noir_title: "The Noir Edition",
-    box_noir_desc: "A bespoke blend of artisanal fragrances and handmade personal accessories.",
-    box_suite_title: "Bride & Groom Suite",
-    box_suite_desc: "A harmonious ensemble for couples with sealed wax and a custom card.",
-    box_milestone_title: "The Milestone Box",
-    box_milestone_desc: "A curated birthday surprise designed specifically around personal interests.",
-    box_bond_title: "Everyday Bond",
-    box_bond_desc: "An understated, elegant surprise celebrating true friendship and gratitude.",
-    btn_add_cart: "ADD TO CART",
-    btn_view_details: "CUSTOMIZE",
-    in_stock: "IN STOCK",
-    cust_title: "CUSTOMIZE YOUR BOX",
+
+    // Customizer Stepper
     cust_label: "CORE EXPERIENCE",
-    cust_s1_title: "STEP 01: Who is it for?",
-    cust_s1_desc: "Define the recipient to tailor the core style and curation.",
+    cust_title: "CUSTOMIZE YOUR BOX",
+    step1_tab: "TIER & STYLE",
+    step2_tab: "RECIPIENT",
+    step3_tab: "OCCASION",
+    step4_tab: "ADD-ONS & CARD",
+    step5_tab: "REVIEW & ORDER",
+
+    // Step 1
+    box_size_title: "1. Select Box Tier & Size",
+    box_size_sub: "Every size is crafted to match its specific volume and items perfectly.",
+    tier_special: "Special Luxury Box",
+    tier_special_desc: "Our largest box, housing over 5 premium curated gifts in royal fashion.",
+    tier_regular: "Regular Box",
+    tier_regular_desc: "Most sought-after option, fitting 3 to 4 refined essentials.",
+    tier_mini: "Mini Box",
+    tier_mini_desc: "Compact and understated, perfect for precious jewelry or small tokens.",
+    box_experience_title: "Experience Vibe",
+    exp_mystery: "100% Mystery Box",
+    exp_mystery_desc: "Our curators hand-select items based on your recipient and moment.",
+    exp_curated: "Classic Semi-Curated",
+    exp_curated_desc: "Pre-aligned gift categories paired with unexpected surprises.",
     btn_continue: "CONTINUE →",
     btn_back: "← BACK",
-    cust_s2_title: "STEP 02: What's the occasion?",
-    cust_s2_desc: "Match the gifts, color themes, and presentation to the event.",
-    cust_s3_title: "STEP 03: Choose your items",
-    cust_s3_desc: "Select the categories you'd love included inside the surprise box.",
-    cust_s4_title: "STEP 04: Personalize",
-    cust_s4_desc: "Add your personal message to be handwritten or printed on the card.",
+
+    // Step 2 & 3
+    cust_s1_title: "2. Who is it for?",
+    cust_s1_desc: "Define the recipient to tailor the core aesthetic and contents.",
+    target_couple: "Couples",
+    target_couple_desc: "For your partner",
+    target_fiance: "Fiancé",
+    target_fiance_desc: "New beginnings",
+    target_friend: "Friend",
+    target_friend_desc: "Close companions",
+    target_family: "Family",
+    target_family_desc: "Home & loved ones",
+    target_parent: "Parent",
+    target_parent_desc: "Mother or Father",
+    target_kids: "Kids",
+    target_kids_desc: "Playful surprises",
+    cust_s2_title: "3. What's the occasion?",
+    cust_s2_desc: "Align packaging, ribbon aesthetics, and tone to the celebration.",
+    occ_birthday: "Birthday",
+    occ_birthday_desc: "Another milestone",
+    occ_graduation: "Graduation",
+    occ_graduation_desc: "Hard work rewarded",
+    occ_engagement: "Engagement",
+    occ_engagement_desc: "Next chapter",
+    occ_wedding: "Wedding",
+    occ_wedding_desc: "The big celebration",
+    occ_anniversary: "Anniversary",
+    occ_anniversary_desc: "Cherished moments",
+    occ_valentines: "Valentine's",
+    occ_valentines_desc: "Pure affection",
+    occ_ramadan: "Ramadan",
+    occ_ramadan_desc: "Generous spirit",
+    occ_justbecause: "Just Because",
+    occ_justbecause_desc: "Spontaneous joy",
+
+    // Step 4
+    step4_addons_title: "4. Add-ons & Gift Message",
+    step4_addons_sub: "Select special touches and customize the card message.",
+    addon_wax: "Wax Seal & Luxury Wrap",
+    addon_wax_desc: "Authentic royal red wax seal on luxury paper (+$5).",
+    addon_card: "Handwritten Gift Card",
+    addon_card_desc: "Your words handwritten with elegant calligraphy ink (+$5).",
+    addon_polaroid: "Polaroid Keepsakes (x2)",
+    addon_polaroid_desc: "Two printed keepsake photos framed inside the lid (+$8).",
+    addon_scent: "Aromatic Unboxing Scent",
+    addon_scent_desc: "A signature bespoke aroma that diffuses upon opening (+$4).",
     form_recip: "Recipient Name",
     form_msg: "Gift Card Message",
-    btn_review: "REVIEW BOX →",
-    cust_s5_title: "STEP 05: Review Your Box",
-    cust_s5_desc: "Confirm your selection details before adding to cart.",
+    btn_review: "REVIEW & ORDER →",
+
+    // Step 5 Review
+    cust_s5_title: "5. Review Your Box",
+    cust_s5_desc: "Confirm your custom selection and total pricing before placing your order.",
+    summary_box_type: "Box Tier & Size:",
+    summary_experience: "Experience Vibe:",
+    summary_target: "Target Recipient:",
+    summary_occasion: "Occasion:",
+    summary_addons: "Selected Add-ons:",
+    summary_recip: "Recipient Name:",
+    summary_note: "Gift Card Note:",
     btn_add_custom: "ADD TO CART",
-    about_title: "MORE THAN A BOX.",
-    about_desc: "MH is built around one simple idea: turning ordinary moments into memorable surprises that endure forever.",
-    contact_title: "LET'S TALK.",
-    contact_desc: "We look forward to receiving your inquiries and special orders.",
-    btn_send: "SEND MESSAGE",
+    btn_direct_wa: "ORDER THIS BOX DIRECTLY VIA WHATSAPP",
+
+    // Cart & Global
     cart_title: "YOUR CART",
     cart_empty: "Your cart is currently empty.",
     cart_total: "Total",
@@ -193,7 +218,6 @@ const I18N_DATA = {
   }
 };
 
-// إدارة الحالة المشتركة والسلة
 const AppStore = {
   cart: [],
   lang: localStorage.getItem("mh_lang") || "ar",
@@ -226,6 +250,11 @@ const AppStore = {
     document.querySelectorAll(".lang-btn").forEach(btn => {
       btn.innerText = I18N_DATA[lang].lang_btn;
     });
+
+    // إعادة تحديث المعاينة إن كانت الصفحة customize.html
+    if (typeof calculateBoxDetails === "function") {
+      calculateBoxDetails();
+    }
   },
 
   toggleLanguage() {
@@ -259,9 +288,7 @@ const AppStore = {
 
   updateCartUI() {
     const badge = document.getElementById("cartBadge");
-    if (badge) {
-      badge.innerText = this.cart.reduce((s, i) => s + i.qty, 0);
-    }
+    if (badge) badge.innerText = this.cart.reduce((s, i) => s + i.qty, 0);
 
     const list = document.getElementById("cartList");
     const totalEl = document.getElementById("cartTotal");
@@ -299,11 +326,11 @@ const AppStore = {
 
   checkout() {
     if (this.cart.length === 0) return;
-    let msg = `MH Brand Order:\n`;
+    let msg = `MH Brand Order:\n------------------------\n`;
     this.cart.forEach((i, idx) => {
       msg += `${idx + 1}. ${i.title} (x${i.qty}) - $${i.price * i.qty}\n   ${i.details || ''}\n`;
     });
-    msg += `Total: $${this.getTotal().toFixed(2)}`;
+    msg += `------------------------\nTotal: $${this.getTotal().toFixed(2)}`;
     window.open(`https://wa.me/${MH_CONFIG.whatsappNumber}?text=${encodeURIComponent(msg)}`, "_blank");
   },
 
@@ -330,23 +357,7 @@ const AppStore = {
       hamburger.addEventListener("click", () => menu.classList.toggle("open"));
     }
 
-    // فلترة المنتجات في صفحة boxes.html
-    document.querySelectorAll(".filter-btn").forEach(btn => {
-      btn.addEventListener("click", () => {
-        document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
-        btn.classList.add("active");
-        const category = btn.getAttribute("data-filter");
-        document.querySelectorAll(".product-card").forEach(card => {
-          if (category === "all" || card.getAttribute("data-cat") === category) {
-            card.style.display = "flex";
-          } else {
-            card.style.display = "none";
-          }
-        });
-      });
-    });
-
-    // خيارات التخصيص في customize.html
+    // إدارة خيارات النقر في الـ Customizer
     document.querySelectorAll(".custom-options-grid").forEach(grid => {
       const isMulti = grid.hasAttribute("data-multi");
       grid.querySelectorAll(".option-box").forEach(box => {
@@ -357,43 +368,106 @@ const AppStore = {
           } else {
             box.classList.toggle("selected");
           }
+          if (typeof calculateBoxDetails === "function") {
+            calculateBoxDetails();
+          }
         });
       });
     });
   }
 };
 
-// إدارة خطوات الـ Customizer
+// حساب تفاصيل الصندوق ومعاينته الحية
+function calculateBoxDetails() {
+  const selectedTierEl = document.querySelector("#boxTierGrid .option-box.selected");
+  const basePrice = selectedTierEl ? parseFloat(selectedTierEl.getAttribute("data-price")) : 90;
+  const tierName = selectedTierEl ? selectedTierEl.querySelector("h4").innerText : "Special Box";
+
+  const selectedExpEl = document.querySelector("#boxExpGrid .option-box.selected");
+  const expName = selectedExpEl ? selectedExpEl.querySelector("h4").innerText : "Mystery Box";
+
+  const targetEl = document.querySelector("#targetGrid .option-box.selected");
+  const targetName = targetEl ? targetEl.querySelector("h4").innerText : "Couple";
+
+  const occEl = document.querySelector("#occasionGrid .option-box.selected");
+  const occName = occEl ? occEl.querySelector("h4").innerText : "Birthday";
+
+  let addonsPrice = 0;
+  const addonsList = [];
+  document.querySelectorAll("#addonsGrid .option-box.selected").forEach(el => {
+    addonsPrice += parseFloat(el.getAttribute("data-price") || 0);
+    addonsList.push(el.querySelector("h4").innerText);
+  });
+
+  const recipName = document.getElementById("customRecipInput")?.value || "-";
+  const cardMsg = document.getElementById("customMsgInput")?.value || "-";
+  const totalPrice = basePrice + addonsPrice;
+
+  // تحديث عناصر المراجعة
+  const sumBoxType = document.getElementById("sumBoxType");
+  const sumBoxExp = document.getElementById("sumBoxExp");
+  const sumTarget = document.getElementById("sumTarget");
+  const sumOccasion = document.getElementById("sumOccasion");
+  const sumAddons = document.getElementById("sumAddons");
+  const sumRecip = document.getElementById("sumRecip");
+  const sumNote = document.getElementById("sumNote");
+  const sumFinalPrice = document.getElementById("sumFinalPrice");
+
+  if (sumBoxType) sumBoxType.innerText = tierName;
+  if (sumBoxExp) sumBoxExp.innerText = expName;
+  if (sumTarget) sumTarget.innerText = targetName;
+  if (sumOccasion) sumOccasion.innerText = occName;
+  if (sumAddons) sumAddons.innerText = addonsList.length > 0 ? addonsList.join(", ") : "None";
+  if (sumRecip) sumRecip.innerText = recipName;
+  if (sumNote) sumNote.innerText = cardMsg;
+  if (sumFinalPrice) sumFinalPrice.innerText = `$${totalPrice.toFixed(2)}`;
+
+  return {
+    tierName,
+    expName,
+    targetName,
+    occName,
+    addons: addonsList.join(", "),
+    recipName,
+    cardMsg,
+    totalPrice
+  };
+}
+
 window.goToStep = function(stepNum) {
   document.querySelectorAll(".step-view").forEach(v => {
     v.classList.toggle("active", parseInt(v.getAttribute("data-step")) === stepNum);
   });
-  document.querySelectorAll(".progress-step-item").forEach(p => {
-    p.classList.toggle("active", parseInt(p.getAttribute("data-step")) <= stepNum);
+  document.querySelectorAll(".stepper-btn").forEach(p => {
+    p.classList.toggle("active", parseInt(p.getAttribute("data-step")) === stepNum);
   });
-
-  if (stepNum === 5) {
-    const target = document.querySelector('[data-step="1"] .option-box.selected h4')?.innerText || 'General';
-    const occasion = document.querySelector('[data-step="2"] .option-box.selected h4')?.innerText || 'Special';
-    const note = document.getElementById("cardMsgInput")?.value || 'No special note';
-    
-    document.getElementById("sumTarget").innerText = target;
-    document.getElementById("sumOccasion").innerText = occasion;
-    document.getElementById("sumNote").innerText = note;
-  }
+  calculateBoxDetails();
 };
 
-window.addCustomBoxToCart = function() {
-  const target = document.getElementById("sumTarget")?.innerText || "Custom";
-  const occasion = document.getElementById("sumOccasion")?.innerText || "Special";
-  const note = document.getElementById("sumNote")?.innerText || "";
-
+window.addCompleteBoxToCart = function() {
+  const details = calculateBoxDetails();
   AppStore.addToCart({
     id: "box-" + Date.now(),
-    title: "Custom Mystery Box",
-    price: 85.00,
-    details: `${target} | ${occasion} | "${note}"`
+    title: `MH ${details.tierName}`,
+    price: details.totalPrice,
+    details: `${details.targetName} | ${details.occName} | Addons: ${details.addons || 'None'}`
   });
+};
+
+window.orderDirectWhatsApp = function() {
+  const d = calculateBoxDetails();
+  const text = `MH Brand — Direct Custom Box Order\n--------------------------------\n` +
+               `🎁 Box Tier: ${d.tierName}\n` +
+               `✨ Vibe: ${d.expName}\n` +
+               `👤 Recipient: ${d.targetName} (${d.recipName})\n` +
+               `🎉 Occasion: ${d.occName}\n` +
+               `➕ Add-ons: ${d.addons || 'None'}\n` +
+               `💌 Card Message: "${d.cardMsg}"\n` +
+               `--------------------------------\n` +
+               `Total Amount: $${d.totalPrice.toFixed(2)}\n\n` +
+               `يرجى تأكيد استلام الطلب وبدء التجهيز.`;
+
+  window.open(`https://wa.me/${MH_CONFIG.whatsappNumber}?text=${encodeURIComponent(text)}`, "_blank");
 };
 
 document.addEventListener("DOMContentLoaded", () => AppStore.init());
