@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MH — Mystery Boxes</title>
+  <meta name="description" content="Discover a box made for your moment. Premium Mystery Boxes.">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="icon" type="image/png" href="Logo.png">
+</head>
+<body>
+
+  <header class="header">
+    <div class="header-inner">
+      <a href="index.html" class="brand-logo-wrap"><img src="Logo.png" alt="MH Logo"></a>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="index.html" class="nav-link">HOME</a></li>
+        <li><a href="boxes.html" class="nav-link active">BOXES</a></li>
+        <li><a href="customize.html" class="nav-link">CUSTOMIZE</a></li>
+        <li><a href="about.html" class="nav-link">ABOUT</a></li>
+        <li><a href="contact.html" class="nav-link">CONTACT</a></li>
+      </ul>
+      <div class="header-actions">
+        <button class="icon-btn" id="cartTriggerBtn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+          <span class="cart-count" id="cartCountBadge">0</span>
+        </button>
+        <button class="icon-btn hamburger" id="hamburgerBtn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <div class="container">
+      <div class="section-header">
+        <h1 style="font-family: var(--font-en); font-size: 36px; letter-spacing: 0.05em; margin-bottom: 6px;">MYSTERY BOXES</h1>
+        <p style="color: var(--mh-cool-grey);">Discover a box made for your moment.</p>
+      </div>
+
+      <!-- Filters -->
+      <div class="filters-bar">
+        <button class="filter-btn active" data-filter="all">ALL</button>
+        <button class="filter-btn" data-filter="couple">COUPLE</button>
+        <button class="filter-btn" data-filter="fiance">FIANCÉ</button>
+        <button class="filter-btn" data-filter="friend">FRIEND</button>
+        <button class="filter-btn" data-filter="birthday">BIRTHDAY</button>
+        <button class="filter-btn" data-filter="wedding">WEDDING</button>
+      </div>
+
+      <!-- Product Cards -->
+      <div class="products-grid">
+        <!-- Product 1 -->
+        <div class="product-card" data-category="couple">
+          <div class="product-thumb">
+            <span class="product-thumb-badge">SIGNATURE</span>
+            <div style="font-family:var(--font-en); color:var(--mh-cool-grey); font-size:12px; letter-spacing:0.1em;">MH BOX 01</div>
+          </div>
+          <div class="product-body">
+            <div class="product-title">The Noir Edition</div>
+            <div class="product-desc">مزيج ملكي من العطور الفاخرة، والإكسسوارات الشخصية المصنوعة يدوياً.</div>
+            <div class="product-meta">
+              <span class="product-price">$95.00</span>
+              <span class="product-avail">IN STOCK</span>
+            </div>
+            <div class="product-actions">
+              <button class="btn btn-primary" style="flex:1;" onclick="MHStore.addItem({id:'box-noir', title:'The Noir Edition', price:95.00, details:'Signature Noir Box'})">ADD TO CART</button>
+              <a href="customize.html" class="btn btn-secondary" style="padding:12px 14px;">VIEW DETAILS</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="product-card" data-category="wedding">
+          <div class="product-thumb">
+            <div style="font-family:var(--font-en); color:var(--mh-cool-grey); font-size:12px; letter-spacing:0.1em;">MH BOX 02</div>
+          </div>
+          <div class="product-body">
+            <div class="product-title">Bride &amp; Groom Suite</div>
+            <div class="product-desc">تنسيق متكامل للعروسين بتغليف شمعي فاخر وبطاقة تهنئة خاصة.</div>
+            <div class="product-meta">
+              <span class="product-price">$130.00</span>
+              <span class="product-avail">IN STOCK</span>
+            </div>
+            <div class="product-actions">
+              <button class="btn btn-primary" style="flex:1;" onclick="MHStore.addItem({id:'box-suite', title:'Bride & Groom Suite', price:130.00, details:'Wedding Deluxe Box'})">ADD TO CART</button>
+              <a href="customize.html" class="btn btn-secondary" style="padding:12px 14px;">VIEW DETAILS</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="product-card" data-category="birthday">
+          <div class="product-thumb">
+            <div style="font-family:var(--font-en); color:var(--mh-cool-grey); font-size:12px; letter-spacing:0.1em;">MH BOX 03</div>
+          </div>
+          <div class="product-body">
+            <div class="product-title">The Milestone Box</div>
+            <div class="product-desc">صندوق عيد ميلاد يحمل مفاجآت مختارة بدقة تتناسب مع اهتمامات الشخص.</div>
+            <div class="product-meta">
+              <span class="product-price">$80.00</span>
+              <span class="product-avail">IN STOCK</span>
+            </div>
+            <div class="product-actions">
+              <button class="btn btn-primary" style="flex:1;" onclick="MHStore.addItem({id:'box-milestone', title:'The Milestone Box', price:80.00, details:'Birthday Special Box'})">ADD TO CART</button>
+              <a href="customize.html" class="btn btn-secondary" style="padding:12px 14px;">VIEW DETAILS</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 4 -->
+        <div class="product-card" data-category="friend">
+          <div class="product-thumb">
+            <div style="font-family:var(--font-en); color:var(--mh-cool-grey); font-size:12px; letter-spacing:0.1em;">MH BOX 04</div>
+          </div>
+          <div class="product-body">
+            <div class="product-title">Everyday Bond</div>
+            <div class="product-desc">هدية أنيقة ومفاجئة تعبّر عن الامتنان والرفقة الدائمة.</div>
+            <div class="product-meta">
+              <span class="product-price">$65.00</span>
+              <span class="product-avail">IN STOCK</span>
+            </div>
+            <div class="product-actions">
+              <button class="btn btn-primary" style="flex:1;" onclick="MHStore.addItem({id:'box-bond', title:'Everyday Bond', price:65.00, details:'Friends Classic Box'})">ADD TO CART</button>
+              <a href="customize.html" class="btn btn-secondary" style="padding:12px 14px;">VIEW DETAILS</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div class="cart-drawer-overlay" id="cartDrawerOverlay">
+    <div class="cart-drawer">
+      <div class="cart-header">
+        <span class="cart-title">YOUR CART</span>
+        <button class="icon-btn" id="cartCloseBtn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
+      <div class="cart-items-body" id="cartItemsList"></div>
+      <div class="cart-footer">
+        <div class="cart-total-row"><span>Total</span><span id="cartTotalDisplay">$0.00</span></div>
+        <button class="btn btn-primary" style="width: 100%;" onclick="MHStore.checkoutWhatsApp('YOUR_PHONE_NUMBER')">CHECKOUT VIA WHATSAPP</button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand"><h3>MH</h3><p>One system. Many expressions.</p></div>
+      <ul class="footer-links">
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="boxes.html">BOXES</a></li>
+        <li><a href="customize.html">CUSTOMIZE</a></li>
+        <li><a href="about.html">ABOUT</a></li>
+        <li><a href="contact.html">CONTACT</a></li>
+      </ul>
+      <ul class="footer-links">
+        <li><a href="https://instagram.com/YOUR_INSTAGRAM_USERNAME" target="_blank">INSTAGRAM</a></li>
+        <li><a href="https://wa.me/YOUR_PHONE_NUMBER" target="_blank">WHATSAPP</a></li>
+      </ul>
+    </div>
+    <div class="footer-bottom">
+      <div>&copy; 2026 MH. All Rights Reserved.</div>
+    </div>
+  </footer>
+
+  <script src="js/store.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
