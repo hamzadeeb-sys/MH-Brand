@@ -6,7 +6,6 @@
   <title>MH — Customize Your Box</title>
   <link rel="icon" type="image/png" href="Logo.png">
   <link rel="stylesheet" href="css/main.css">
-  <!-- مكتبة توليد الصورة الرسمية -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
   <style>
     .stepper-nav {
@@ -71,6 +70,13 @@
       margin: 20px 0 10px;
       text-align: center;
     }
+    .grid-3-cols {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 24px;
+      width: 100%;
+    }
     .input-grid-2 {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -78,13 +84,12 @@
       margin-bottom: 16px;
       width: 100%;
     }
-    /* ستايل كرت التلخيص المخصص للتوليد كصورة */
     #orderReceiptCapture {
       background: #121214;
       border: 1px solid rgba(244, 81, 16, 0.3);
       padding: 28px;
       margin-bottom: 24px;
-      text-align: right;
+      text-align: inherit;
       width: 100%;
       border-radius: 4px;
     }
@@ -97,9 +102,11 @@
       margin-bottom: 16px;
     }
     .receipt-title {
-      font-size: 20px;
+      font-size: 18px;
       font-weight: 800;
       color: var(--mh-orange);
+      font-family: var(--font-en);
+      letter-spacing: 0.05em;
     }
     .summary-row {
       display: flex;
@@ -115,7 +122,7 @@
       font-weight: 700;
       color: var(--mh-white);
       max-width: 65%;
-      text-align: left;
+      text-align: inherit;
     }
     .total-price-large {
       font-family: var(--font-en);
@@ -123,14 +130,18 @@
       font-weight: 800;
       color: var(--mh-orange);
     }
+    @media (max-width: 820px) {
+      .grid-3-cols { grid-template-columns: 1fr 1fr; }
+    }
     @media (max-width: 600px) {
+      .grid-3-cols { grid-template-columns: 1fr; }
       .input-grid-2 { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Header ثابت -->
+  <!-- Header -->
   <header class="header">
     <div class="header-inner">
       <a href="index.html" class="brand-logo-wrap">
@@ -155,299 +166,314 @@
   <main class="main-content">
     <div class="container-narrow">
       <div class="section-header">
-        <div class="section-label">تجربة التخصيص</div>
-        <h1 style="font-size: 32px;">صمّم صندوق مفاجأتك</h1>
+        <div class="section-label" data-i18n="cust_label">تجربة التخصيص</div>
+        <h1 style="font-size: 32px;" data-i18n="cust_title">صمّم صندوق مفاجأتك</h1>
       </div>
 
       <div class="customizer-wrapper">
         
         <!-- التوجيه بين الخطوات -->
         <div class="stepper-nav">
-          <button class="stepper-btn active" data-step="1" onclick="goToStep(1)">01 الحجم والطابع</button>
-          <button class="stepper-btn" data-step="2" onclick="goToStep(2)">02 المستلم وتفاصيله</button>
-          <button class="stepper-btn" data-step="3" onclick="goToStep(3)">03 المناسبة</button>
-          <button class="stepper-btn" data-step="4" onclick="goToStep(4)">04 الإضافات والكرت</button>
-          <button class="stepper-btn" data-step="5" onclick="goToStep(5)">05 مراجعة وتأكيد</button>
+          <button class="stepper-btn active" data-step="1" onclick="goToStep(1)">01 <span data-i18n="step1_tab">الحجم والطابع</span></button>
+          <button class="stepper-btn" data-step="2" onclick="goToStep(2)">02 <span data-i18n="step2_tab">المستلم وتفاصيله</span></button>
+          <button class="stepper-btn" data-step="3" onclick="goToStep(3)">03 <span data-i18n="step3_tab">المناسبة</span></button>
+          <button class="stepper-btn" data-step="4" onclick="goToStep(4)">04 <span data-i18n="step4_tab">الإضافات والكرت</span></button>
+          <button class="stepper-btn" data-step="5" onclick="goToStep(5)">05 <span data-i18n="step5_tab">مراجعة وتأكيد</span></button>
         </div>
 
-        <!-- الخطوة 01: الحجم والطابع المزدوج -->
+        <!-- الخطوة 01: الحجم والطابع بدون أي تحديد افتراضي -->
         <div class="step-view active" data-step="1">
-          <div class="custom-section-title">1. اختر حجم وفئة الصندوق</div>
-          <p class="custom-section-sub">اختر الباقة المناسبة لميزانيتك وعدد الهدايا المتضمنة.</p>
+          <div class="custom-section-title" data-i18n="box_size_title">1. اختر حجم وفئة الصندوق</div>
+          <p class="custom-section-sub" data-i18n="box_size_sub">حدد الباقة المناسبة لميزانيتك وعدد الهدايا المتضمنة.</p>
           
-          <div class="custom-options-grid" id="boxTierGrid">
-            <div class="option-box selected" data-value="Starter Box" data-price="25">
-              <span class="tier-badge">2 - 3 هدايا</span>
-              <h4>باقة 25$</h4>
-              <span>هدايا لطيفة رمزية وأنيقة</span>
+          <div class="grid-3-cols" id="boxTierGrid">
+            <div class="option-box" data-value="Starter Box" data-price="25">
+              <span class="tier-badge" data-i18n="tier_starter_badge">2 - 3 هدايا</span>
+              <h4 data-i18n="tier_starter_title">باقة 25$</h4>
+              <span data-i18n="tier_starter_desc">هدايا لطيفة رمزية وأنيقة</span>
               <div class="price-tag">$25.00</div>
             </div>
             <div class="option-box" data-value="Classic Box" data-price="50">
-              <span class="tier-badge">3 - 6 هدايا</span>
-              <h4>باقة 50$</h4>
-              <span>تشكيلة مميزة الأكثر طلباً</span>
+              <span class="tier-badge" data-i18n="tier_classic_badge">3 - 6 هدايا</span>
+              <h4 data-i18n="tier_classic_title">باقة 50$</h4>
+              <span data-i18n="tier_classic_desc">تشكيلة مميزة الأكثر طلباً</span>
               <div class="price-tag">$50.00</div>
             </div>
             <div class="option-box" data-value="Premium Box" data-price="75">
-              <span class="tier-badge">6 - 9 هدايا</span>
-              <h4>باقة 75$</h4>
-              <span>مفاجآت راقية ذات قيمة عالية</span>
+              <span class="tier-badge" data-i18n="tier_premium_badge">6 - 9 هدايا</span>
+              <h4 data-i18n="tier_premium_title">باقة 75$</h4>
+              <span data-i18n="tier_premium_desc">مفاجآت راقية ذات قيمة عالية</span>
               <div class="price-tag">$75.00</div>
             </div>
             <div class="option-box" data-value="Deluxe Box" data-price="100">
-              <span class="tier-badge">9 - 12 هدية</span>
-              <h4>باقة 100$</h4>
-              <span>صندوق فاخر متكامل وتفاصيل مميزة</span>
+              <span class="tier-badge" data-i18n="tier_deluxe_badge">9 - 12 هدية</span>
+              <h4 data-i18n="tier_deluxe_title">باقة 100$</h4>
+              <span data-i18n="tier_deluxe_desc">صندوق فاخر متكامل وتفاصيل مميزة</span>
               <div class="price-tag">$100.00</div>
             </div>
             <div class="option-box" data-value="Executive Box" data-price="150">
-              <span class="tier-badge">12 - 18 هدية</span>
-              <h4>باقة 150$</h4>
-              <span>تجربة ملكية فارهة بمحتوى ضخم</span>
+              <span class="tier-badge" data-i18n="tier_executive_badge">12 - 18 هدية</span>
+              <h4 data-i18n="tier_executive_title">باقة 150$</h4>
+              <span data-i18n="tier_executive_desc">تجربة ملكية فارهة بمحتوى ضخم</span>
               <div class="price-tag">$150.00</div>
             </div>
             <div class="option-box" data-value="Royal Box" data-price="200">
-              <span class="tier-badge">18 - 24 هدية</span>
-              <h4>باقة 200$</h4>
-              <span>القمة في الفخامة والقطع الثمينة الحصرية</span>
+              <span class="tier-badge" data-i18n="tier_royal_badge">18 - 24 هدية</span>
+              <h4 data-i18n="tier_royal_title">باقة 200$</h4>
+              <span data-i18n="tier_royal_desc">القمة في الفخامة والقطع الثمينة</span>
               <div class="price-tag">$200.00</div>
             </div>
           </div>
 
           <!-- الفئة الأولى لطابع المفاجأة -->
-          <div class="sub-group-title">طابع الهدايا (الفئة الأولى: القيمة والوزن)</div>
-          <div class="custom-options-grid" id="vibeTier1Grid">
-            <div class="option-box selected" data-value="Light (3-10$)">
-              <h4>هدايا خفيفة</h4>
-              <span>بين 3$ إلى 10$ للقطعة الواحدة</span>
+          <div class="sub-group-title" data-i18n="vibe_title_1">طابع الهدايا (الفئة الأولى: القيمة والوزن)</div>
+          <div class="grid-3-cols" id="vibeTier1Grid">
+            <div class="option-box" data-value="Light (3-10$)">
+              <h4 data-i18n="vibe1_opt1_title">هدايا خفيفة</h4>
+              <span data-i18n="vibe1_opt1_desc">بين 3$ إلى 10$ للقطعة الواحدة</span>
             </div>
             <div class="option-box" data-value="Heavy (10$+)">
-              <h4>هدايا ثقيلة</h4>
-              <span>أكثر من 10$ للقطعة الواحدة</span>
+              <h4 data-i18n="vibe1_opt2_title">هدايا ثقيلة</h4>
+              <span data-i18n="vibe1_opt2_desc">أكثر من 10$ للقطعة الواحدة</span>
             </div>
             <div class="option-box" data-value="Mixed (Light + Heavy)">
-              <h4>هدايا مختلطة</h4>
-              <span>توليفة تجمع بين الخفيفة والثقيلة</span>
+              <h4 data-i18n="vibe1_opt3_title">هدايا مختلطة</h4>
+              <span data-i18n="vibe1_opt3_desc">توليفة تجمع بين الخفيفة والثقيلة</span>
             </div>
           </div>
 
           <!-- الفئة الثانية لطابع المفاجأة -->
-          <div class="sub-group-title">طابع الهدايا (الفئة الثانية: النمط والغرابة)</div>
-          <div class="custom-options-grid" id="vibeTier2Grid">
-            <div class="option-box selected" data-value="Familiar & Classic">
-              <h4>هدايا مألوفة</h4>
-              <span>خيارات كلاسيكية مضمونة وراقية</span>
+          <div class="sub-group-title" data-i18n="vibe_title_2">طابع الهدايا (الفئة الثانية: النمط والغرابة)</div>
+          <div class="grid-3-cols" id="vibeTier2Grid">
+            <div class="option-box" data-value="Familiar & Classic">
+              <h4 data-i18n="vibe2_opt1_title">هدايا مألوفة</h4>
+              <span data-i18n="vibe2_opt1_desc">خيارات كلاسيكية مضمونة وراقية</span>
             </div>
             <div class="option-box" data-value="Crazy & Unusual">
-              <h4>هدايا مجنونة وغريبة</h4>
-              <span>أفكار فريدة وصادمة خارج الصندوق</span>
+              <h4 data-i18n="vibe2_opt2_title">هدايا مجنونة وغريبة</h4>
+              <span data-i18n="vibe2_opt2_desc">أفكار فريدة وصادمة خارج الصندوق</span>
             </div>
             <div class="option-box" data-value="Mixed (Familiar + Unusual)">
-              <h4>مختلطة (مألوفة + غريبة)</h4>
-              <span>توازن ممتع بين الكلاسيكي والمفاجئ</span>
+              <h4 data-i18n="vibe2_opt3_title">مختلطة (مألوفة + غريبة)</h4>
+              <span data-i18n="vibe2_opt3_desc">توازن ممتع بين الكلاسيكي والمفاجئ</span>
             </div>
           </div>
 
-          <button class="btn btn-primary" style="margin-top: 10px;" onclick="goToStep(2)">متابعة ←</button>
+          <button class="btn btn-primary" style="margin-top: 10px;" onclick="goToStep(2)" data-i18n="btn_continue">متابعة ←</button>
         </div>
 
         <!-- الخطوة 02: لمن هذا الصندوق وتفاصيله -->
         <div class="step-view" data-step="2">
-          <div class="custom-section-title">2. لمن هذا الصندوق؟</div>
-          <p class="custom-section-sub">اختر صلة القرابة أو المعرفة لتخصيص محتوى الهدية بدقة.</p>
+          <div class="custom-section-title" data-i18n="cust_s1_title">2. لمن هذا الصندوق؟</div>
+          <p class="custom-section-sub" data-i18n="cust_s1_desc">اختر صلة القرابة أو المعرفة لتخصيص محتوى الهدية بدقة.</p>
           
-          <div class="custom-options-grid" id="recipientRelationGrid">
-            <div class="option-box selected" data-value="زوج"><h4>زوج</h4><span>لشريك العمر</span></div>
-            <div class="option-box" data-value="خطيب / خطيبة"><h4>خطيب / خطيبة</h4><span>لبداية رحلة العمر</span></div>
-            <div class="option-box" data-value="عروس"><h4>عروس</h4><span>تهنئة ملكية بالزفاف</span></div>
-            <div class="option-box" data-value="صديق / صديقة"><h4>صديق</h4><span>لرفقة العمر والذكريات</span></div>
-            <div class="option-box" data-value="أخ / أخت"><h4>أخ / أخت</h4><span>للسند والأقرب للقلب</span></div>
-            <div class="option-box" data-value="أب / أم"><h4>أب أو أم</h4><span>لأغلى الناس وأعظمهم</span></div>
-            <div class="option-box" data-value="ابن / ابنة"><h4>ابن / ابنة</h4><span>لأجمل فرحة</span></div>
-            <div class="option-box" data-value="جد / جدة"><h4>جد / جدة</h4><span>لبركة العائلة</span></div>
-            <div class="option-box" data-value="زميل عمل"><h4>زميل</h4><span>تقدير ومودة مهنية</span></div>
-            <div class="option-box" data-value="معلم"><h4>معلم</h4><span>عرفان بالفضل والعطاء</span></div>
-            <div class="option-box" data-value="صاحب عمل"><h4>صاحب عمل</h4><span>احترام وتقدير مهني</span></div>
-            <div class="option-box" data-value="شخص مميز"><h4>شخص مميز</h4><span>لمن يحتل مكانة استثنائية</span></div>
+          <div class="grid-3-cols" id="recipientRelationGrid">
+            <div class="option-box" data-value="Spouse"><h4 data-i18n="rel_spouse">زوج / زوجة</h4><span data-i18n="rel_spouse_desc">لشريك العمر</span></div>
+            <div class="option-box" data-value="Fiancé"><h4 data-i18n="rel_fiance">خطيب / خطيبة</h4><span data-i18n="rel_fiance_desc">لبداية رحلة العمر</span></div>
+            <div class="option-box" data-value="Bride"><h4 data-i18n="rel_bride">عروس</h4><span data-i18n="rel_bride_desc">تهنئة ملكية بالزفاف</span></div>
+            <div class="option-box" data-value="Friend"><h4 data-i18n="rel_friend">صديق / صديقة</h4><span data-i18n="rel_friend_desc">لرفقة العمر والذكريات</span></div>
+            <div class="option-box" data-value="Sibling"><h4 data-i18n="rel_sibling">أخ / أخت</h4><span data-i18n="rel_sibling_desc">للسند والأقرب للقلب</span></div>
+            <div class="option-box" data-value="Parent"><h4 data-i18n="rel_parent">أب أو أم</h4><span data-i18n="rel_parent_desc">لأغلى الناس وأعظمهم</span></div>
+            <div class="option-box" data-value="Child"><h4 data-i18n="rel_child">ابن / ابنة</h4><span data-i18n="rel_child_desc">لأجمل فرحة</span></div>
+            <div class="option-box" data-value="Grandparent"><h4 data-i18n="rel_grandparent">جد / جدة</h4><span data-i18n="rel_grandparent_desc">لبركة العائلة</span></div>
+            <div class="option-box" data-value="Colleague"><h4 data-i18n="rel_colleague">زميل عمل</h4><span data-i18n="rel_colleague_desc">تقدير ومودة مهنية</span></div>
+            <div class="option-box" data-value="Teacher"><h4 data-i18n="rel_teacher">معلم</h4><span data-i18n="rel_teacher_desc">عرفان بالفضل والعطاء</span></div>
+            <div class="option-box" data-value="Manager"><h4 data-i18n="rel_manager">صاحب عمل</h4><span data-i18n="rel_manager_desc">احترام وتقدير مهني</span></div>
+            <div class="option-box" data-value="Special Person"><h4 data-i18n="rel_special">شخص مميز</h4><span data-i18n="rel_special_desc">لمن يحتل مكانة استثنائية</span></div>
           </div>
 
-          <!-- تفاصيل المستلم الإضافية -->
-          <div class="sub-group-title">تفاصيل المستلم الدقيقة</div>
+          <div class="sub-group-title" data-i18n="recip_sub_details">تفاصيل المستلم الدقيقة</div>
           <div class="input-grid-2">
             <div class="form-group">
-              <label class="form-label">الجنس</label>
+              <label class="form-label" data-i18n="lbl_gender">الجنس</label>
               <select class="form-control" id="recipGenderSelect">
-                <option value="أنثى">أنثى (Female)</option>
-                <option value="ذكر">ذكر (Male)</option>
+                <option value="" disabled selected data-i18n="opt_select_gender">-- اختر الجنس --</option>
+                <option value="Female" data-i18n="gender_female">أنثى</option>
+                <option value="Male" data-i18n="gender_male">ذكر</option>
               </select>
             </div>
             <div class="form-group">
-              <label class="form-label">العمر التقريبي</label>
-              <input type="number" class="form-control" id="recipAgeInput" placeholder="مثلاً: 24">
+              <label class="form-label" data-i18n="lbl_age">العمر التقريبي</label>
+              <input type="number" class="form-control" id="recipAgeInput" data-i18n-ph="ph_age" placeholder="مثلاً: 24">
             </div>
           </div>
 
           <div class="form-group">
-            <label class="form-label">اللون المفضل للمستلم</label>
-            <input type="text" class="form-control" id="recipFavColorInput" placeholder="مثلاً: أسود، بنفسجي، أزرق نيلي...">
+            <label class="form-label" data-i18n="lbl_fav_color">اللون المفضل للمستلم</label>
+            <input type="text" class="form-control" id="recipFavColorInput" data-i18n-ph="ph_fav_color" placeholder="مثلاً: أسود، بنفسجي، أزرق نيلي...">
           </div>
 
           <div class="form-group">
-            <label class="form-label">اهتمامات المستلم أو محظورات يجب تجنبها داخل الصندوق</label>
-            <textarea class="form-control" id="recipInterestsInput" placeholder="مثلاً: يحب القراءة والقهوة / يمنع العطور لأنه يعاني من حساسية..."></textarea>
+            <label class="form-label" data-i18n="lbl_interests_avoid">اهتمامات المستلم أو محظورات يجب تجنبها ضمن الصندوق</label>
+            <textarea class="form-control" id="recipInterestsInput" data-i18n-ph="ph_interests_avoid" placeholder="مثلاً: يحب القراءة والقهوة / تجنب العطور لوجود حساسية..."></textarea>
           </div>
 
           <div style="display:flex; justify-content:center; gap:10px;">
-            <button class="btn btn-secondary" onclick="goToStep(1)">← رجوع</button>
-            <button class="btn btn-primary" onclick="goToStep(3)">متابعة ←</button>
+            <button class="btn btn-secondary" onclick="goToStep(1)" data-i18n="btn_back">← رجوع</button>
+            <button class="btn btn-primary" onclick="goToStep(3)" data-i18n="btn_continue">متابعة ←</button>
           </div>
         </div>
 
-        <!-- الخطوة 03: المناسبة -->
+        <!-- الخطوة 03: المناسبة (18 خياراً، 3 في كل سطر بالتساوي) -->
         <div class="step-view" data-step="3">
-          <div class="custom-section-title">3. ما هي المناسبة؟</div>
-          <p class="custom-section-sub">اختر المناسبة لننسق الألوان وطابع الرسالة والإيحاء العام.</p>
+          <div class="custom-section-title" data-i18n="cust_s2_title">3. ما هي المناسبة؟</div>
+          <p class="custom-section-sub" data-i18n="cust_s2_desc">اختر المناسبة ليتم مواءمة التغليف ورسالة الإهداء والمفاجآت معها.</p>
           
-          <div class="custom-options-grid" id="occasionGrid">
-            <div class="option-box selected" data-value="عيد ميلاد"><h4>عيد ميلاد</h4><span>سنة جديدة مليئة بالفرح</span></div>
-            <div class="option-box" data-value="عيد حب"><h4>عيد حب</h4><span>تعبير رقيق عن المشاعر</span></div>
-            <div class="option-box" data-value="ذكرى زواج"><h4>ذكرى زواج</h4><span>تخليد لأجمل رباط</span></div>
-            <div class="option-box" data-value="ذكرى ارتباط"><h4>ذكرى ارتباط</h4><span>احتفال بالبدايات</span></div>
-            <div class="option-box" data-value="خطوبة"><h4>خطوبة</h4><span>مباركة بالخطوة الأولى</span></div>
-            <div class="option-box" data-value="زفاف"><h4>زفاف</h4><span>فخامة تليق باليوم الكبير</span></div>
-            <div class="option-box" data-value="تخرج"><h4>تخرج</h4><span>تتويج سنوات التعب</span></div>
-            <div class="option-box" data-value="نجاح"><h4>نجاح</h4><span>فرحة إنجاز مستحق</span></div>
-            <div class="option-box" data-value="وظيفة أو ترقية"><h4>وظيفة أو ترقية</h4><span>انطلاقة مهنية جديدة</span></div>
-            <div class="option-box" data-value="عيد الأم"><h4>عيد الأم</h4><span>لأغلى قلب بالوجود</span></div>
-            <div class="option-box" data-value="عيد الأب"><h4>عيد الأب</h4><span>لسند الحياة والقدوة</span></div>
-            <div class="option-box" data-value="رمضان"><h4>رمضان</h4><span>أجواء دافئة وهدايا أصيلة</span></div>
-            <div class="option-box" data-value="مولود جديد"><h4>مولود جديد</h4><span>مباركة بقدوم الفرح</span></div>
-            <div class="option-box" data-value="شكر وامتنان"><h4>شكر وامتنان</h4><span>تقدير صادق لجهد أو موقف</span></div>
-            <div class="option-box" data-value="اعتذار"><h4>اعتذار</h4><span>تطييب خاطر بأسلوب راقٍ</span></div>
-            <div class="option-box" data-value="بدون مناسبة"><h4>بدون مناسبة</h4><span>مفاجأة عفوية تصنع اليوم</span></div>
+          <div class="grid-3-cols" id="occasionGrid">
+            <!-- سطر 1 -->
+            <div class="option-box" data-value="Birthday"><h4 data-i18n="occ_birthday">عيد ميلاد</h4><span data-i18n="occ_birthday_desc">سنة جديدة مليئة بالفرح</span></div>
+            <div class="option-box" data-value="Valentine's"><h4 data-i18n="occ_valentines">عيد حب</h4><span data-i18n="occ_valentines_desc">تعبير رقيق عن المشاعر</span></div>
+            <div class="option-box" data-value="Wedding Anniversary"><h4 data-i18n="occ_wedding_anniv">ذكرى زواج</h4><span data-i18n="occ_wedding_anniv_desc">تخليد لأجمل رباط</span></div>
+            <!-- سطر 2 -->
+            <div class="option-box" data-value="Relationship Anniversary"><h4 data-i18n="occ_rel_anniv">ذكرى ارتباط</h4><span data-i18n="occ_rel_anniv_desc">احتفال ببدء الحكاية</span></div>
+            <div class="option-box" data-value="Engagement"><h4 data-i18n="occ_engagement">خطوبة</h4><span data-i18n="occ_engagement_desc">مباركة بالخطوة الأولى</span></div>
+            <div class="option-box" data-value="Wedding"><h4 data-i18n="occ_wedding">زفاف</h4><span data-i18n="occ_wedding_desc">فخامة تليق باليوم الكبير</span></div>
+            <!-- سطر 3 -->
+            <div class="option-box" data-value="Graduation"><h4 data-i18n="occ_graduation">تخرج</h4><span data-i18n="occ_graduation_desc">تتويج سنوات التعب</span></div>
+            <div class="option-box" data-value="Success / Milestone"><h4 data-i18n="occ_success">نجاح</h4><span data-i18n="occ_success_desc">فرحة إنجاز مستحق</span></div>
+            <div class="option-box" data-value="New Job / Promotion"><h4 data-i18n="occ_promotion">وظيفة أو ترقية</h4><span data-i18n="occ_promotion_desc">انطلاقة مهنية جديدة</span></div>
+            <!-- سطر 4 -->
+            <div class="option-box" data-value="Mother's Day"><h4 data-i18n="occ_mothers_day">عيد الأم</h4><span data-i18n="occ_mothers_day_desc">لأغلى قلب بالوجود</span></div>
+            <div class="option-box" data-value="Father's Day"><h4 data-i18n="occ_fathers_day">عيد الأب</h4><span data-i18n="occ_fathers_day_desc">لسند الحياة والقدوة</span></div>
+            <div class="option-box" data-value="Ramadan"><h4 data-i18n="occ_ramadan">رمضان</h4><span data-i18n="occ_ramadan_desc">أجواء دافئة وهدايا أصيلة</span></div>
+            <!-- سطر 5 -->
+            <div class="option-box" data-value="Newborn Baby"><h4 data-i18n="occ_newborn">مولود جديد</h4><span data-i18n="occ_newborn_desc">مباركة بقدوم الفرح</span></div>
+            <div class="option-box" data-value="Get Well Soon / Welcome Back"><h4 data-i18n="occ_getwell">سلامتك</h4><span data-i18n="occ_getwell_desc">حمد لله على السلامة أو عودة سفر</span></div>
+            <div class="option-box" data-value="Gratitude & Thanks"><h4 data-i18n="occ_gratitude">شكر وامتنان</h4><span data-i18n="occ_gratitude_desc">تقدير صادق لجهد أو موقف</span></div>
+            <!-- سطر 6 -->
+            <div class="option-box" data-value="Apology"><h4 data-i18n="occ_apology">اعتذار</h4><span data-i18n="occ_apology_desc">تطييب خاطر بأسلوب راقٍ</span></div>
+            <div class="option-box" data-value="Just Because"><h4 data-i18n="occ_justbecause">بدون مناسبة</h4><span data-i18n="occ_justbecause_desc">مفاجأة عفوية تصنع اليوم</span></div>
+            <div class="option-box" data-value="Other Special Occasion"><h4 data-i18n="occ_other">مناسبة خاصة</h4><span data-i18n="occ_other_desc">اكتب تفاصيلها بالملاحظات</span></div>
           </div>
 
           <div style="display:flex; justify-content:center; gap:10px;">
-            <button class="btn btn-secondary" onclick="goToStep(2)">← رجوع</button>
-            <button class="btn btn-primary" onclick="goToStep(4)">متابعة ←</button>
+            <button class="btn btn-secondary" onclick="goToStep(2)" data-i18n="btn_back">← رجوع</button>
+            <button class="btn btn-primary" onclick="goToStep(4)" data-i18n="btn_continue">متابعة ←</button>
           </div>
         </div>
 
-        <!-- الخطوة 04: الإضافات، الاسم، والكرت -->
+        <!-- الخطوة 04: الإضافات المتناسقة (6 خيارات = 3 في السطر) والكرت -->
         <div class="step-view" data-step="4">
-          <div class="custom-section-title">4. الإضافات وبطاقة الإهداء</div>
-          <p class="custom-section-sub">اختر الإضافات المميزة واكتب كلماتك لتوضع داخل البوكس.</p>
+          <div class="custom-section-title" data-i18n="step4_addons_title">4. الإضافات وبطاقة الإهداء</div>
+          <p class="custom-section-sub" data-i18n="step4_addons_sub">اختر الإضافات الخاصة ثم اكتب رسالة الصندوق.</p>
           
-          <div class="custom-options-grid" data-multi="true" id="addonsGrid" style="margin-bottom: 24px;">
-            <div class="option-box" data-addon="بطاقة إهداء بخط اليد" data-price="1">
-              <h4>بطاقة إهداء بخط اليد (+1$)</h4>
-              <span>كتابة رسالتك بخط يد فاخر على كرت أنيق</span>
+          <div class="grid-3-cols" data-multi="true" id="addonsGrid" style="margin-bottom: 24px;">
+            <div class="option-box" data-addon="Handwritten Card" data-price="1">
+              <h4 data-i18n="addon_card_title">بطاقة إهداء يدوية (+1$)</h4>
+              <span data-i18n="addon_card_desc">كتابة رسالتك بخط يد فاخر على كرت أنيق</span>
             </div>
-            <div class="option-box" data-addon="صورة تذكارية" data-price="3">
-              <h4>صورة تذكارية (+3$)</h4>
-              <span>طباعة صورة شخصية عالية الجودة داخل الغطاء</span>
+            <div class="option-box" data-addon="Keepsake Photo" data-price="3">
+              <h4 data-i18n="addon_photo_title">صورة تذكارية (+3$)</h4>
+              <span data-i18n="addon_photo_desc">طباعة صورة شخصية عالية الجودة داخل الغطاء</span>
             </div>
-            <div class="option-box" data-addon="تعطير الصندوق" data-price="5">
-              <h4>تعطير الصندوق (+5$)</h4>
-              <span>تفوح منه رائحة زكية استثنائية فور فتحه</span>
+            <div class="option-box" data-addon="Box Perfuming" data-price="5">
+              <h4 data-i18n="addon_perfume_title">تعطير الصندوق (+5$)</h4>
+              <span data-i18n="addon_perfume_desc">تفوح منه رائحة زكية استثنائية فور فتحه</span>
             </div>
-            <div class="option-box" data-addon="هدية خاصة منك" data-price="0">
-              <h4>هدية خاصة منك (+0$)</h4>
-              <span>ترسل لنا غرضاً أو هدية منك لنضعها داخل الصندوق</span>
+            <div class="option-box" data-addon="Custom Name Ribbon" data-price="2">
+              <h4 data-i18n="addon_ribbon_title">شريط إهداء بالاسم (+2$)</h4>
+              <span data-i18n="addon_ribbon_desc">شريط ستان فاخر مطبوع باسم المستلم</span>
+            </div>
+            <div class="option-box" data-addon="Royal Wax Seal" data-price="4">
+              <h4 data-i18n="addon_wax_title">ختم شمعي أحمر (+4$)</h4>
+              <span data-i18n="addon_wax_desc">ختم شمعي رسمي يعطي طابع الفخامة الملكية</span>
+            </div>
+            <div class="option-box" data-addon="Personal Gift from You" data-price="0">
+              <h4 data-i18n="addon_personal_title">هدية خاصة منك (+0$)</h4>
+              <span data-i18n="addon_personal_desc">ترسل لنا غرضاً أو هدية منك لنضعها داخل الصندوق</span>
             </div>
           </div>
 
           <div class="form-group">
-            <label class="form-label">اسم مستلم الصندوق</label>
-            <input type="text" class="form-control" id="recipNameInput" placeholder="أدخل اسم الشخص الذي سيتلقى الهدية...">
+            <label class="form-label" data-i18n="lbl_recip_name">اسم مستلم الصندوق</label>
+            <input type="text" class="form-control" id="recipNameInput" data-i18n-ph="ph_recip_name" placeholder="أدخل اسم الشخص الذي سيتلقى الهدية...">
           </div>
 
           <div class="form-group">
-            <label class="form-label">نص رسالة الإهداء للبطاقة</label>
-            <textarea class="form-control" id="giftCardMsgInput" placeholder="اكتب الكلمات الخاصة التي تريد أن نضعها داخل البطاقة..."></textarea>
+            <label class="form-label" data-i18n="lbl_card_msg">نص رسالة الإهداء للبطاقة</label>
+            <textarea class="form-control" id="giftCardMsgInput" data-i18n-ph="ph_card_msg" placeholder="اكتب الكلمات الخاصة التي تريد أن نضعها داخل البطاقة..."></textarea>
           </div>
 
           <div class="form-group">
-            <label class="form-label">ملاحظات أخيرة خاصة بالطلب (إن وجدت)</label>
-            <textarea class="form-control" id="extraNotesInput" placeholder="أي تفصيل أو رغبة إضافية تحب أن ننتبه لها في تجهيز البوكس..."></textarea>
+            <label class="form-label" data-i18n="lbl_extra_notes">ملاحظات أخيرة خاصة بالطلب (إن وجدت)</label>
+            <textarea class="form-control" id="extraNotesInput" data-i18n-ph="ph_extra_notes" placeholder="إذا اخترت (مناسبة خاصة) أو لديك أي تفصيل تحب أن نراعيه..."></textarea>
           </div>
 
           <div style="display:flex; justify-content:center; gap:10px;">
-            <button class="btn btn-secondary" onclick="goToStep(3)">← رجوع</button>
-            <button class="btn btn-primary" onclick="goToStep(5)">معاينة الصندوق والطلب ←</button>
+            <button class="btn btn-secondary" onclick="goToStep(3)" data-i18n="btn_back">← رجوع</button>
+            <button class="btn btn-primary" onclick="goToStep(5)" data-i18n="btn_review">معاينة الصندوق والطلب ←</button>
           </div>
         </div>
 
-        <!-- الخطوة 05: المعاينة، توليد الصورة والطلب المباشر -->
+        <!-- الخطوة 05: المعاينة، حفظ كرت الطلب والتأكيد -->
         <div class="step-view" data-step="5">
-          <div class="custom-section-title">5. مراجعة تفاصيل الصندوق وتأكيده</div>
-          <p class="custom-section-sub">اضغط على زر التأكيد ليتم حفظ كرت الطلب لديك وفتح المحادثة معنا مباشرة.</p>
+          <div class="custom-section-title" data-i18n="cust_s5_title">5. مراجعة تفاصيل الصندوق وتأكيده</div>
+          <p class="custom-section-sub" data-i18n="cust_s5_desc">اضغط على زر التأكيد ليتم حفظ كرت الطلب لديك وفتح المحادثة معنا مباشرة.</p>
 
-          <!-- الكرت المرئي الذي سيتم تصويره وحفظه كملف PNG -->
           <div id="orderReceiptCapture">
             <div class="receipt-header">
               <span class="receipt-title">MH BRAND — MYSTERY ORDER</span>
-              <span style="font-size:12px; color:var(--mh-cool-grey);" id="receiptDate">2026</span>
+              <span style="font-size:12px; color:var(--mh-cool-grey); font-family:var(--font-en);" id="receiptDate">2026</span>
             </div>
             <div class="summary-row">
-              <span class="summary-row-label">فئة وميزانية الصندوق:</span>
+              <span class="summary-row-label" data-i18n="sum_lbl_tier">فئة وميزانية الصندوق:</span>
               <span class="summary-row-val" id="sumTier">-</span>
             </div>
             <div class="summary-row">
-              <span class="summary-row-label">طابع الهدايا (القيمة):</span>
+              <span class="summary-row-label" data-i18n="sum_lbl_vibe1">طابع الهدايا (القيمة):</span>
               <span class="summary-row-val" id="sumVibe1">-</span>
             </div>
             <div class="summary-row">
-              <span class="summary-row-label">طابع الهدايا (النمط):</span>
+              <span class="summary-row-label" data-i18n="sum_lbl_vibe2">طابع الهدايا (النمط):</span>
               <span class="summary-row-val" id="sumVibe2">-</span>
             </div>
             <div class="summary-row">
-              <span class="summary-row-label">صلة القرابة / المستلم:</span>
+              <span class="summary-row-label" data-i18n="sum_lbl_relation">صلة القرابة / المستلم:</span>
               <span class="summary-row-val" id="sumRelation">-</span>
             </div>
             <div class="summary-row">
-              <span class="summary-row-label">الجنس والعمر:</span>
+              <span class="summary-row-label" data-i18n="sum_lbl_gender_age">الجنس والعمر:</span>
               <span class="summary-row-val" id="sumGenderAge">-</span>
             </div>
             <div class="summary-row">
-              <span class="summary-row-label">اللون المفضل:</span>
+              <span class="summary-row-label" data-i18n="sum_lbl_color">اللون المفضل:</span>
               <span class="summary-row-val" id="sumColor">-</span>
             </div>
             <div class="summary-row">
-              <span class="summary-row-label">الاهتمامات والمحظورات:</span>
+              <span class="summary-row-label" data-i18n="sum_lbl_interests">الاهتمامات والمحظورات:</span>
               <span class="summary-row-val" id="sumInterests">-</span>
             </div>
             <div class="summary-row">
-              <span class="summary-row-label">المناسبة:</span>
+              <span class="summary-row-label" data-i18n="sum_lbl_occasion">المناسبة:</span>
               <span class="summary-row-val" id="sumOccasion">-</span>
             </div>
             <div class="summary-row">
-              <span class="summary-row-label">الإضافات الخاصة:</span>
+              <span class="summary-row-label" data-i18n="sum_lbl_addons">الإضافات الخاصة:</span>
               <span class="summary-row-val" id="sumAddons">-</span>
             </div>
             <div class="summary-row">
-              <span class="summary-row-label">اسم المستلم:</span>
+              <span class="summary-row-label" data-i18n="sum_lbl_name">اسم المستلم:</span>
               <span class="summary-row-val" id="sumName">-</span>
             </div>
             <div class="summary-row">
-              <span class="summary-row-label">رسالة الإهداء:</span>
+              <span class="summary-row-label" data-i18n="sum_lbl_msg">رسالة الإهداء:</span>
               <span class="summary-row-val" id="sumCardMsg" style="font-style:italic;">-</span>
             </div>
             <div class="summary-row">
-              <span class="summary-row-label">ملاحظات العميل:</span>
+              <span class="summary-row-label" data-i18n="sum_lbl_notes">ملاحظات العميل:</span>
               <span class="summary-row-val" id="sumExtraNotes">-</span>
             </div>
             <div class="summary-row" style="margin-top:16px; padding-top:14px; border-top:1px solid rgba(244, 81, 16, 0.4);">
-              <span style="font-weight:800; font-size:16px;">المجموع النهائي للصندوق:</span>
+              <span style="font-weight:800; font-size:16px;" data-i18n="sum_lbl_total">المجموع النهائي للصندوق:</span>
               <span class="total-price-large" id="sumFinalPrice">$0.00</span>
             </div>
           </div>
 
           <div style="display:flex; flex-direction:column; gap:12px; max-width:480px; margin:0 auto;">
-            <button class="btn btn-secondary" onclick="goToStep(4)">← تعديل البيانات</button>
+            <button class="btn btn-secondary" onclick="goToStep(4)" data-i18n="btn_edit">← تعديل البيانات</button>
             <button class="btn btn-primary" id="btnSubmitAndCapture" onclick="processOrderAndCapture()" style="background:#25d366; border-color:#25d366; font-size:14px; padding:14px 20px;">
-              <svg viewBox="0 0 24 24" style="stroke:#fff; margin-left:8px;"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
-              تأكيد وحفظ الطلب كصورة ومتابعة عبر واتساب
+              <svg viewBox="0 0 24 24" style="stroke:#fff; margin-inline-end:8px;"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+              <span data-i18n="btn_confirm_capture">تأكيد وحفظ الطلب كصورة ومتابعة عبر واتساب</span>
             </button>
           </div>
         </div>
