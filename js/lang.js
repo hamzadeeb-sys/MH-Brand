@@ -1,27 +1,25 @@
 /* ===================================================
-   MH Brand - Internationalization (i18n) Engine
-   Complete Bilingual Support Across All Pages
+   MH Brand - Minimal Clean i18n
    =================================================== */
 
 const translations = {
   ar: {
-    // Navigation & Common
     nav_home: "الرئيسية",
     nav_boxes: "البوكسات",
     nav_customize: "تخصيص الصندوق",
     nav_about: "عن البراند",
     nav_contact: "تواصل معنا",
     lang_btn: "EN",
-    currency_symbol: "$",
 
-    // Home
     hero_tag: "أكثر من مجرد صندوق",
     hero_title: "صندوق. مفاجأة. لحظة لا تُنسى.",
     hero_desc: "نحوّل اللحظات العادية إلى ذكريات استثنائية عبر صناديق غامضة صُممت بعناية فائقة وأعلى معايير الأناقة.",
     hero_cta_discover: "استكشف البوكسات",
     hero_cta_customize: "صمّم صندوقك",
+
     concept_title: "اختر اللحظة. ونحن نصنع المفاجأة.",
     concept_desc: "صناديق مفاجآت مخصصة للكابلز، الأصدقاء، العائلة، ولكل مناسبة تستحق الاحتفال.",
+
     moments_label: "المناسبات",
     moments_title: "لكل لحظة خاصة",
     moment_couples: "الكابلز",
@@ -40,6 +38,7 @@ const translations = {
     moment_valentines_sub: "تعبير رقيق بأرقى أسلوب",
     moment_ramadan: "رمضان",
     moment_ramadan_sub: "أجواء دافئة وهدايا أصيلة",
+
     how_label: "كيف نعمل",
     how_title: "خطوات بسيطة نحو المفاجأة",
     how_step1_num: "01",
@@ -51,14 +50,15 @@ const translations = {
     how_step3_num: "03",
     how_step3_title: "فاجئ",
     how_step3_desc: "استلم الصندوق الفاخر وافتح باب الدهشة واللحظة السعيدة.",
+
     make_label: "تجربة مخصصة",
     make_title: "اصنعه بأسلوبك",
     make_desc: "صمّم صندوقك بالكامل من الصفر بدقة وانسيابية تامة. اختر كل عنصر بنفسك.",
     make_btn: "تخصيص البوكس الآن",
+
     ready_title: "جاهز لصناعة مفاجأة لا تُنسى؟",
     ready_btn: "ابدأ بتجهيز الصندوق",
 
-    // Boxes Page
     boxes_page_title: "صناديق المفاجآت",
     boxes_page_subtitle: "اكتشف صندوقاً صُمم خصيصاً لمناسبتك.",
     filter_all: "الكل",
@@ -79,7 +79,6 @@ const translations = {
     btn_view_details: "تخصيص البوكس",
     in_stock: "متوفر للطلب",
 
-    // Customize Page
     cust_core_label: "التجربة الأساسية",
     cust_page_title: "تخصيص صندوقك الخاص",
     cust_step1_label: "01 المستهدف",
@@ -152,7 +151,6 @@ const translations = {
     btn_edit: "← تعديل",
     btn_add_custom_cart: "إضافة الصندوق إلى السلة",
 
-    // About Page
     about_philosophy_label: "فلسفة البراند",
     about_hero_title: "أكثر من مجرد صندوق.",
     about_hero_desc: "تأسست MH حول فكرة واحدة بسيطة: تحويل اللحظات العادية إلى مفاجآت لا تُنسى تبقى في الذاكرة للأبد.",
@@ -165,7 +163,6 @@ const translations = {
     val_moments_title: "اللحظات (MOMENTS)",
     val_moments_desc: "نحن لا نبيع مجرد منتج مغلف، بل نبتكر تجربة وجدانية تصنع ذكريات دائمة.",
 
-    // Contact Page
     contact_label: "ابقَ على تواصل",
     contact_title: "دعنا نتحدث.",
     channel_wa: "واتساب",
@@ -180,7 +177,6 @@ const translations = {
     field_message_ph: "كيف يمكننا مساعدتك؟",
     btn_send_msg: "إرسال الرسالة",
 
-    // Cart & Footer
     cart_title: "سلة المشتريات",
     cart_empty: "السلة فارغة حالياً.",
     cart_total: "الإجمالي",
@@ -190,23 +186,22 @@ const translations = {
   },
 
   en: {
-    // Navigation & Common
     nav_home: "HOME",
     nav_boxes: "BOXES",
     nav_customize: "CUSTOMIZE",
     nav_about: "ABOUT",
     nav_contact: "CONTACT",
     lang_btn: "عربي",
-    currency_symbol: "$",
 
-    // Home
     hero_tag: "More Than a Box",
     hero_title: "A Box. A Surprise. A Moment.",
     hero_desc: "Turning ordinary moments into memorable surprises through meticulously curated boxes and refined elegance.",
     hero_cta_discover: "DISCOVER BOXES",
     hero_cta_customize: "CUSTOMIZE YOUR BOX",
+
     concept_title: "Choose the moment. We create the surprise.",
     concept_desc: "Mystery Boxes designed for couples, friends, families, and every special moment.",
+
     moments_label: "MOMENTS",
     moments_title: "FOR EVERY MOMENT",
     moment_couples: "Couples",
@@ -225,6 +220,7 @@ const translations = {
     moment_valentines_sub: "Pure expression in supreme aesthetic",
     moment_ramadan: "Ramadan",
     moment_ramadan_sub: "Warm vibes and heartfelt meaningful gifts",
+
     how_label: "PROCESS",
     how_title: "HOW IT WORKS",
     how_step1_num: "01",
@@ -236,14 +232,15 @@ const translations = {
     how_step3_num: "03",
     how_step3_title: "Surprise",
     how_step3_desc: "Receive the signature box and unveil the magic together.",
+
     make_label: "CUSTOM EXPERIENCE",
     make_title: "MAKE IT YOURS",
     make_desc: "Build your gift box from scratch with absolute fluidity and precision.",
     make_btn: "CUSTOMIZE YOUR BOX →",
+
     ready_title: "Ready to create a surprise?",
     ready_btn: "BUILD YOUR BOX",
 
-    // Boxes Page
     boxes_page_title: "MYSTERY BOXES",
     boxes_page_subtitle: "Discover a box made for your moment.",
     filter_all: "ALL",
@@ -264,7 +261,6 @@ const translations = {
     btn_view_details: "CUSTOMIZE",
     in_stock: "IN STOCK",
 
-    // Customize Page
     cust_core_label: "CORE EXPERIENCE",
     cust_page_title: "CUSTOMIZE YOUR BOX",
     cust_step1_label: "01 TARGET",
@@ -337,7 +333,6 @@ const translations = {
     btn_edit: "← EDIT",
     btn_add_custom_cart: "ADD TO CART",
 
-    // About Page
     about_philosophy_label: "BRAND PHILOSOPHY",
     about_hero_title: "MORE THAN A BOX.",
     about_hero_desc: "MH is built around one simple idea: turning ordinary moments into memorable surprises that endure forever.",
@@ -350,7 +345,6 @@ const translations = {
     val_moments_title: "MOMENTS",
     val_moments_desc: "We do not merely deliver products; we construct shared human memories.",
 
-    // Contact Page
     contact_label: "GET IN TOUCH",
     contact_title: "LET'S TALK.",
     channel_wa: "WHATSAPP",
@@ -365,7 +359,6 @@ const translations = {
     field_message_ph: "How can we assist you?",
     btn_send_msg: "SEND MESSAGE",
 
-    // Cart & Footer
     cart_title: "YOUR CART",
     cart_empty: "Your cart is currently empty.",
     cart_total: "Total",
@@ -396,8 +389,8 @@ const I18n = {
     document.documentElement.lang = lang;
     document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
     document.body.setAttribute('data-lang', lang);
+    document.body.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
 
-    // تحديث كل عنصر يحمل data-i18n
     document.querySelectorAll('[data-i18n]').forEach(el => {
       const key = el.getAttribute('data-i18n');
       if (translations[lang] && translations[lang][key]) {
@@ -405,7 +398,6 @@ const I18n = {
       }
     });
 
-    // تحديث الـ placeholders في الفورم
     document.querySelectorAll('[data-i18n-ph]').forEach(el => {
       const key = el.getAttribute('data-i18n-ph');
       if (translations[lang] && translations[lang][key]) {
@@ -413,7 +405,6 @@ const I18n = {
       }
     });
 
-    // تحديث نص زر التبديل
     document.querySelectorAll('.lang-toggle-btn').forEach(btn => {
       btn.innerText = translations[lang].lang_btn;
     });
