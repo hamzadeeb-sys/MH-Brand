@@ -1,57 +1,116 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // 1. إدارة تحديد العناصر التفاعلية
-  const selectionItems = document.querySelectorAll('.selection-item');
+  // Mobile Hamburger Toggle
+  const hamburgerBtn = document.getElementById('hamburgerBtn');
+  const navMenu = document.getElementById('navMenu');
 
-  selectionItems.forEach(item => {
-    const input = item.querySelector('input');
-    if (!input) return;
+  if (hamburgerBtn && navMenu) {
+    hamburgerBtn.addEventListener('click', () => {
+      navMenu.classList.toggle('open');
+    });
+  }
 
-    // تهيئة الحالة الأولية
-    if (input.checked) {
-      item.classList.add('selected');
-    }
+  // Cart Drawer open/close triggers
+  const cartTrigger = document.getElementById('cartTriggerBtn');
+  const cartClose = document.getElementById('cartCloseBtn');
+  const drawerOverlay = document.getElementById('cartDrawerOverlay');
 
-    item.addEventListener('click', () => {
-      if (input.type === 'radio') {
-        const groupName = input.name;
-        document.querySelectorAll(`input[name="${groupName}"]`).forEach(radio => {
-          radio.closest('.selection-item').classList.remove('selected');
-        });
-        input.checked = true;
-        item.classList.add('selected');
-      } else if (input.type === 'checkbox') {
-        input.checked = !input.checked;
-        item.classList.toggle('selected', input.checked);
-      }
+  if (cartTrigger) cartTrigger.addEventListener('click', () => MHStore.openDrawer());
+  if (cartClose) cartClose.addEventListener('click', () => MHStore.closeDrawer());
+  if (drawerOverlay) {
+    drawerOverlay.addEventListener('click', (e) => {
+      if (e.target === drawerOverlay) MHStore.closeDrawer();
+    });
+  }
+
+  // Filter Buttons on boxes.html
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const productCards = document.querySelectorAll('.product-card');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const filter = btn.getAttribute('data-filter');
+      productCards.forEach(card => {
+        if (filter === 'all' || card.getAttribute('data-category') === filter) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
     });
   });
 
-  // 2. إرسال الطلب المخصص إلى WhatsApp
-  const sendOrderBtn = document.getElementById('sendWhatsAppOrderBtn');
-  if (sendOrderBtn) {
-    sendOrderBtn.addEventListener('click', () => {
-      // استبدل هذا الرقم برقم الواتساب الخاص بك بالصيغة الدولية بدون + (مثال: 9639xxxxxxxx)
-      const phoneNumber = "YOUR_PHONE_NUMBER";
+  // Step-by-Step Customizer Logic (customize.html)
+  const stepViews = document.querySelectorAll('.step-view');
+  const stepItems = document.querySelectorAll('.progress-step-item');
+  let currentStep = 1;
 
-      const selectedBox = document.querySelector('input[name="box_type"]:checked')?.value || 'غير محدد';
-      const selectedTarget = document.querySelector('input[name="target_gender"]:checked')?.value || 'غير محدد';
-      
-      const addons = [];
-      document.querySelectorAll('input[name="addons"]:checked').forEach(addon => {
-        addons.push(addon.value);
+  window.goToStep = function(stepNum) {
+    currentStep = stepNum;
+    stepViews.forEach(view => {
+      view.classList.toggle('active', parseInt(view.getAttribute('data-step')) === currentStep);
+    });
+    stepItems.forEach(item => {
+      item.classList.toggle('active', parseInt(item.getAttribute('data-step')) <= currentStep);
+    });
+
+    if (currentStep === 5) {
+      updateReviewSummary();
+    }
+  };
+
+  // Option selection logic
+  document.querySelectorAll('.custom-options-grid').forEach(grid => {
+    const isMulti = grid.hasAttribute('data-multi');
+    grid.querySelectorAll('.option-box').forEach(box => {
+      box.addEventListener('click', () => {
+        if (!isMulti) {
+          grid.querySelectorAll('.option-box').forEach(b => b.classList.remove('selected'));
+          box.classList.add('selected');
+        } else {
+          box.classList.toggle('selected');
+        }
       });
-      const addonsText = addons.length > 0 ? addons.join('، ') : 'لا يوجد';
+    });
+  });
 
-      const message = `مرحباً MH Brand 👋\nأود طلب وتجهيز بوكس جديد بالتفاصيل التالية:\n\n` +
-                      `🎁 نوع الصندوق: ${selectedBox}\n` +
-                      `👤 الفئة: ${selectedTarget}\n` +
-                      `✨ الإضافات: ${addonsText}\n\n` +
-                      `يرجى تزويدي بالسعر وتأكيد الطلب. شكراً لكم!`;
+  function updateReviewSummary() {
+    const target = document.querySelector('[data-step="1"] .option-box.selected h4')?.innerText || 'Not Specified';
+    const occasion = document.querySelector('[data-step="2"] .option-box.selected h4')?.innerText || 'Not Specified';
+    
+    const items = [];
+    document.querySelectorAll('[data-step="3"] .option-box.selected h4').forEach(h => items.push(h.innerText));
+    const itemsStr = items.length ? items.join(', ') : 'Curated Surprise Items';
 
-      const encodedMessage = encodeURIComponent(message);
-      const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+    const cardNote = document.getElementById('cardMessageInput')?.value || 'No personal message';
 
-      window.open(whatsappUrl, '_blank');
+    const reviewTarget = document.getElementById('summaryTarget');
+    const reviewOccasion = document.getElementById('summaryOccasion');
+    const reviewItems = document.getElementById('summaryItems');
+    const reviewNote = document.getElementById('summaryNote');
+
+    if (reviewTarget) reviewTarget.innerText = target;
+    if (reviewOccasion) reviewOccasion.innerText = occasion;
+    if (reviewItems) reviewItems.innerText = itemsStr;
+    if (reviewNote) reviewNote.innerText = cardNote;
+  }
+
+  // Add customized box to cart
+  const addCustomBoxBtn = document.getElementById('addCustomBoxBtn');
+  if (addCustomBoxBtn) {
+    addCustomBoxBtn.addEventListener('click', () => {
+      const target = document.getElementById('summaryTarget')?.innerText;
+      const occasion = document.getElementById('summaryOccasion')?.innerText;
+      const note = document.getElementById('summaryNote')?.innerText;
+
+      MHStore.addItem({
+        id: 'custom-' + Date.now(),
+        title: 'Custom Mystery Box',
+        price: 85.00,
+        details: `For: ${target} | Occasion: ${occasion} | Note: "${note}"`
+      });
     });
   }
 });
