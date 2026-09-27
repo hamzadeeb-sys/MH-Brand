@@ -1,3 +1,0 @@
-User-agent: *
-Allow: /
-Sitemap: https://hamzadeeb-sys.github.io/MH-Brand/sitemap.xml
