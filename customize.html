@@ -8,6 +8,15 @@
   <link rel="stylesheet" href="css/main.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
   <style>
+    /* حل المشكلة: إخفاء الخطوات غير النشطة وإظهار الحالية فقط */
+    .step-view {
+      display: none !important;
+      width: 100%;
+    }
+    .step-view.active {
+      display: block !important;
+    }
+
     .stepper-nav {
       display: flex;
       justify-content: center;
@@ -181,7 +190,7 @@
           <button class="stepper-btn" data-step="5" onclick="goToStep(5)">05 <span data-i18n="step5_tab">مراجعة وتأكيد</span></button>
         </div>
 
-        <!-- الخطوة 01: الحجم والطابع بدون أي تحديد افتراضي -->
+        <!-- الخطوة 01: تظهر وحدها فقط -->
         <div class="step-view active" data-step="1">
           <div class="custom-section-title" data-i18n="box_size_title">1. اختر حجم وفئة الصندوق</div>
           <p class="custom-section-sub" data-i18n="box_size_sub">حدد الباقة المناسبة لميزانيتك وعدد الهدايا المتضمنة.</p>
@@ -262,7 +271,7 @@
           <button class="btn btn-primary" style="margin-top: 10px;" onclick="goToStep(2)" data-i18n="btn_continue">متابعة ←</button>
         </div>
 
-        <!-- الخطوة 02: لمن هذا الصندوق وتفاصيله -->
+        <!-- الخطوة 02: تظهر فقط عند الضغط على متابعة -->
         <div class="step-view" data-step="2">
           <div class="custom-section-title" data-i18n="cust_s1_title">2. لمن هذا الصندوق؟</div>
           <p class="custom-section-sub" data-i18n="cust_s1_desc">اختر صلة القرابة أو المعرفة لتخصيص محتوى الهدية بدقة.</p>
@@ -314,33 +323,27 @@
           </div>
         </div>
 
-        <!-- الخطوة 03: المناسبة (18 خياراً، 3 في كل سطر بالتساوي) -->
+        <!-- الخطوة 03: المناسبة -->
         <div class="step-view" data-step="3">
           <div class="custom-section-title" data-i18n="cust_s2_title">3. ما هي المناسبة؟</div>
           <p class="custom-section-sub" data-i18n="cust_s2_desc">اختر المناسبة ليتم مواءمة التغليف ورسالة الإهداء والمفاجآت معها.</p>
           
           <div class="grid-3-cols" id="occasionGrid">
-            <!-- سطر 1 -->
             <div class="option-box" data-value="Birthday"><h4 data-i18n="occ_birthday">عيد ميلاد</h4><span data-i18n="occ_birthday_desc">سنة جديدة مليئة بالفرح</span></div>
             <div class="option-box" data-value="Valentine's"><h4 data-i18n="occ_valentines">عيد حب</h4><span data-i18n="occ_valentines_desc">تعبير رقيق عن المشاعر</span></div>
             <div class="option-box" data-value="Wedding Anniversary"><h4 data-i18n="occ_wedding_anniv">ذكرى زواج</h4><span data-i18n="occ_wedding_anniv_desc">تخليد لأجمل رباط</span></div>
-            <!-- سطر 2 -->
             <div class="option-box" data-value="Relationship Anniversary"><h4 data-i18n="occ_rel_anniv">ذكرى ارتباط</h4><span data-i18n="occ_rel_anniv_desc">احتفال ببدء الحكاية</span></div>
             <div class="option-box" data-value="Engagement"><h4 data-i18n="occ_engagement">خطوبة</h4><span data-i18n="occ_engagement_desc">مباركة بالخطوة الأولى</span></div>
             <div class="option-box" data-value="Wedding"><h4 data-i18n="occ_wedding">زفاف</h4><span data-i18n="occ_wedding_desc">فخامة تليق باليوم الكبير</span></div>
-            <!-- سطر 3 -->
             <div class="option-box" data-value="Graduation"><h4 data-i18n="occ_graduation">تخرج</h4><span data-i18n="occ_graduation_desc">تتويج سنوات التعب</span></div>
             <div class="option-box" data-value="Success / Milestone"><h4 data-i18n="occ_success">نجاح</h4><span data-i18n="occ_success_desc">فرحة إنجاز مستحق</span></div>
             <div class="option-box" data-value="New Job / Promotion"><h4 data-i18n="occ_promotion">وظيفة أو ترقية</h4><span data-i18n="occ_promotion_desc">انطلاقة مهنية جديدة</span></div>
-            <!-- سطر 4 -->
             <div class="option-box" data-value="Mother's Day"><h4 data-i18n="occ_mothers_day">عيد الأم</h4><span data-i18n="occ_mothers_day_desc">لأغلى قلب بالوجود</span></div>
             <div class="option-box" data-value="Father's Day"><h4 data-i18n="occ_fathers_day">عيد الأب</h4><span data-i18n="occ_fathers_day_desc">لسند الحياة والقدوة</span></div>
             <div class="option-box" data-value="Ramadan"><h4 data-i18n="occ_ramadan">رمضان</h4><span data-i18n="occ_ramadan_desc">أجواء دافئة وهدايا أصيلة</span></div>
-            <!-- سطر 5 -->
             <div class="option-box" data-value="Newborn Baby"><h4 data-i18n="occ_newborn">مولود جديد</h4><span data-i18n="occ_newborn_desc">مباركة بقدوم الفرح</span></div>
             <div class="option-box" data-value="Get Well Soon / Welcome Back"><h4 data-i18n="occ_getwell">سلامتك</h4><span data-i18n="occ_getwell_desc">حمد لله على السلامة أو عودة سفر</span></div>
             <div class="option-box" data-value="Gratitude & Thanks"><h4 data-i18n="occ_gratitude">شكر وامتنان</h4><span data-i18n="occ_gratitude_desc">تقدير صادق لجهد أو موقف</span></div>
-            <!-- سطر 6 -->
             <div class="option-box" data-value="Apology"><h4 data-i18n="occ_apology">اعتذار</h4><span data-i18n="occ_apology_desc">تطييب خاطر بأسلوب راقٍ</span></div>
             <div class="option-box" data-value="Just Because"><h4 data-i18n="occ_justbecause">بدون مناسبة</h4><span data-i18n="occ_justbecause_desc">مفاجأة عفوية تصنع اليوم</span></div>
             <div class="option-box" data-value="Other Special Occasion"><h4 data-i18n="occ_other">مناسبة خاصة</h4><span data-i18n="occ_other_desc">اكتب تفاصيلها بالملاحظات</span></div>
@@ -352,7 +355,7 @@
           </div>
         </div>
 
-        <!-- الخطوة 04: الإضافات المتناسقة (6 خيارات = 3 في السطر) والكرت -->
+        <!-- الخطوة 04: الإضافات والكرت -->
         <div class="step-view" data-step="4">
           <div class="custom-section-title" data-i18n="step4_addons_title">4. الإضافات وبطاقة الإهداء</div>
           <p class="custom-section-sub" data-i18n="step4_addons_sub">اختر الإضافات الخاصة ثم اكتب رسالة الصندوق.</p>
@@ -405,7 +408,7 @@
           </div>
         </div>
 
-        <!-- الخطوة 05: المعاينة، حفظ كرت الطلب والتأكيد -->
+        <!-- الخطوة 05: المراجعة والتأكيد -->
         <div class="step-view" data-step="5">
           <div class="custom-section-title" data-i18n="cust_s5_title">5. مراجعة تفاصيل الصندوق وتأكيده</div>
           <p class="custom-section-sub" data-i18n="cust_s5_desc">اضغط على زر التأكيد ليتم حفظ كرت الطلب لديك وفتح المحادثة معنا مباشرة.</p>
