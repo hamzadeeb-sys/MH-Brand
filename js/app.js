@@ -1,21 +1,19 @@
 /* ===================================================
-   MH Brand - Complete Master Engine (With Auto Scroll-to-Top)
+   MH Brand - Master Engine
    =================================================== */
 
-// 1. منع المتصفح من حفظ مكان النزول والعودة لرأس الصفحة عند التحديث
 if ('scrollRestoration' in history) {
   history.scrollRestoration = 'manual';
 }
 window.scrollTo(0, 0);
 
 const MH_CONFIG = {
-  whatsappNumber: "963900000000", // ضع رقمك بالصيغة الدولية هنا بدون +
+  whatsappNumber: "963900000000", // ضع رقمك بالصيغة الدولية بدون +
   instagramUsername: "mh_brand"
 };
 
 const I18N_DATA = {
   ar: {
-    // Shared Navigation & Footer
     nav_home: "الرئيسية",
     nav_boxes: "البوكسات",
     nav_customize: "تخصيص الصندوق",
@@ -25,7 +23,6 @@ const I18N_DATA = {
     footer_surprise_slogan: "اترك المفاجأة علينا",
     footer_rights: "جميع الحقوق محفوظة © 2026 MH Brand.",
 
-    // Index Page
     hero_tag: "أكثر من مجرد صندوق",
     hero_title: "صندوق. مفاجأة. لحظة لا تُنسى.",
     hero_desc: "نحوّل اللحظات العادية إلى ذكريات استثنائية عبر صناديق غامضة صُممت بعناية تامة وبأعلى درجات الفخامة.",
@@ -60,7 +57,6 @@ const I18N_DATA = {
     make_desc: "صمّم صندوقك بالكامل من الصفر بدقة وانسيابية تامة.",
     make_btn: "تخصيص البوكس الآن ←",
 
-    // Boxes Page
     boxes_title: "صناديق المفاجآت",
     boxes_sub: "اكتشف صندوقاً صُمم خصيصاً لمناسبتك.",
     filter_all: "الكل",
@@ -73,15 +69,14 @@ const I18N_DATA = {
     box_noir_desc: "مزيج ملكي من العطور الفاخرة، والإكسسوارات المصنوعة يدوياً.",
     box_suite_title: "جناح العروسين الفاخر",
     box_suite_desc: "تنسيق متكامل للعروسين بتغليف شمعي فاخر وبطاقة تهنئة.",
-    box_milestone_title: "صندوق أعياد الميلاد",
-    box_milestone_desc: "صندوق مفاجآت يحمل هدايا مختارة بدقة تتناسب مع اهتمامات الشخص.",
+    box_milestone_title: "صندوق أعياد الميلاد والعائلة",
+    box_milestone_desc: "صندوق مفاجآت يحمل هدايا مختارة بدقة تتناسب مع اهتمامات العائلة والأطفال.",
     box_bond_title: "صندوق الصداقة الدائمة",
     box_bond_desc: "هدية أنيقة ومفاجئة تعبّر عن الامتنان والرفقة الدائمة.",
     btn_add_cart: "إضافة للسلة",
     btn_view_details: "تخصيص البوكس",
     in_stock: "متوفر للطلب",
 
-    // About Page
     about_label: "فلسفة البراند",
     about_title: "أكثر من مجرد صندوق.",
     about_desc: "تأسست MH حول فكرة واحدة بسيطة: تحويل اللحظات العادية إلى مفاجآت لا تُنسى تبقى في الذاكرة للأبد.",
@@ -94,7 +89,6 @@ const I18N_DATA = {
     val_moments_title: "اللحظات (MOMENTS)",
     val_moments_desc: "نحن لا نبيع مجرد منتج مغلف، بل نبتكر تجربة وجدانية تصنع ذكريات دائمة.",
 
-    // Contact Page
     contact_label: "ابقَ على تواصل",
     contact_title: "دعنا نتحدث.",
     contact_desc: "نسعد بتلقي استفساراتك وطلباتك الخاصة مباشرة.",
@@ -109,7 +103,6 @@ const I18N_DATA = {
     field_message_ph: "كيف يمكننا مساعدتك؟",
     btn_send: "إرسال الرسالة",
 
-    // Customize Page
     cust_label: "تجربة التخصيص",
     cust_title: "صمّم صندوق مفاجأتك",
     step1_tab: "الحجم والطابع",
@@ -123,7 +116,6 @@ const I18N_DATA = {
     btn_edit: "← تعديل البيانات",
     btn_confirm_capture: "تأكيد وحفظ الطلب كصورة ومتابعة عبر واتساب",
 
-    // Step 1
     box_size_title: "1. اختر حجم وفئة الصندوق",
     box_size_sub: "حدد الباقة المناسبة لميزانيتك وعدد الهدايا المتضمنة.",
     tier_starter_badge: "2 - 3 هدايا",
@@ -161,7 +153,6 @@ const I18N_DATA = {
     vibe2_opt3_title: "مختلطة (مألوفة + غريبة)",
     vibe2_opt3_desc: "توازن ممتع بين الكلاسيكي والمفاجئ",
 
-    // Step 2
     cust_s1_title: "2. لمن هذا الصندوق؟",
     cust_s1_desc: "اختر صلة القرابة أو المعرفة لتخصيص محتوى الهدية بدقة.",
     rel_spouse: "زوج / زوجة",
@@ -200,7 +191,6 @@ const I18N_DATA = {
     lbl_interests_avoid: "اهتمامات المستلم أو محظورات يجب تجنبها ضمن الصندوق",
     ph_interests_avoid: "مثلاً: يحب القراءة والقهوة / تجنب العطور لوجود حساسية...",
 
-    // Step 3
     cust_s2_title: "3. ما هي المناسبة؟",
     cust_s2_desc: "اختر المناسبة ليتم مواءمة التغليف ورسالة الإهداء والمفاجآت معها.",
     occ_birthday: "عيد ميلاد",
@@ -240,7 +230,6 @@ const I18N_DATA = {
     occ_other: "مناسبة خاصة",
     occ_other_desc: "اكتب تفاصيلها بالملاحظات",
 
-    // Step 4
     step4_addons_title: "4. الإضافات وبطاقة الإهداء",
     step4_addons_sub: "اختر الإضافات الخاصة ثم اكتب رسالة الصندوق.",
     addon_card_title: "بطاقة إهداء يدوية (+1$)",
@@ -262,7 +251,6 @@ const I18N_DATA = {
     lbl_extra_notes: "ملاحظات أخيرة خاصة بالطلب (إن وجدت)",
     ph_extra_notes: "إذا اخترت (مناسبة خاصة) أو لديك أي تفصيل تحب أن نراعيه...",
 
-    // Step 5 Review
     cust_s5_title: "5. مراجعة تفاصيل الصندوق وتأكيده",
     cust_s5_desc: "اضغط على زر التأكيد ليتم حفظ كرت الطلب لديك وفتح المحادثة معنا مباشرة.",
     sum_lbl_tier: "فئة وميزانية الصندوق:",
@@ -286,7 +274,6 @@ const I18N_DATA = {
   },
 
   en: {
-    // Shared Navigation & Footer
     nav_home: "HOME",
     nav_boxes: "BOXES",
     nav_customize: "CUSTOMIZE",
@@ -296,7 +283,6 @@ const I18N_DATA = {
     footer_surprise_slogan: "LET US SURPRISE YOU",
     footer_rights: "© 2026 MH Brand. All Rights Reserved.",
 
-    // Index Page
     hero_tag: "More Than a Box",
     hero_title: "A Box. A Surprise. A Moment.",
     hero_desc: "Turning ordinary moments into memorable surprises through meticulously curated boxes and refined elegance.",
@@ -331,7 +317,6 @@ const I18N_DATA = {
     make_desc: "Build your gift box from scratch with absolute fluidity and precision.",
     make_btn: "CUSTOMIZE YOUR BOX →",
 
-    // Boxes Page
     boxes_title: "MYSTERY BOXES",
     boxes_sub: "Discover a box made for your moment.",
     filter_all: "ALL",
@@ -352,7 +337,6 @@ const I18N_DATA = {
     btn_view_details: "CUSTOMIZE",
     in_stock: "IN STOCK",
 
-    // About Page
     about_label: "BRAND PHILOSOPHY",
     about_title: "MORE THAN A BOX.",
     about_desc: "MH is built around one simple idea: turning ordinary moments into memorable surprises that endure forever.",
@@ -365,7 +349,6 @@ const I18N_DATA = {
     val_moments_title: "MOMENTS",
     val_moments_desc: "We do not merely deliver products; we construct shared human memories.",
 
-    // Contact Page
     contact_label: "CONNECT",
     contact_title: "LET'S TALK.",
     contact_desc: "We look forward to receiving your inquiries and special orders.",
@@ -380,7 +363,6 @@ const I18N_DATA = {
     field_message_ph: "How can we assist you?",
     btn_send: "SEND MESSAGE",
 
-    // Customize Page
     cust_label: "CUSTOM EXPERIENCE",
     cust_title: "CUSTOMIZE YOUR BOX",
     step1_tab: "TIER & VIBE",
@@ -394,7 +376,6 @@ const I18N_DATA = {
     btn_edit: "← EDIT DETAILS",
     btn_confirm_capture: "CONFIRM & SAVE RECEIPT TO WHATSAPP",
 
-    // Step 1
     box_size_title: "1. Select Box Tier & Budget",
     box_size_sub: "Choose the package tailored to your budget and items count.",
     tier_starter_badge: "2 - 3 Gifts",
@@ -432,7 +413,6 @@ const I18N_DATA = {
     vibe2_opt3_title: "Mixed (Familiar + Unusual)",
     vibe2_opt3_desc: "An exciting balance of classic & daring",
 
-    // Step 2
     cust_s1_title: "2. Who is this box for?",
     cust_s1_desc: "Select the relationship to tailor the gift curation perfectly.",
     rel_spouse: "Spouse",
@@ -471,7 +451,6 @@ const I18N_DATA = {
     lbl_interests_avoid: "Interests & Things to Avoid",
     ph_interests_avoid: "e.g. Loves espresso and reading / Avoid perfumes due to allergies...",
 
-    // Step 3
     cust_s2_title: "3. What's the occasion?",
     cust_s2_desc: "Match the wrapping, card aesthetic, and surprises to the celebration.",
     occ_birthday: "Birthday",
@@ -511,7 +490,6 @@ const I18N_DATA = {
     occ_other: "Special Occasion",
     occ_other_desc: "Detail it in the special notes below",
 
-    // Step 4
     step4_addons_title: "4. Add-ons & Gift Message",
     step4_addons_sub: "Choose special touches and write your personal note.",
     addon_card_title: "Handwritten Card (+1$)",
@@ -533,7 +511,6 @@ const I18N_DATA = {
     lbl_extra_notes: "Additional Notes (Optional)",
     ph_extra_notes: "If you selected 'Special Occasion' or have specific requests...",
 
-    // Step 5 Review
     cust_s5_title: "5. Review & Confirm Your Box",
     cust_s5_desc: "Click confirm to save the official receipt and open WhatsApp directly.",
     sum_lbl_tier: "Box Tier & Budget:",
@@ -563,6 +540,8 @@ const AppEngine = {
   init() {
     this.applyLanguage(this.lang);
     this.bindGlobalEvents();
+    this.initProductFilters();
+    this.initContactForm();
   },
 
   applyLanguage(lang) {
@@ -576,311 +555,4 @@ const AppEngine = {
 
     document.querySelectorAll("[data-i18n]").forEach(el => {
       const key = el.getAttribute("data-i18n");
-      if (I18N_DATA[lang] && I18N_DATA[lang][key]) {
-        el.textContent = I18N_DATA[lang][key];
-      }
-    });
-
-    document.querySelectorAll("[data-i18n-ph]").forEach(el => {
-      const key = el.getAttribute("data-i18n-ph");
-      if (I18N_DATA[lang] && I18N_DATA[lang][key]) {
-        el.setAttribute("placeholder", I18N_DATA[lang][key]);
-      }
-    });
-
-    document.querySelectorAll(".lang-btn, .lang-toggle-btn").forEach(btn => {
-      btn.textContent = I18N_DATA[lang].lang_btn;
-    });
-
-    if (document.querySelector(".step-view[data-step='5'].active")) {
-      updateReviewDisplay();
-    }
-  },
-
-  toggleLanguage() {
-    this.applyLanguage(this.lang === "ar" ? "en" : "ar");
-  },
-
-  bindGlobalEvents() {
-  bindGlobalEvents() {
-    document.querySelectorAll(".lang-btn, .lang-toggle-btn").forEach(btn => {
-      btn.addEventListener("click", () => this.toggleLanguage());
-    });
-
-    const hamburger = document.getElementById("hamburgerBtn");
-    const menu = document.getElementById("navMenu");
-    if (hamburger && menu) {
-      hamburger.addEventListener("click", () => menu.classList.toggle("open"));
-    }
-
-    // تفعيل فلترة البوكسات
-    this.bindBoxesFilter();
-
-    document.querySelectorAll(".custom-options-grid, .grid-3-cols").forEach(grid => {
-      const isMulti = grid.hasAttribute("data-multi");
-      grid.querySelectorAll(".option-box").forEach(box => {
-        box.addEventListener("click", () => {
-          if (!isMulti) {
-            grid.querySelectorAll(".option-box").forEach(b => b.classList.remove("selected"));
-            box.classList.add("selected");
-          } else {
-            box.classList.toggle("selected");
-          }
-        });
-      });
-    });
-  },
-
-  bindBoxesFilter() {
-    const filterBtns = document.querySelectorAll(".filter-btn");
-    const cards = document.querySelectorAll(".product-card");
-    if (!filterBtns.length || !cards.length) return;
-
-    filterBtns.forEach(btn => {
-      btn.addEventListener("click", () => {
-        filterBtns.forEach(b => b.classList.remove("active"));
-        btn.classList.add("active");
-
-        const targetCat = btn.getAttribute("data-filter");
-        cards.forEach(card => {
-          const cardCat = card.getAttribute("data-cat");
-          if (targetCat === "all" || cardCat === targetCat) {
-            card.style.display = "flex";
-            requestAnimationFrame(() => {
-              card.style.opacity = "1";
-              card.style.transform = "scale(1)";
-            });
-          } else {
-            card.style.opacity = "0";
-            card.style.transform = "scale(0.96)";
-            setTimeout(() => {
-              card.style.display = "none";
-            }, 200);
-          }
-        });
-      });
-    });
-  }
-
-    document.querySelectorAll(".lang-btn, .lang-toggle-btn").forEach(btn => {
-      btn.addEventListener("click", () => this.toggleLanguage());
-    });
-
-    const hamburger = document.getElementById("hamburgerBtn");
-    const menu = document.getElementById("navMenu");
-    if (hamburger && menu) {
-      hamburger.addEventListener("click", () => menu.classList.toggle("open"));
-    }
-
-    document.querySelectorAll(".custom-options-grid, .grid-3-cols").forEach(grid => {
-      const isMulti = grid.hasAttribute("data-multi");
-      grid.querySelectorAll(".option-box").forEach(box => {
-        box.addEventListener("click", () => {
-          if (!isMulti) {
-            grid.querySelectorAll(".option-box").forEach(b => b.classList.remove("selected"));
-            box.classList.add("selected");
-          } else {
-            box.classList.toggle("selected");
-          }
-        });
-      });
-    });
-  }
-};
-
-function collectCustomBoxData() {
-  const isEn = AppEngine.lang === "en";
-  const selectedTier = document.querySelector("#boxTierGrid .option-box.selected");
-  const basePrice = selectedTier ? parseFloat(selectedTier.getAttribute("data-price")) : 0;
-  const tierName = selectedTier 
-    ? selectedTier.querySelector("h4").textContent + " (" + selectedTier.querySelector(".tier-badge").textContent + ")" 
-    : (isEn ? "Not Selected" : "لم يتم التحديد");
-
-  const vibe1 = document.querySelector("#vibeTier1Grid .option-box.selected h4")?.textContent || (isEn ? "Not Selected" : "لم يتم التحديد");
-  const vibe2 = document.querySelector("#vibeTier2Grid .option-box.selected h4")?.textContent || (isEn ? "Not Selected" : "لم يتم التحديد");
-
-  const relation = document.querySelector("#recipientRelationGrid .option-box.selected h4")?.textContent || (isEn ? "Not Selected" : "لم يتم التحديد");
-  const genderEl = document.getElementById("recipGenderSelect");
-  const gender = (genderEl && genderEl.selectedIndex > 0) ? genderEl.options[genderEl.selectedIndex].text : (isEn ? "Not Specified" : "لم يحدد");
-  const age = document.getElementById("recipAgeInput")?.value || (isEn ? "Not Specified" : "غير محدد");
-  const favColor = document.getElementById("recipFavColorInput")?.value || (isEn ? "Not Specified" : "غير محدد");
-  const interests = document.getElementById("recipInterestsInput")?.value || (isEn ? "None" : "لا يوجد");
-
-  const occasion = document.querySelector("#occasionGrid .option-box.selected h4")?.textContent || (isEn ? "Not Selected" : "لم يتم التحديد");
-
-  let addonsPrice = 0;
-  const addons = [];
-  document.querySelectorAll("#addonsGrid .option-box.selected").forEach(el => {
-    addonsPrice += parseFloat(el.getAttribute("data-price") || 0);
-    addons.push(el.querySelector("h4").textContent);
-  });
-
-  const recipName = document.getElementById("recipNameInput")?.value || (isEn ? "Anonymous" : "بدون اسم");
-  const cardMsg = document.getElementById("giftCardMsgInput")?.value || (isEn ? "No card note" : "لا توجد رسالة");
-  const extraNotes = document.getElementById("extraNotesInput")?.value || (isEn ? "None" : "لا توجد ملاحظات");
-
-  const totalPrice = basePrice + addonsPrice;
-
-  return {
-    tierSelected: !!selectedTier,
-    vibe1Selected: !!document.querySelector("#vibeTier1Grid .option-box.selected"),
-    vibe2Selected: !!document.querySelector("#vibeTier2Grid .option-box.selected"),
-    relationSelected: !!document.querySelector("#recipientRelationGrid .option-box.selected"),
-    occasionSelected: !!document.querySelector("#occasionGrid .option-box.selected"),
-    tierName,
-    vibe1,
-    vibe2,
-    relation,
-    gender,
-    age,
-    favColor,
-    interests,
-    occasion,
-    addons: addons.length > 0 ? addons.join(" + ") : (isEn ? "No special add-ons" : "بدون إضافات خاصة"),
-    recipName,
-    cardMsg,
-    extraNotes,
-    totalPrice
-  };
-}
-
-function updateReviewDisplay() {
-  const isEn = AppEngine.lang === "en";
-  const data = collectCustomBoxData();
-  const dateEl = document.getElementById("receiptDate");
-  if (dateEl) dateEl.textContent = new Date().toLocaleDateString(isEn ? 'en-US' : 'ar-EG');
-
-  document.getElementById("sumTier").textContent = data.tierName;
-  document.getElementById("sumVibe1").textContent = data.vibe1;
-  document.getElementById("sumVibe2").textContent = data.vibe2;
-  document.getElementById("sumRelation").textContent = data.relation;
-  document.getElementById("sumGenderAge").textContent = isEn ? `${data.gender} (Age: ${data.age})` : `${data.gender} (العمر: ${data.age})`;
-  document.getElementById("sumColor").textContent = data.favColor;
-  document.getElementById("sumInterests").textContent = data.interests;
-  document.getElementById("sumOccasion").textContent = data.occasion;
-  document.getElementById("sumAddons").textContent = data.addons;
-  document.getElementById("sumName").textContent = data.recipName;
-  document.getElementById("sumCardMsg").textContent = data.cardMsg;
-  document.getElementById("sumExtraNotes").textContent = data.extraNotes;
-  document.getElementById("sumFinalPrice").textContent = `$${data.totalPrice.toFixed(2)}`;
-}
-
-// التمرير التلقائي لأعلى الصفحة عند الانتقال بين الخطوات
-window.goToStep = function(stepNum) {
-  const data = collectCustomBoxData();
-  const lang = AppEngine.lang;
-
-  if (stepNum > 1 && (!data.tierSelected || !data.vibe1Selected || !data.vibe2Selected)) {
-    alert(I18N_DATA[lang].alert_step1);
-    return;
-  }
-  if (stepNum > 2 && !data.relationSelected) {
-    alert(I18N_DATA[lang].alert_step2);
-    return;
-  }
-  if (stepNum > 3 && !data.occasionSelected) {
-    alert(I18N_DATA[lang].alert_step3);
-    return;
-  }
-
-  document.querySelectorAll(".step-view").forEach(v => {
-    v.classList.toggle("active", parseInt(v.getAttribute("data-step")) === stepNum);
-  });
-  document.querySelectorAll(".stepper-btn").forEach(p => {
-    p.classList.toggle("active", parseInt(p.getAttribute("data-step")) === stepNum);
-  });
-
-  // العودة إلى رأس الصفحة بسلاسة
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-
-  if (stepNum === 5) {
-    updateReviewDisplay();
-  }
-};
-
-window.processOrderAndCapture = function() {
-  const btn = document.getElementById("btnSubmitAndCapture");
-  const lang = AppEngine.lang;
-  const isEn = lang === "en";
-  btn.textContent = I18N_DATA[lang].btn_processing;
-  btn.disabled = true;
-
-  const data = collectCustomBoxData();
-  const receiptElement = document.getElementById("orderReceiptCapture");
-
-  html2canvas(receiptElement, {
-    scale: 2,
-    backgroundColor: "#121214"
-  }).then(canvas => {
-    const link = document.createElement("a");
-    link.download = `MH-Order-${Date.now()}.png`;
-    link.href = canvas.toDataURL("image/png");
-    link.click();
-
-    let waText = "";
-    if (isEn) {
-      waText = 
-        `Hello MH Brand 👋\n` +
-        `I would like to confirm my Mystery Box order:\n\n` +
-        `📦 Tier & Budget: ${data.tierName}\n` +
-        `⚖️ Value Vibe: ${data.vibe1}\n` +
-        `🎭 Style Vibe: ${data.vibe2}\n` +
-        `👤 Recipient: ${data.relation} (${data.gender} - Age: ${data.age})\n` +
-        `🎨 Favorite Color: ${data.favColor}\n` +
-        `📌 Interests & Exclusions: ${data.interests}\n` +
-        `🎉 Occasion: ${data.occasion}\n` +
-        `✨ Add-ons: ${data.addons}\n` +
-        `🏷️ Recipient Name: ${data.recipName}\n` +
-        `💌 Card Message: "${data.cardMsg}"\n` +
-        `📝 Notes: ${data.extraNotes}\n\n` +
-        `💰 Total Amount: $${data.totalPrice.toFixed(2)}\n\n` +
-        `*(Attached receipt card just downloaded to verify details)*`;
-    } else {
-      waText = 
-        `مرحباً MH Brand 👋\n` +
-        `أود تأكيد طلب Mystery Box بالبيانات التالية:\n\n` +
-        `📦 باقة الصندوق: ${data.tierName}\n` +
-        `⚖️ طابع القيمة: ${data.vibe1}\n` +
-        `🎭 نمط الهدايا: ${data.vibe2}\n` +
-        `👤 المستلم: ${data.relation} (${data.gender} - العمر: ${data.age})\n` +
-        `🎨 اللون المفضل: ${data.favColor}\n` +
-        `📌 الاهتمامات والمحظورات: ${data.interests}\n` +
-        `🎉 المناسبة: ${data.occasion}\n` +
-        `✨ الإضافات: ${data.addons}\n` +
-        `🏷️ اسم المستلم: ${data.recipName}\n` +
-        `💌 رسالة الكرت: "${data.cardMsg}"\n` +
-        `📝 ملاحظات: ${data.extraNotes}\n\n` +
-        `💰 الإجمالي: $${data.totalPrice.toFixed(2)}\n\n` +
-        `*(مرفق لحضرتكم صورة كرت الطلب المحفوظة للتو لتأكيد التفاصيل)*`;
-    }
-
-    setTimeout(() => {
-      window.open(`https://wa.me/${MH_CONFIG.whatsappNumber}?text=${encodeURIComponent(waText)}`, "_blank");
-      btn.textContent = I18N_DATA[lang].btn_confirm_capture;
-      btn.disabled = false;
-    }, 1000);
-  }).catch(err => {
-    console.error("Error generating receipt image:", err);
-    btn.textContent = I18N_DATA[lang].btn_confirm_capture;
-    btn.disabled = false;
-  });
-};
-window.handleContactSubmit = function(event) {
-  event.preventDefault();
-  const name = document.getElementById("contactName").value.trim();
-  const info = document.getElementById("contactInfo").value.trim();
-  const msg = document.getElementById("contactMsg").value.trim();
-
-  const isEn = AppEngine.lang === "en";
-  let text = "";
-
-  if (isEn) {
-    text = `Hello MH Brand 👋\nNew Inquiry from Website:\n\n👤 Name: ${name}\n📞 Contact: ${info}\n💬 Message: ${msg}`;
-  } else {
-    text = `مرحباً MH Brand 👋\nاستفسار جديد من الموقع الإلكتروني:\n\n👤 الاسم: ${name}\n📞 وسيلة التواصل: ${info}\n💬 الرسالة: ${msg}`;
-  }
-
-  window.open(`https://wa.me/${MH_CONFIG.whatsappNumber}?text=${encodeURIComponent(text)}`, "_blank");
-};
-
-document.addEventListener("DOMContentLoaded", () => AppEngine.init());
+      if
