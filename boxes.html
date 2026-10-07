@@ -9,6 +9,7 @@
 </head>
 <body>
 
+  <!-- Header -->
   <header class="header">
     <div class="header-inner">
       <a href="index.html" class="brand-logo-wrap"><img src="Logo.png" alt="MH Logo"></a>
@@ -35,18 +36,20 @@
         <p style="color: var(--mh-cool-grey);" data-i18n="boxes_sub">اكتشف صندوقاً صُمم خصيصاً لمناسبتك.</p>
       </div>
 
+      <!-- Filters Bar -->
       <div class="filters-bar">
-        <button class="filter-btn active" data-filter="all" data-i18n="filter_all">الكل</button>
-        <button class="filter-btn" data-filter="couple" data-i18n="filter_couple">كابلز</button>
-        <button class="filter-btn" data-filter="fiance" data-i18n="filter_fiance">خطوبة</button>
-        <button class="filter-btn" data-filter="friend" data-i18n="filter_friend">أصدقاء</button>
-        <button class="filter-btn" data-filter="birthday" data-i18n="filter_birthday">عيد ميلاد</button>
-        <button class="filter-btn" data-filter="wedding" data-i18n="filter_wedding">زفاف</button>
+        <button type="button" class="filter-btn active" data-filter="all" onclick="filterProducts('all')" data-i18n="filter_all">الكل</button>
+        <button type="button" class="filter-btn" data-filter="couple" onclick="filterProducts('couple')" data-i18n="filter_couple">كابلز</button>
+        <button type="button" class="filter-btn" data-filter="fiance" onclick="filterProducts('fiance')" data-i18n="filter_fiance">خطوبة</button>
+        <button type="button" class="filter-btn" data-filter="friend" onclick="filterProducts('friend')" data-i18n="filter_friend">أصدقاء</button>
+        <button type="button" class="filter-btn" data-filter="birthday" onclick="filterProducts('birthday')" data-i18n="filter_birthday">عيد ميلاد</button>
+        <button type="button" class="filter-btn" data-filter="wedding" onclick="filterProducts('wedding')" data-i18n="filter_wedding">زفاف</button>
       </div>
 
+      <!-- Products Grid -->
       <div class="products-grid">
-        <!-- بوكس 1: صورة 0003 العطور والتغليف الفاخر -->
-        <div class="product-card" data-cat="couple">
+        <!-- بوكس 1 -->
+        <div class="product-card" data-cat="couple fiance">
           <div class="product-thumb">
             <img src="img/0003.jpg" alt="The Noir Edition" loading="lazy">
           </div>
@@ -63,8 +66,8 @@
           </div>
         </div>
 
-        <!-- بوكس 2: صورة 0001 البوكس الفاخر الكامل -->
-        <div class="product-card" data-cat="wedding">
+        <!-- بوكس 2 -->
+        <div class="product-card" data-cat="wedding fiance">
           <div class="product-thumb">
             <img src="img/0001.jpg" alt="Bride & Groom Suite" loading="lazy">
           </div>
@@ -81,7 +84,7 @@
           </div>
         </div>
 
-        <!-- بوكس 3: صورة 0002 بوكس الأطفال والعائلة -->
+        <!-- بوكس 3 -->
         <div class="product-card" data-cat="birthday">
           <div class="product-thumb">
             <img src="img/0002.jpg" alt="Kids & Family Milestone Box" loading="lazy">
@@ -99,8 +102,8 @@
           </div>
         </div>
 
-        <!-- بوكس 4: تكرار أنيق مع صورة 0001 -->
-        <div class="product-card" data-cat="friend">
+        <!-- بوكس 4 -->
+        <div class="product-card" data-cat="friend couple">
           <div class="product-thumb">
             <img src="img/0001.jpg" alt="Everyday Bond" loading="lazy">
           </div>
