@@ -9,18 +9,15 @@
 </head>
 <body>
 
-  <!-- Header موحد بدون أيقونة سلة قديمة -->
   <header class="header">
     <div class="header-inner">
-      <a href="index.html" class="brand-logo-wrap">
-        <img src="Logo.png" alt="MH Logo">
-      </a>
+      <a href="index.html" class="brand-logo-wrap"><img src="Logo.png" alt="MH Logo"></a>
       <ul class="nav-menu" id="navMenu">
         <li><a href="index.html" class="nav-link" data-i18n="nav_home">الرئيسية</a></li>
         <li><a href="boxes.html" class="nav-link" data-i18n="nav_boxes">البوكسات</a></li>
         <li><a href="customize.html" class="nav-link" data-i18n="nav_customize">تخصيص الصندوق</a></li>
         <li><a href="about.html" class="nav-link active" data-i18n="nav_about">عن البراند</a></li>
-        <li><a href="contact.html" class="nav-link" data-i18n="nav_contact">تواصل معنا</a></li>
+        <li><a href="contact.html" data-i18n="nav_contact">تواصل معنا</a></li>
       </ul>
       <div class="header-actions">
         <button class="lang-btn">EN</button>
@@ -32,41 +29,39 @@
   </header>
 
   <main class="main-content">
-    <div class="container-narrow" style="padding-top:70px; padding-bottom:70px; text-align: center;">
+    <div class="container" style="padding-top:70px; padding-bottom:70px;">
       <div class="section-label" data-i18n="about_label">فلسفة البراند</div>
-      <h1 style="font-size: 40px; margin-bottom: 20px;" data-i18n="about_title">أكثر من مجرد صندوق.</h1>
-      <p style="font-size: 18px; line-height: 1.8; color: var(--mh-white); margin-bottom: 40px; max-width: 650px; margin-inline: auto;" data-i18n="about_desc">
+      <h1 style="font-size: 42px; margin-bottom: 20px; font-weight:800;" data-i18n="about_title">أكثر من مجرد صندوق.</h1>
+      <p style="font-size: 19px; line-height: 1.8; color: var(--mh-white); margin-bottom: 50px; max-width: 850px; margin-inline: auto;" data-i18n="about_desc">
         تأسست MH حول فكرة واحدة بسيطة: تحويل اللحظات العادية إلى مفاجآت لا تُنسى تبقى في الذاكرة للأبد.
       </p>
 
-      <div style="border-top: var(--border-subtle); padding-top: 40px; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 28px; width: 100%;">
-        <div style="text-align: center;">
-          <div style="font-size: 16px; font-weight: 700; color: var(--mh-orange); margin-bottom: 8px;" data-i18n="val_surprise_title">الدهشة (SURPRISE)</div>
+      <!-- 4 بطاقات تتوزع بعرض الصفحة بالكامل -->
+      <div style="border-top: var(--border-subtle); padding-top: 50px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; width: 100%;">
+        <div class="moment-card">
+          <div style="font-size: 18px; font-weight: 700; color: var(--mh-orange); margin-bottom: 10px;" data-i18n="val_surprise_title">الدهشة (SURPRISE)</div>
           <p style="color: var(--mh-cool-grey); font-size: 14px; line-height: 1.7;" data-i18n="val_surprise_desc">عنصر الغموض والتشويق الراقي الذي يكسر رتابة الهدايا الكلاسيكية ويثير الفرح الحقيقي.</p>
         </div>
-        <div style="text-align: center;">
-          <div style="font-size: 16px; font-weight: 700; color: var(--mh-orange); margin-bottom: 8px;" data-i18n="val_style_title">الأناقة (STYLE)</div>
+        <div class="moment-card">
+          <div style="font-size: 18px; font-weight: 700; color: var(--mh-orange); margin-bottom: 10px;" data-i18n="val_style_title">الأناقة (STYLE)</div>
           <p style="color: var(--mh-cool-grey); font-size: 14px; line-height: 1.7;" data-i18n="val_style_desc">تصميم عصري بسيط وخالٍ من التعقيد يعكس الحداثة والجاذبية بهدوء وثقة.</p>
         </div>
-        <div style="text-align: center;">
-          <div style="font-size: 16px; font-weight: 700; color: var(--mh-orange); margin-bottom: 8px;" data-i18n="val_detail_title">الدقة (DETAIL)</div>
+        <div class="moment-card">
+          <div style="font-size: 18px; font-weight: 700; color: var(--mh-orange); margin-bottom: 10px;" data-i18n="val_detail_title">الدقة (DETAIL)</div>
           <p style="color: var(--mh-cool-grey); font-size: 14px; line-height: 1.7;" data-i18n="val_detail_desc">من نوع خامة الصندوق ورائحة التغليف حتى الختم والخط، كل تفصيل ينال عناية فائقة.</p>
         </div>
-        <div style="text-align: center;">
-          <div style="font-size: 16px; font-weight: 700; color: var(--mh-orange); margin-bottom: 8px;" data-i18n="val_moments_title">اللحظات (MOMENTS)</div>
+        <div class="moment-card">
+          <div style="font-size: 18px; font-weight: 700; color: var(--mh-orange); margin-bottom: 10px;" data-i18n="val_moments_title">اللحظات (MOMENTS)</div>
           <p style="color: var(--mh-cool-grey); font-size: 14px; line-height: 1.7;" data-i18n="val_moments_desc">نحن لا نبيع مجرد منتج مغلف، بل نبتكر تجربة وجدانية تصنع ذكريات دائمة.</p>
         </div>
       </div>
     </div>
   </main>
 
-  <!-- Unified Footer -->
   <footer class="footer">
     <div class="footer-top">
       <div class="footer-brand-box">
-        <a href="index.html" class="footer-logo-link">
-          <img src="Logo.png" alt="MH Logo" class="footer-logo-img">
-        </a>
+        <a href="index.html" class="footer-logo-link"><img src="Logo.png" alt="MH Logo" class="footer-logo-img"></a>
         <p class="footer-slogan" data-i18n="footer_surprise_slogan">اترك المفاجأة علينا</p>
       </div>
 
