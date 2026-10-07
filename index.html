@@ -3,174 +3,172 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MH — Official Website</title>
-  <link rel="icon" type="image/png" href="Logo.png">
-  <link rel="stylesheet" href="css/main.css">
+  <title data-ar="MH Brand | تجربة البوكسات الفاخرة" data-en="MH Brand | Luxury Box Experience">MH Brand | تجربة البوكسات الفاخرة</title>
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Header ثابت -->
-  <header class="header">
-    <div class="header-inner">
-      <a href="index.html" class="brand-logo-wrap">
-        <img src="Logo.png" alt="MH Logo">
-      </a>
-      <ul class="nav-menu" id="navMenu">
-        <li><a href="index.html" class="nav-link active" data-i18n="nav_home">الرئيسية</a></li>
-        <li><a href="boxes.html" class="nav-link" data-i18n="nav_boxes">البوكسات</a></li>
-        <li><a href="customize.html" class="nav-link" data-i18n="nav_customize">تخصيص الصندوق</a></li>
-        <li><a href="about.html" class="nav-link" data-i18n="nav_about">عن البراند</a></li>
-        <li><a href="contact.html" class="nav-link" data-i18n="nav_contact">تواصل معنا</a></li>
-      </ul>
-      <div class="header-actions">
-        <button class="lang-btn">EN</button>
-        <button class="icon-btn hamburger" id="hamburgerBtn" aria-label="Menu">
-          <svg viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+  <!-- Navigation -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo">MH</a>
+      <nav class="nav-links">
+        <a href="#hero" data-ar="الرئيسية" data-en="Home">الرئيسية</a>
+        <a href="#occasions" data-ar="المناسبات" data-en="Occasions">المناسبات</a>
+        <a href="#steps" data-ar="الخطوات" data-en="Steps">الخطوات</a>
+        <a href="#contact" data-ar="تواصل معنا" data-en="Contact">تواصل معنا</a>
+      </nav>
+      <div class="nav-actions">
+        <button id="langToggle" class="lang-btn" aria-label="Toggle Language">
+          <span class="lang-text">EN</span>
         </button>
       </div>
     </div>
   </header>
 
-  <main class="main-content">
-    
-    <!-- Hero Section مع صورة box0001.jpg وإطار البراند البرتقالي -->
-    <section class="hero">
-      <div class="container hero-grid">
-        <div>
-          <div class="hero-tagline" data-i18n="hero_tag">أكثر من مجرد صندوق</div>
-          <h1 class="hero-title" data-i18n="hero_title">صندوق. مفاجأة. لحظة لا تُنسى.</h1>
-          <p class="hero-desc" data-i18n="hero_desc">
-            نحوّل اللحظات العادية إلى ذكريات استثنائية عبر صناديق غامضة صُممت بعناية تامة وبأعلى درجات الفخامة.
-          </p>
-          <div class="hero-buttons">
-            <a href="boxes.html" class="btn btn-primary" data-i18n="hero_btn_discover">استكشف البوكسات</a>
-            <a href="customize.html" class="btn btn-secondary" data-i18n="hero_btn_customize">صمّم صندوقك</a>
-          </div>
-        </div>
-        <div>
-          <div class="hero-img-wrap">
-            <img src="img/box0001.jpg" alt="MH Signature Box Experience" loading="eager">
-          </div>
-        </div>
-      </div>
-    </section>
+  <!-- Hero Section -->
+  <section id="hero" class="hero-section">
+    <div class="hero-content">
+      <h1 data-ar="اصنع لحظتك الخاصة مع MH" data-en="Create Your Special Moment With MH">اصنع لحظتك الخاصة مع MH</h1>
+      <p data-ar="صناديق هدايا فاخرة ومصممة بعناية لتناسب أرقى مناسباتكم." data-en="Curated luxury gift boxes crafted with elegance for all your occasions.">صناديق هدايا فاخرة ومصممة بعناية لتناسب أرقى مناسباتكم.</p>
+      <a href="#occasions" class="btn btn-primary" data-ar="استكشف المناسبات" data-en="Explore Occasions">استكشف المناسبات</a>
+    </div>
+  </section>
 
-    <!-- Concept Section -->
-    <section class="container" style="border-bottom: var(--border-subtle); text-align: center;">
-      <div style="max-width: 650px; margin: 0 auto;">
-        <h2 style="font-size: 26px; margin-bottom: 12px;" data-i18n="concept_title">اختر اللحظة. ونحن نصنع المفاجأة.</h2>
-        <p style="color: var(--mh-cool-grey);" data-i18n="concept_desc">صناديق مفاجآت مخصصة للكابلز، الأصدقاء، العائلة، ولكل مناسبة تستحق الاحتفال.</p>
-      </div>
-    </section>
-
-    <!-- For Every Moment -->
-    <section class="container">
+  <!-- Occasions Section -->
+  <section id="occasions" class="occasions-section">
+    <div class="container">
       <div class="section-header">
-        <div class="section-label" data-i18n="moments_label">المناسبات</div>
-        <h2 class="section-title" data-i18n="moments_title">لكل لحظة خاصة</h2>
+        <h2 data-ar="المناسبات" data-en="Occasions">المناسبات</h2>
+        <p data-ar="اختر المناسبة ودعنا نصنع لك تجربة استثنائية" data-en="Select the occasion and let us craft an exceptional experience">اختر المناسبة ودعنا نصنع لك تجربة استثنائية</p>
       </div>
-      <div class="moments-grid">
-        <a href="boxes.html" class="moment-card">
-          <div class="moment-card-title" data-i18n="moment_couples">الكابلز (Couples)</div>
-          <div class="moment-card-sub" data-i18n="moment_couples_sub">لحظات استثنائية تجمعكما معاً</div>
-        </a>
-        <a href="boxes.html" class="moment-card">
-          <div class="moment-card-title" data-i18n="moment_engagement">الخطوبة (Engagement)</div>
-          <div class="moment-card-sub" data-i18n="moment_engagement_sub">بداية القصة والخطوة الأولى</div>
-        </a>
-        <a href="boxes.html" class="moment-card">
-          <div class="moment-card-title" data-i18n="moment_wedding">الزواج (Wedding)</div>
-          <div class="moment-card-sub" data-i18n="moment_wedding_sub">فخامة تليق باليوم الكبير</div>
-        </a>
-        <a href="boxes.html" class="moment-card">
-          <div class="moment-card-title" data-i18n="moment_friends">الأصدقاء (Friends)</div>
-          <div class="moment-card-sub" data-i18n="moment_friends_sub">تقدير حقيقي لرفقة تدوم</div>
-        </a>
-        <a href="boxes.html" class="moment-card">
-          <div class="moment-card-title" data-i18n="moment_birthday">أعياد الميلاد (Birthday)</div>
-          <div class="moment-card-sub" data-i18n="moment_birthday_sub">مفاجأة مبهجة متجددة كل عام</div>
-        </a>
-        <a href="boxes.html" class="moment-card">
-          <div class="moment-card-title" data-i18n="moment_graduation">التخرج (Graduation)</div>
-          <div class="moment-card-sub" data-i18n="moment_graduation_sub">تتويج مسيرة الجهد والنجاح</div>
-        </a>
-      </div>
-    </section>
 
-    <!-- How It Works -->
-    <section class="container" style="border-top: var(--border-subtle);">
-      <div class="section-header">
-        <div class="section-label" data-i18n="how_label">الخطوات</div>
-        <h2 class="section-title" data-i18n="how_title">كيف نعمل</h2>
-      </div>
-      <div class="steps-grid">
-        <div class="step-card">
-          <div class="step-number">01</div>
-          <div class="step-name" data-i18n="how_s1_title">اختر</div>
-          <div class="step-desc" data-i18n="how_s1_desc">اختر المناسبة ونوع الصندوق الأساسي الذي يناسبك.</div>
+      <div class="occasions-grid">
+        <!-- 1. كابلز -->
+        <div class="occasion-card" data-occasion="couples">
+          <div class="card-icon">
+            <i class="fa-solid fa-heart-pulse"></i>
+          </div>
+          <h3 data-ar="كابلز" data-en="Couples">كابلز</h3>
         </div>
-        <div class="step-card">
-          <div class="step-number">02</div>
-          <div class="step-name" data-i18n="how_s2_title">خصّص</div>
-          <div class="step-desc" data-i18n="how_s2_desc">حدد الهدايا الداخلية والإضافات والرسالة الشخصية.</div>
+
+        <!-- 2. أصدقاء -->
+        <div class="occasion-card" data-occasion="friends">
+          <div class="card-icon">
+            <i class="fa-solid fa-user-group"></i>
+          </div>
+          <h3 data-ar="أصدقاء" data-en="Friends">أصدقاء</h3>
         </div>
-        <div class="step-card">
-          <div class="step-number">03</div>
-          <div class="step-name" data-i18n="how_s3_title">فاجئ</div>
-          <div class="step-desc" data-i18n="how_s3_desc">استلم البوكس المغلف بعناية وافتح باب الدهشة.</div>
+
+        <!-- 3. أعياد ميلاد -->
+        <div class="occasion-card" data-occasion="birthdays">
+          <div class="card-icon">
+            <i class="fa-solid fa-cake-candles"></i>
+          </div>
+          <h3 data-ar="أعياد ميلاد" data-en="Birthdays">أعياد ميلاد</h3>
         </div>
-      </div>
-    </section>
 
-    <!-- Make It Yours Section مع صورة 0003 بالإطار البرتقالي -->
-    <section class="container" style="border-top: var(--border-subtle); padding: 70px 24px;">
-      <div class="make-it-yours-card">
-        <div class="make-visual-wrap">
-          <img src="img/0003.jpg" alt="MH Custom Perfume & Box" loading="lazy">
+        <!-- 4. عيد الحب -->
+        <div class="occasion-card" data-occasion="valentine">
+          <div class="card-icon">
+            <i class="fa-solid fa-heart"></i>
+          </div>
+          <h3 data-ar="عيد الحب" data-en="Valentine's Day">عيد الحب</h3>
         </div>
-        <div>
-          <div class="section-label" data-i18n="make_label">تجربة مخصصة</div>
-          <h2 style="font-size: 30px; margin-bottom: 14px;" data-i18n="make_title">اصنعه بأسلوبك</h2>
-          <p style="color: var(--mh-cool-grey); margin-bottom: 24px;" data-i18n="make_desc">صمّم صندوقك بالكامل من الصفر بدقة وانسيابية تامة، واختر كل تفصيل بنفسك.</p>
-          <a href="customize.html" class="btn btn-primary" data-i18n="make_btn">تخصيص البوكس الآن ←</a>
+
+        <!-- 5. عيد الأم -->
+        <div class="occasion-card" data-occasion="mothers-day">
+          <div class="card-icon">
+            <i class="fa-solid fa-seedling"></i>
+          </div>
+          <h3 data-ar="عيد الأم" data-en="Mother's Day">عيد الأم</h3>
         </div>
-      </div>
-    </section>
 
-  </main>
+        <!-- 6. تخرج -->
+        <div class="occasion-card" data-occasion="graduation">
+          <div class="card-icon">
+            <i class="fa-solid fa-graduation-cap"></i>
+          </div>
+          <h3 data-ar="تخرج" data-en="Graduation">تخرج</h3>
+        </div>
 
-  <!-- Unified Footer -->
-  <footer class="footer">
-    <div class="footer-top">
-      <div class="footer-brand-box">
-        <a href="index.html" class="footer-logo-link">
-          <img src="Logo.png" alt="MH Logo" class="footer-logo-img">
-        </a>
-        <p class="footer-slogan" data-i18n="footer_surprise_slogan">اترك المفاجأة علينا</p>
-      </div>
+        <!-- 7. ولادة -->
+        <div class="occasion-card" data-occasion="newborn">
+          <div class="card-icon">
+            <i class="fa-solid fa-baby"></i>
+          </div>
+          <h3 data-ar="ولادة" data-en="Newborn">ولادة</h3>
+        </div>
 
-      <ul class="footer-links">
-        <li><a href="index.html" data-i18n="nav_home">الرئيسية</a></li>
-        <li><a href="boxes.html" data-i18n="nav_boxes">البوكسات</a></li>
-        <li><a href="customize.html" data-i18n="nav_customize">تخصيص الصندوق</a></li>
-        <li><a href="about.html" data-i18n="nav_about">عن البراند</a></li>
-        <li><a href="contact.html" data-i18n="nav_contact">تواصل معنا</a></li>
-      </ul>
-
-      <div class="footer-social-icons">
-        <a href="https://wa.me/963900000000" target="_blank" class="social-icon-btn whatsapp" aria-label="WhatsApp">
-          <svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
-        </a>
-        <a href="https://instagram.com/mh_brand" target="_blank" class="social-icon-btn instagram" aria-label="Instagram">
-          <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-        </a>
+        <!-- 8. توديع العزوبية -->
+        <div class="occasion-card" data-occasion="bachelor">
+          <div class="card-icon">
+            <i class="fa-solid fa-champagne-glasses"></i>
+          </div>
+          <h3 data-ar="توديع العزوبية" data-en="Bachelor Party">توديع العزوبية</h3>
+        </div>
       </div>
     </div>
-    <div class="footer-bottom">
-      <div data-i18n="footer_rights">جميع الحقوق محفوظة © 2026 MH Brand.</div>
+  </section>
+
+  <!-- Steps Section -->
+  <section id="steps" class="steps-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 data-ar="الخطوات" data-en="Steps">الخطوات</h2>
+        <p data-ar="رحلة طلب بسيطة وسريعة للحصول على بوكسك الخاص" data-en="A simple, seamless order process for your custom box">رحلة طلب بسيطة وسريعة للحصول على بوكسك الخاص</p>
+      </div>
+
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-number">1</div>
+          <div class="step-icon">
+            <i class="fa-solid fa-gift"></i>
+          </div>
+          <h3 data-ar="اختر المناسبة" data-en="Select the Occasion">اختر المناسبة</h3>
+          <p data-ar="حدد المناسبة ونوع الصندوق المناسب لميزانيتك واهتماماتك." data-en="Choose the occasion and package fitting your budget and taste.">حدد المناسبة ونوع الصندوق المناسب لميزانيتك واهتماماتك.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">2</div>
+          <div class="step-icon">
+            <i class="fa-solid fa-sliders"></i>
+          </div>
+          <h3 data-ar="خصص التفاصيل" data-en="Customize Details">خصص التفاصيل</h3>
+          <p data-ar="أضف لمساتك وتفضيلات المستلم لنقوم بتجهيز محتوى فريد." data-en="Share preferences and recipient details for a uniquely tailored package.">أضف لمساتك وتفضيلات المستلم لنقوم بتجهيز محتوى فريد.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">3</div>
+          <div class="step-icon">
+            <i class="fa-solid fa-truck-fast"></i>
+          </div>
+          <h3 data-ar="التجهيز والتسليم" data-en="Preparation & Delivery">التجهيز والتسليم</h3>
+          <p data-ar="نقوم بتغليف الصندوق بعناية فائقة وتوصيله إلى عنوانك المحدد." data-en="We pack your gift box meticulously and deliver it directly to your door.">نقوم بتغليف الصندوق بعناية فائقة وتوصيله إلى عنوانك المحدد.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="contact" class="footer">
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <span class="logo">MH</span>
+        <p data-ar="علامة تجارية متخصصة في الهدايا وتجارب الصناديق الفاخرة." data-en="A premium brand specializing in luxury gifts and mystery boxes.">علامة تجارية متخصصة في الهدايا وتجارب الصناديق الفاخرة.</p>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 MH Brand. All rights reserved.</p>
+      </div>
     </div>
   </footer>
 
-  <script src="js/app.js"></script>
+  <!-- Scripts -->
+  <script src="script.js"></script>
 </body>
 </html>
