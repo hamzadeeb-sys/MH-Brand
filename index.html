@@ -3,595 +3,81 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MH Brand</title>
-  
-  <!-- Fonts: Cairo for Arabic & Outfit for English -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  
-  <!-- Lucide Icons -->
-  <script src="https://unpkg.com/lucide@latest"></script>
-
+  <title>MH — Official Website</title>
+  <link rel="icon" type="image/png" href="Logo.png">
+  <link rel="stylesheet" href="css/main.css">
   <style>
+    /* Modern UI Polish & Brand Accents */
     :root {
-      --bg-dark: #0b0d11;
-      --bg-surface: #11141a;
-      --bg-card: rgba(22, 26, 34, 0.7);
-      --bg-card-hover: rgba(28, 33, 43, 0.85);
-      --primary-orange: #ff7a00;
-      --primary-orange-hover: #e06900;
-      --orange-soft: rgba(255, 122, 0, 0.1);
-      --orange-border: rgba(255, 122, 0, 0.25);
-      --orange-glow: rgba(255, 122, 0, 0.18);
-      --text-white: #ffffff;
-      --text-gray: #9ba1b0;
-      --border-color: rgba(255, 255, 255, 0.08);
-      --border-color-hover: rgba(255, 122, 0, 0.4);
-      --radius-sm: 10px;
-      --radius-md: 16px;
-      --radius-lg: 24px;
-      --transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      --mh-orange: #ff6a00;
+      --mh-orange-glow: rgba(255, 106, 0, 0.28);
+      --card-glass-bg: rgba(255, 255, 255, 0.025);
+      --card-glass-hover: rgba(255, 255, 255, 0.05);
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      --mh-cool-grey: #94a3b8;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
+    html {
+      scroll-behavior: smooth;
     }
 
-    body {
-      background-color: var(--bg-dark);
-      background-image: 
-        radial-gradient(circle at 50% 0%, rgba(255, 122, 0, 0.08) 0%, transparent 60%),
-        radial-gradient(circle at 100% 40%, rgba(255, 122, 0, 0.03) 0%, transparent 40%);
-      background-attachment: fixed;
-      color: var(--text-white);
-      font-family: 'Cairo', sans-serif;
-      line-height: 1.6;
-      overflow-x: hidden;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    body.lang-en {
-      font-family: 'Outfit', sans-serif;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-
-    /* Header / Navbar */
-    header {
+    /* Header Backdrop Blur */
+    .header {
       position: sticky;
       top: 0;
-      z-index: 100;
+      z-index: 1000;
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
-      background: rgba(11, 13, 17, 0.75);
-      border-bottom: 1px solid var(--border-color);
+      transition: background 0.3s ease, border-color 0.3s ease;
     }
 
-    .nav-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 76px;
-    }
-
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-size: 1.55rem;
-      font-weight: 800;
-      color: var(--text-white);
-      letter-spacing: -0.5px;
-    }
-
-    .logo-icon-box {
-      width: 40px;
-      height: 40px;
-      border-radius: var(--radius-sm);
-      background: var(--orange-soft);
-      border: 1px solid var(--orange-border);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--primary-orange);
-    }
-
-    .logo span {
-      color: var(--primary-orange);
-    }
-
-    .nav-actions {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-    }
-
-    .lang-btn {
-      background: var(--bg-surface);
-      border: 1px solid var(--border-color);
-      color: var(--text-white);
-      padding: 8px 18px;
-      font-size: 0.95rem;
-      font-weight: 600;
-      border-radius: var(--radius-sm);
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      transition: var(--transition);
-      backdrop-filter: blur(8px);
-    }
-
-    .lang-btn:hover {
-      border-color: var(--primary-orange);
-      color: var(--primary-orange);
-      box-shadow: 0 0 16px var(--orange-glow);
-    }
-
-    /* Section Headers */
-    .section-header {
-      text-align: center;
-      max-width: 720px;
-      margin: 0 auto 56px auto;
-    }
-
-    .section-badge {
+    /* Tagline Glow Badge */
+    .hero-tagline {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      background: var(--orange-soft);
-      border: 1px solid var(--orange-border);
-      color: var(--primary-orange);
-      font-size: 0.95rem;
-      font-weight: 700;
-      padding: 6px 18px;
+      gap: 10px;
+      padding: 6px 16px;
       border-radius: 9999px;
-      margin-bottom: 20px;
-      letter-spacing: 0.3px;
+      background: rgba(255, 106, 0, 0.08);
+      border: 1px solid rgba(255, 106, 0, 0.3);
+      color: var(--mh-orange);
+      font-size: 0.875rem;
+      font-weight: 600;
+      margin-bottom: 18px;
+      letter-spacing: 0.02em;
     }
 
-    .section-title {
-      font-size: 2.3rem;
-      font-weight: 800;
-      margin-bottom: 14px;
-      color: var(--text-white);
-      line-height: 1.3;
+    .hero-tagline::before {
+      content: '';
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--mh-orange);
+      box-shadow: 0 0 10px var(--mh-orange);
     }
 
-    .section-desc {
-      color: var(--text-gray);
-      font-size: 1.1rem;
-      line-height: 1.7;
-    }
-
-    /* Hero Section */
-    .hero {
+    /* Luxury Image Wrappers with Brand Orange Border */
+    .hero-img-wrap,
+    .make-visual-wrap {
       position: relative;
-      padding: 100px 0 80px 0;
-      text-align: center;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 2px solid var(--mh-orange);
+      box-shadow: 0 20px 45px -15px var(--mh-orange-glow), 0 0 0 1px rgba(255, 106, 0, 0.15);
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
     }
 
-    .hero-glow {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 480px;
-      height: 320px;
-      background: radial-gradient(circle, rgba(255, 122, 0, 0.15) 0%, transparent 70%);
-      filter: blur(50px);
-      z-index: -1;
-      pointer-events: none;
+    .hero-img-wrap:hover,
+    .make-visual-wrap:hover {
+      transform: translateY(-4px) scale(1.008);
+      box-shadow: 0 30px 60px -15px rgba(255, 106, 0, 0.38);
     }
 
-    .hero h1 {
-      font-size: 3.4rem;
-      font-weight: 800;
-      margin-bottom: 20px;
-      line-height: 1.25;
-      letter-spacing: -0.5px;
-    }
-
-    .hero h1 span {
-      background: linear-gradient(135deg, var(--primary-orange) 0%, #ffaa5b 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .hero p {
-      font-size: 1.25rem;
-      color: var(--text-gray);
-      max-width: 680px;
-      margin: 0 auto;
-      line-height: 1.8;
-    }
-
-    /* Occasions Section */
-    .occasions-section {
-      padding: 80px 0;
-    }
-
-    .occasions-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 20px;
-    }
-
-    .occasion-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius-md);
-      padding: 24px 20px;
-      display: flex;
-      align-items: center;
-      gap: 18px;
-      backdrop-filter: blur(12px);
-      transition: var(--transition);
-      cursor: pointer;
-      position: relative;
-    }
-
-    .occasion-card:hover {
-      background: var(--bg-card-hover);
-      border-color: var(--border-color-hover);
-      transform: translateY(-4px);
-      box-shadow: 0 12px 28px -8px rgba(0, 0, 0, 0.5), 0 0 18px var(--orange-glow);
-    }
-
-    .occasion-icon {
-      width: 52px;
-      height: 52px;
-      border-radius: var(--radius-sm);
-      background: var(--orange-soft);
-      border: 1px solid var(--orange-border);
-      color: var(--primary-orange);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      transition: var(--transition);
-    }
-
-    .occasion-card:hover .occasion-icon {
-      background: var(--primary-orange);
-      border-color: var(--primary-orange);
-      color: #ffffff;
-      transform: scale(1.05);
-    }
-
-    .occasion-name {
-      font-size: 1.15rem;
-      font-weight: 700;
-      color: var(--text-white);
-    }
-
-    /* Work Steps Section */
-    .steps-section {
-      padding: 90px 0 110px 0;
-      position: relative;
-    }
-
-    .steps-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 28px;
-    }
-
-    .step-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius-lg);
-      padding: 40px 32px;
-      position: relative;
-      backdrop-filter: blur(12px);
-      transition: var(--transition);
-    }
-
-    .step-card:hover {
-      background: var(--bg-card-hover);
-      border-color: var(--border-color-hover);
-      transform: translateY(-5px);
-      box-shadow: 0 14px 32px -8px rgba(0, 0, 0, 0.5), 0 0 20px var(--orange-glow);
-    }
-
-    .step-number {
-      font-size: 1.8rem;
-      font-weight: 800;
-      color: var(--primary-orange);
-      background: var(--orange-soft);
-      width: 58px;
-      height: 58px;
-      border-radius: var(--radius-sm);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 24px;
-      border: 1px solid var(--orange-border);
-      transition: var(--transition);
-    }
-
-    .step-card:hover .step-number {
-      border-color: var(--primary-orange);
-      box-shadow: 0 0 16px var(--orange-glow);
-    }
-
-    .step-title {
-      font-size: 1.35rem;
-      font-weight: 700;
-      margin-bottom: 12px;
-      color: var(--text-white);
-    }
-
-    .step-desc {
-      color: var(--text-gray);
-      font-size: 1.05rem;
-      line-height: 1.7;
-    }
-
-    /* Footer */
-    footer {
-      border-top: 1px solid var(--border-color);
-      padding: 40px 0;
-      text-align: center;
-      color: var(--text-gray);
-      font-size: 0.95rem;
-      background: rgba(11, 13, 17, 0.9);
-    }
-
-    footer span {
-      color: var(--primary-orange);
-      font-weight: 700;
-    }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      .hero {
-        padding: 60px 0 50px 0;
-      }
-      .hero h1 {
-        font-size: 2.3rem;
-      }
-      .hero p {
-        font-size: 1.05rem;
-      }
-      .section-title {
-        font-size: 1.8rem;
-      }
-      .occasions-grid {
-        grid-template-columns: 1fr;
-      }
-      .steps-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
-</head>
-<body>
-
-  <!-- Navigation -->
-  <header>
-    <div class="container nav-inner">
-      <a href="#" class="logo">
-        <div class="logo-icon-box">
-          <i data-lucide="sparkles"></i>
-        </div>
-        <div>MH <span>Brand</span></div>
-      </a>
-      <div class="nav-actions">
-        <button class="lang-btn" id="langToggle">
-          <i data-lucide="globe" style="width: 18px; height: 18px;"></i>
-          <span id="langLabel">English</span>
-        </button>
-      </div>
-    </div>
-  </header>
-
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero-glow"></div>
-    <div class="container">
-      <span class="section-badge" data-key="heroBadge">هدايا وتجهيزات استثنائية</span>
-      <h1 data-key="heroTitle">لحظاتك المميزة تستحق <span>لمسة لا تُنسى</span></h1>
-      <p data-key="heroDesc">نصمم لك تجارب وهدايا مخصصة لكل لحظة تجمعك بمن تحب، بأعلى معايير الإتقان والتفرد.</p>
-    </div>
-  </section>
-
-  <!-- Occasions Section -->
-  <section class="occasions-section">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-badge" data-key="occasionsBadge">المناسبات</span>
-        <h2 class="section-title" data-key="occasionsTitle">نشارككم كل اللحظات السعيدة</h2>
-        <p class="section-desc" data-key="occasionsDesc">اختر مناسبتك لنصنع لك ما يلائمها بعناية وشغف.</p>
-      </div>
-
-      <div class="occasions-grid">
-        <!-- 1. كابلز -->
-        <div class="occasion-card">
-          <div class="occasion-icon"><i data-lucide="heart-handshake"></i></div>
-          <div class="occasion-name" data-key="occ_couples">كابلز</div>
-        </div>
-
-        <!-- 2. اصدقاء -->
-        <div class="occasion-card">
-          <div class="occasion-icon"><i data-lucide="users"></i></div>
-          <div class="occasion-name" data-key="occ_friends">أصدقاء</div>
-        </div>
-
-        <!-- 3. اعياد ميلاد -->
-        <div class="occasion-card">
-          <div class="occasion-icon"><i data-lucide="cake"></i></div>
-          <div class="occasion-name" data-key="occ_birthdays">أعياد ميلاد</div>
-        </div>
-
-        <!-- 4. توديع العزوبية -->
-        <div class="occasion-card">
-          <div class="occasion-icon"><i data-lucide="glass-water"></i></div>
-          <div class="occasion-name" data-key="occ_bachelor">توديع العزوبية</div>
-        </div>
-
-        <!-- 5. عيد الحب -->
-        <div class="occasion-card">
-          <div class="occasion-icon"><i data-lucide="heart"></i></div>
-          <div class="occasion-name" data-key="occ_valentine">عيد الحب</div>
-        </div>
-
-        <!-- 6. عيد الام -->
-        <div class="occasion-card">
-          <div class="occasion-icon"><i data-lucide="flower-2"></i></div>
-          <div class="occasion-name" data-key="occ_mother">عيد الأم</div>
-        </div>
-
-        <!-- 7. تخرج -->
-        <div class="occasion-card">
-          <div class="occasion-icon"><i data-lucide="graduation-cap"></i></div>
-          <div class="occasion-name" data-key="occ_grad">تخرج</div>
-        </div>
-
-        <!-- 8. ولادة -->
-        <div class="occasion-card">
-          <div class="occasion-icon"><i data-lucide="baby"></i></div>
-          <div class="occasion-name" data-key="occ_newborn">ولادة</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Work Steps Section -->
-  <section class="steps-section">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-badge" data-key="stepsBadge">كيف يتم الأمر</span>
-        <h2 class="section-title" data-key="stepsTitle">خطوات العمل</h2>
-        <p class="section-desc" data-key="stepsDesc">خطوات بسيطة ومباشرة من الطلب حتى الاستلام.</p>
-      </div>
-
-      <div class="steps-grid">
-        <!-- Step 1 -->
-        <div class="step-card">
-          <div class="step-number">01</div>
-          <h3 class="step-title" data-key="step1Title">اختيار المناسبة والتصميم</h3>
-          <p class="step-desc" data-key="step1Desc">تحديد نوع الفعالية والمنتج وتنسيق التفاصيل أو الأفكار التي ترغب بتنفيذها.</p>
-        </div>
-
-        <!-- Step 2 -->
-        <div class="step-card">
-          <div class="step-number">02</div>
-          <h3 class="step-title" data-key="step2Title">التأكيد والتجهيز الدقيق</h3>
-          <p class="step-desc" data-key="step2Desc">معاينة وتأكيد التفاصيل النهائية لنبدأ عمليات التنفيذ المخصصة بأعلى دقة.</p>
-        </div>
-
-        <!-- Step 3 -->
-        <div class="step-card">
-          <div class="step-number">03</div>
-          <h3 class="step-title" data-key="step3Title">التغليف والتسليم</h3>
-          <p class="step-desc" data-key="step3Desc">تغليف فاخر يليق بالمناسبة وتوصيل سريع وموثوق إلى وجهتك المحددة.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <p data-key="footerText">© 2026 <span>MH Brand</span>. جميع الحقوق محفوظة.</p>
-    </div>
-  </footer>
-
-  <!-- Translation & Interactive Script -->
-  <script>
-    lucide.createIcons();
-
-    const translations = {
-      ar: {
-        langBtn: "English",
-        heroBadge: "هدايا وتجهيزات استثنائية",
-        heroTitle: "لحظاتك المميزة تستحق <span>لمسة لا تُنسى</span>",
-        heroDesc: "نصمم لك تجارب وهدايا مخصصة لكل لحظة تجمعك بمن تحب، بأعلى معايير الإتقان والتفرد.",
-        occasionsBadge: "المناسبات",
-        occasionsTitle: "نشارككم كل اللحظات السعيدة",
-        occasionsDesc: "اختر مناسبتك لنصنع لك ما يلائمها بعناية وشغف.",
-        occ_couples: "كابلز",
-        occ_friends: "أصدقاء",
-        occ_birthdays: "أعياد ميلاد",
-        occ_bachelor: "توديع العزوبية",
-        occ_valentine: "عيد الحب",
-        occ_mother: "عيد الأم",
-        occ_grad: "تخرج",
-        occ_newborn: "ولادة",
-        stepsBadge: "مسار الطلب",
-        stepsTitle: "خطوات العمل",
-        stepsDesc: "خطوات بسيطة ومباشرة من الفكرة حتى الاستلام.",
-        step1Title: "اختيار المناسبة والتصميم",
-        step1Desc: "تحديد نوع الفعالية والمنتج وتنسيق التفاصيل أو الأفكار التي ترغب بتنفيذها.",
-        step2Title: "التأكيد والتجهيز الدقيق",
-        step2Desc: "معاينة وتأكيد التفاصيل النهائية لنبدأ عمليات التنفيذ المخصصة بأعلى دقة.",
-        step3Title: "التغليف والتسليم",
-        step3Desc: "تغليف فاخر يليق بالمناسبة وتوصيل سريع وموثوق إلى وجهتك المحددة.",
-        footerText: "© 2026 <span>MH Brand</span>. جميع الحقوق محفوظة."
-      },
-      en: {
-        langBtn: "العربية",
-        heroBadge: "Exclusive Gifts & Styling",
-        heroTitle: "Your Special Moments Deserve <span>An Unforgettable Touch</span>",
-        heroDesc: "We craft personalized gifts and unique setups for every cherished memory, delivered with high precision.",
-        occasionsBadge: "Occasions",
-        occasionsTitle: "Celebrating Every Special Occasion",
-        occasionsDesc: "Choose your occasion and let us craft something truly remarkable.",
-        occ_couples: "Couples",
-        occ_friends: "Friends",
-        occ_birthdays: "Birthdays",
-        occ_bachelor: "Bachelor / Bachelorette",
-        occ_valentine: "Valentine's Day",
-        occ_mother: "Mother's Day",
-        occ_grad: "Graduation",
-        occ_newborn: "Newborn",
-        stepsBadge: "Our Process",
-        stepsTitle: "Work Steps",
-        stepsDesc: "Straightforward steps from initial concept to your hands.",
-        step1Title: "Choose Occasion & Style",
-        step1Desc: "Select the occasion, pick your preferred design, and define your personal details.",
-        step2Title: "Confirmation & Crafting",
-        step2Desc: "Review final specs before our tailored production process begins.",
-        step3Title: "Luxury Packaging & Delivery",
-        step3Desc: "Elegant premium packaging followed by fast, reliable delivery to your door.",
-        footerText: "© 2026 <span>MH Brand</span>. All rights reserved."
-      }
-    };
-
-    let currentLang = 'ar';
-    const langToggleBtn = document.getElementById('langToggle');
-    const langLabel = document.getElementById('langLabel');
-
-    langToggleBtn.addEventListener('click', () => {
-      currentLang = currentLang === 'ar' ? 'en' : 'ar';
-      
-      document.documentElement.setAttribute('dir', currentLang === 'ar' ? 'rtl' : 'ltr');
-      document.documentElement.setAttribute('lang', currentLang);
-      document.body.classList.toggle('lang-en', currentLang === 'en');
-      langLabel.textContent = translations[currentLang].langBtn;
-
-      document.querySelectorAll('[data-key]').forEach(el => {
-        const key = el.getAttribute('data-key');
-        if (translations[currentLang][key]) {
-          el.innerHTML = translations[currentLang][key];
-        }
-      });
-
-      lucide.createIcons();
-    });
-  </script>
-</body>
-</html>
+    .hero-img-wrap img,
+    .make-visual-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1
