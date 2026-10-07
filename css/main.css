@@ -143,6 +143,7 @@ svg {
   cursor: pointer;
   letter-spacing: 0.05em;
   transition: var(--transition);
+  border-radius: 4px;
 }
 
 .lang-btn:hover {
@@ -457,6 +458,8 @@ svg {
   padding-bottom: 20px;
   border-bottom: var(--border-subtle);
   width: 100%;
+  position: relative;
+  z-index: 2;
 }
 
 .filter-btn {
@@ -469,6 +472,8 @@ svg {
   cursor: pointer;
   transition: var(--transition);
   border-radius: 4px;
+  position: relative;
+  z-index: 2;
 }
 
 .filter-btn.active, .filter-btn:hover {
@@ -1035,9 +1040,18 @@ html[lang="en"] .footer-brand-box {
     padding: 24px;
     gap: 16px;
     transform: translateY(-120%);
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, opacity 0.25s ease, visibility 0.25s ease;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 9998;
   }
-  .nav-menu.open { transform: translateY(0); }
+  .nav-menu.open {
+    transform: translateY(0);
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+  }
   .hamburger { display: inline-flex; }
   .hero-title { font-size: 34px; }
   .customizer-wrapper { padding: 24px 16px; }
