@@ -20,8 +20,8 @@
         <li><a href="index.html" class="nav-link" data-i18n="nav_home">الرئيسية</a></li>
         <li><a href="boxes.html" class="nav-link" data-i18n="nav_boxes">البوكسات</a></li>
         <li><a href="customize.html" class="nav-link active" data-i18n="nav_customize">تخصيص الصندوق</a></li>
-        <li><a href="about.html" class="nav-link" data-i18n="nav_about">عن البراند</a></li>
-        <li><a href="contact.html" class="nav-link" data-i18n="nav_contact">تواصل معنا</a></li>
+        <li><a href="about.html" data-i18n="nav_about">عن البراند</a></li>
+        <li><a href="contact.html" data-i18n="nav_contact">تواصل معنا</a></li>
       </ul>
       <div class="header-actions">
         <button class="lang-btn">EN</button>
@@ -36,7 +36,7 @@
     <div class="container-narrow">
       <div class="section-header">
         <div class="section-label" data-i18n="cust_label">تجربة التخصيص</div>
-        <h1 style="font-size: 32px;" data-i18n="cust_title">صمّم صندوق مفاجأتك</h1>
+        <h1 class="section-title" data-i18n="cust_title">صمّم صندوق مفاجأتك</h1>
       </div>
 
       <div class="customizer-wrapper">
@@ -50,7 +50,7 @@
           <button class="stepper-btn" data-step="5" onclick="goToStep(5)">05 <span data-i18n="step5_tab">مراجعة وتأكيد</span></button>
         </div>
 
-        <!-- الخطوة 01: تظهر وحدها فقط -->
+        <!-- الخطوة 01 -->
         <div class="step-view active" data-step="1">
           <div class="custom-section-title" data-i18n="box_size_title">1. اختر حجم وفئة الصندوق</div>
           <p class="custom-section-sub" data-i18n="box_size_sub">حدد الباقة المناسبة لميزانيتك وعدد الهدايا المتضمنة.</p>
@@ -131,7 +131,7 @@
           <button class="btn btn-primary" style="margin-top: 10px;" onclick="goToStep(2)" data-i18n="btn_continue">متابعة ←</button>
         </div>
 
-        <!-- الخطوة 02: تظهر فقط عند الضغط على متابعة -->
+        <!-- الخطوة 02 -->
         <div class="step-view" data-step="2">
           <div class="custom-section-title" data-i18n="cust_s1_title">2. لمن هذا الصندوق؟</div>
           <p class="custom-section-sub" data-i18n="cust_s1_desc">اختر صلة القرابة أو المعرفة لتخصيص محتوى الهدية بدقة.</p>
@@ -183,7 +183,7 @@
           </div>
         </div>
 
-        <!-- الخطوة 03: المناسبة -->
+        <!-- الخطوة 03 -->
         <div class="step-view" data-step="3">
           <div class="custom-section-title" data-i18n="cust_s2_title">3. ما هي المناسبة؟</div>
           <p class="custom-section-sub" data-i18n="cust_s2_desc">اختر المناسبة ليتم مواءمة التغليف ورسالة الإهداء والمفاجآت معها.</p>
@@ -215,7 +215,7 @@
           </div>
         </div>
 
-        <!-- الخطوة 04: الإضافات والكرت -->
+        <!-- الخطوة 04 -->
         <div class="step-view" data-step="4">
           <div class="custom-section-title" data-i18n="step4_addons_title">4. الإضافات وبطاقة الإهداء</div>
           <p class="custom-section-sub" data-i18n="step4_addons_sub">اختر الإضافات الخاصة ثم اكتب رسالة الصندوق.</p>
@@ -268,7 +268,7 @@
           </div>
         </div>
 
-        <!-- الخطوة 05: المراجعة والتأكيد -->
+        <!-- الخطوة 05 -->
         <div class="step-view" data-step="5">
           <div class="custom-section-title" data-i18n="cust_s5_title">5. مراجعة تفاصيل الصندوق وتأكيده</div>
           <p class="custom-section-sub" data-i18n="cust_s5_desc">اضغط على زر التأكيد ليتم حفظ كرت الطلب لديك وفتح المحادثة معنا مباشرة.</p>
