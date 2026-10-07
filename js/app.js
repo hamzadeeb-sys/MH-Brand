@@ -602,6 +602,66 @@ const AppEngine = {
   },
 
   bindGlobalEvents() {
+  bindGlobalEvents() {
+    document.querySelectorAll(".lang-btn, .lang-toggle-btn").forEach(btn => {
+      btn.addEventListener("click", () => this.toggleLanguage());
+    });
+
+    const hamburger = document.getElementById("hamburgerBtn");
+    const menu = document.getElementById("navMenu");
+    if (hamburger && menu) {
+      hamburger.addEventListener("click", () => menu.classList.toggle("open"));
+    }
+
+    // تفعيل فلترة البوكسات
+    this.bindBoxesFilter();
+
+    document.querySelectorAll(".custom-options-grid, .grid-3-cols").forEach(grid => {
+      const isMulti = grid.hasAttribute("data-multi");
+      grid.querySelectorAll(".option-box").forEach(box => {
+        box.addEventListener("click", () => {
+          if (!isMulti) {
+            grid.querySelectorAll(".option-box").forEach(b => b.classList.remove("selected"));
+            box.classList.add("selected");
+          } else {
+            box.classList.toggle("selected");
+          }
+        });
+      });
+    });
+  },
+
+  bindBoxesFilter() {
+    const filterBtns = document.querySelectorAll(".filter-btn");
+    const cards = document.querySelectorAll(".product-card");
+    if (!filterBtns.length || !cards.length) return;
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener("click", () => {
+        filterBtns.forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+
+        const targetCat = btn.getAttribute("data-filter");
+        cards.forEach(card => {
+          const cardCat = card.getAttribute("data-cat");
+          if (targetCat === "all" || cardCat === targetCat) {
+            card.style.display = "flex";
+            requestAnimationFrame(() => {
+              card.style.opacity = "1";
+              card.style.transform = "scale(1)";
+            });
+          } else {
+            card.style.opacity = "0";
+            card.style.transform = "scale(0.96)";
+            setTimeout(() => {
+              card.style.display = "none";
+            }, 200);
+          }
+        });
+      });
+    });
+  }
+
     document.querySelectorAll(".lang-btn, .lang-toggle-btn").forEach(btn => {
       btn.addEventListener("click", () => this.toggleLanguage());
     });
@@ -804,6 +864,23 @@ window.processOrderAndCapture = function() {
     btn.textContent = I18N_DATA[lang].btn_confirm_capture;
     btn.disabled = false;
   });
+};
+window.handleContactSubmit = function(event) {
+  event.preventDefault();
+  const name = document.getElementById("contactName").value.trim();
+  const info = document.getElementById("contactInfo").value.trim();
+  const msg = document.getElementById("contactMsg").value.trim();
+
+  const isEn = AppEngine.lang === "en";
+  let text = "";
+
+  if (isEn) {
+    text = `Hello MH Brand 👋\nNew Inquiry from Website:\n\n👤 Name: ${name}\n📞 Contact: ${info}\n💬 Message: ${msg}`;
+  } else {
+    text = `مرحباً MH Brand 👋\nاستفسار جديد من الموقع الإلكتروني:\n\n👤 الاسم: ${name}\n📞 وسيلة التواصل: ${info}\n💬 الرسالة: ${msg}`;
+  }
+
+  window.open(`https://wa.me/${MH_CONFIG.whatsappNumber}?text=${encodeURIComponent(text)}`, "_blank");
 };
 
 document.addEventListener("DOMContentLoaded", () => AppEngine.init());
