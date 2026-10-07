@@ -415,11 +415,13 @@ svg {
   border-color: var(--mh-orange);
 }
 
-/* Footer */
+/* ===================================================
+   Luxury Unified Footer
+   =================================================== */
 .footer {
-  background-color: #080808;
+  background-color: #070709;
   border-top: var(--border-subtle);
-  padding: 48px 24px 24px;
+  padding: 56px 24px 28px;
   margin-top: auto;
   width: 100%;
 }
@@ -431,21 +433,148 @@ svg {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 32px;
 }
 
+/* Brand & Slogan */
+.footer-brand-box {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+  text-align: start;
+}
+
+html[lang="ar"] .footer-brand-box {
+  align-items: flex-start;
+  text-align: right;
+}
+
+html[lang="en"] .footer-brand-box {
+  align-items: flex-start;
+  text-align: left;
+}
+
+.footer-logo-link {
+  display: inline-flex;
+  align-items: center;
+}
+
+.footer-logo-img {
+  height: 38px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.footer-slogan {
+  color: var(--mh-cool-grey);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+}
+
+/* Navigation Links */
 .footer-links {
   display: flex;
-  gap: 24px;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
   list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-wrap: wrap;
 }
 
 .footer-links a {
+  font-size: 13.5px;
+  font-weight: 600;
   color: var(--mh-cool-grey);
   text-decoration: none;
-  font-size: 13px;
+  transition: var(--transition);
 }
 
-.footer-links a:hover { color: var(--mh-orange); }
+.footer-links a:hover {
+  color: var(--mh-orange);
+}
+
+/* Social Buttons */
+.footer-social-icons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.social-icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--mh-white);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.social-icon-btn svg {
+  width: 20px;
+  height: 20px;
+  stroke: currentColor;
+  stroke-width: 1.8;
+}
+
+.social-icon-btn.whatsapp:hover {
+  border-color: #25D366;
+  color: #25D366;
+  background: rgba(37, 211, 102, 0.12);
+  box-shadow: 0 0 16px rgba(37, 211, 102, 0.25);
+  transform: translateY(-2px);
+}
+
+.social-icon-btn.instagram:hover {
+  border-color: #E1306C;
+  color: #E1306C;
+  background: rgba(225, 48, 108, 0.12);
+  box-shadow: 0 0 16px rgba(225, 48, 108, 0.25);
+  transform: translateY(-2px);
+}
+
+/* Copyright Row */
+.footer-bottom {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding-top: 22px;
+  border-top: var(--border-subtle);
+  font-size: 12.5px;
+  color: #666670;
+  text-align: center;
+  width: 100%;
+}
+
+/* Mobile & Tablet Adjustments */
+@media screen and (max-width: 900px) {
+  .footer-top {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 26px;
+  }
+
+  .footer-brand-box {
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  .footer-links {
+    gap: 18px;
+    justify-content: center;
+  }
+}
+
 
 @media screen and (max-width: 900px) {
   .hero-grid, .steps-grid, .footer-top { grid-template-columns: 1fr; flex-direction: column; gap: 24px; }
